@@ -223,9 +223,9 @@ class CalculateTree(Transformer):
         return sy.log(n, b)
 
 
-class Calculator(commands.Cog):
+class Calculatorv2(commands.Cog):
     """
-    Calculator, Thanks Neko!
+    It's working!! FINALLY - Taki.
     """
 
     def __init__(self, bot):
@@ -236,9 +236,9 @@ class Calculator(commands.Cog):
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def calc(self, ctx, *, exp):
+    async def calcv2(self, ctx, *, exp):
         """
-        Thanks Neko!
+        Basically a simple calculator-v2. This command is safe.
         """
         exp = REMOVE_CODE.sub('', exp).strip().splitlines()
         outputs = []
