@@ -11,6 +11,10 @@ from core import utils
 
 
 class Animals(commands.Cog):
+    """
+    Thanks Neko!
+    """
+
     def __init__(self, bot):
         self.bot = bot
         self.db = bot.plugin_db.get_partition(self)
@@ -53,8 +57,11 @@ class Animals(commands.Cog):
     async def meow(self, ctx, *, breed=None):
         """
         Random cat pic.
+
         API from random.cat or TheCatAPI.com.
+
         Breed can only be the codes found from `{prefix}meow breeds` command.
+
         To request from TheCatAPI.com, an API key must be set with `{prefix}meow apikey yourkeyhere`.
         Sign up for an API key for FREE here: https://thecatapi.com/signup.
         """
@@ -69,8 +76,10 @@ class Animals(commands.Cog):
     async def meow_apikey(self, ctx, *, key):
         """
         Set API key for TheCatAPI.com!
+
         To request from TheCatAPI.com, an API key must be set with `{prefix}meow apikey yourkeyhere`.
         Sign up for an API key for FREE here: https://thecatapi.com/signup.
+
         You may remove the API key with `{prefix}meow apikey clear`.
         """
         if key.lower() == "clear":
@@ -126,7 +135,9 @@ class Animals(commands.Cog):
     async def woof(self, ctx, *, breed: str.lower = None):
         """
         Random dog pic.
+
         You may specify a dog breed, see `{prefix}woof breeds` to find all supported breeds.
+
         API from dog.ceo!
         """
         if breed is not None:
@@ -205,6 +216,7 @@ class Animals(commands.Cog):
     async def floof(self, ctx):
         """
         Random fox pic.
+
         API from randomfox.ca!
         """
         async with self.bot.session.get("https://randomfox.ca/floof/") as r:
@@ -218,6 +230,7 @@ class Animals(commands.Cog):
     async def shibe(self, ctx):
         """
         Random Shiba Inu pic.
+
         API from shibe.online!
         """
         async with self.bot.session.get("http://shibe.online/api/shibes") as r:
