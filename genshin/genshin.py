@@ -6,7 +6,6 @@ import pytz
 from discord.ext import commands, tasks
 
 
-# Credits to https://github.com/Cog-Creators/Red-DiscordBot/blob/ded5aff08cfe443498770e7f27035db694e72c30/redbot/core/utils/chat_formatting.py#L86
 def box(text: str, lang: str = "") -> str:
     """Get the given text in a code block.
     Parameters
@@ -25,6 +24,9 @@ def box(text: str, lang: str = "") -> str:
 
 
 class Genshin(commands.Cog):
+    """
+    Thanks Neko!
+    """
     def __init__(self, bot):
         self.bot = bot
         self.coll = bot.plugin_db.get_partition(self)
