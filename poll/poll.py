@@ -72,7 +72,7 @@ class Polls(commands.Cog):
         except:
             pass  # oh well
 
-        answer = "\n\n".join(f"{keycap}: {content}" for keycap, content in answers)
+        answer = "\n\n".join(f"{keycap} {content}" for keycap, content in answers)
         embed = discord.Embed(
             color=self.bot.main_color,
             timestamp=datetime.datetime.utcnow(),
