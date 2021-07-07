@@ -1,6 +1,6 @@
 {
     "action": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Fun Actions! >:D",
         "title": "Actions",
@@ -8,7 +8,7 @@
         "thumbnail_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096"
     },
     "animals": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Pictures of Animals, Awh!",
         "title": "Animals",
@@ -16,7 +16,7 @@
         "thumbnail_url": "https://opengameart.org/sites/default/files/forum-attachments/circle%20dog%20big.png"
     },
     "announcements": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Easy Announcements",
         "title": "Announcements",
@@ -24,7 +24,7 @@
         "thumbnail_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096"
     },
     "calculator": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Advanced/Simple Math",
         "title": "Calculator",
@@ -32,7 +32,7 @@
         "thumbnail_url": "https://cdn0.iconfinder.com/data/icons/mathematical-symbols-1-1/640/circle_divide-512.png"
     },
     "gchat": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Fun Games!",
         "title": "Chat Games",
@@ -40,7 +40,7 @@
         "thumbnail_url": "http://www.newdesignfile.com/postpic/2015/09/board-game-icon_336083.png"
     },
     "genshin": {
-        "repository": "abadima/modmail-plugins",
+        "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Server Times & Daily/Weekly Times!",
         "title": "Genshin Status",
