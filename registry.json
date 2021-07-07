@@ -119,6 +119,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://i.pinimg.com/originals/37/5e/bc/375ebcb53d28c7177fca29c1712965eb.png"
     },
+    "media-only": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Setup Media-Only Channels, \n to prevent Non-Media from entering",
+        "title": "Media Only Feature",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://icons.iconarchive.com/icons/cornmanthe3rd/plex/512/Media-wmp-icon.png"
+    },
     "menu": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
