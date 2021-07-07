@@ -24,7 +24,7 @@ class Announcements(commands.Cog):
         """
         await ctx.send_help(ctx.command)
 
-    @announcement.command()
+    @announce.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def start(
         self,
