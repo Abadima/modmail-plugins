@@ -6,4 +6,4 @@ Artificial intelligence in a discord bot? Heck yeah!
 
 ## Installation
 
-`?plugins add kyb3r/modmail-plugins/profanity-filter`
+`plugin add Abadima/modmail-plugins/profanity-filter`
