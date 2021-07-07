@@ -53,7 +53,7 @@
         "description": "Giveaway Feature!",
         "title": "Giveaways",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_89341.png"
+        "thumbnail_url": "https://www.pinclipart.com/picdir/big/487-4876759_icon-gift-gift-icon-free-png-clipart.png"
     },
     "logs": {
         "repository": "Abadima/modmail-plugins",
@@ -69,6 +69,22 @@
         "description": "Tons of Moderation Commands! \nHighly advised you stay away from our warning command though.",
         "title": "Moderation System",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://cdn.onlinewebfonts.com/svg/img_343223.png"
+    },
+    "poll": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Create Polls! Yes/No & More :D",
+        "title": "Polls",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_157794.png"
+    },
+    "profanity-filter": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Prevent Profanity!",
+        "title": "Anti-Profanity",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://cdn.onlinewebfonts.com/svg/img_343223.png"
     }
 }
