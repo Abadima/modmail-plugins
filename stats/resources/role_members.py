@@ -3,7 +3,7 @@ import discord
 from .timedelta import format_time
 
 
-class RoleResource:
+class RoleMembersResource:
     def __init__(self, ctx, role):
         self.ctx = ctx
         self.role = role
@@ -26,28 +26,41 @@ class RoleResource:
             lambda r: r.name.lower().startswith(self.role.lower()), self.ctx.guild.roles
         )
 
-    def role_embed(self):
-        """Create an embed containing the role's information."""
+    def role_members_embed(self):
+        """Create an embed containing the role members."""
 
         r: discord.Role = self.role
 
-        rolecolor = str(r.color).upper()
+        member_list = r.members.copy()
 
-        embed = discord.Embed(color=r.color)
+        embeds = [
+            discord.Embed(
+                title=f"Members in {discord.utils.escape_markdown(r.name).title()}",
+                color=r.color,
+                description="",
+            ).set_thumbnail(url=f"https://placehold.it/100/{str(r.color)[1:]}?text=+")
+        ]
+        entries = 0
 
-        embed.set_author(name=f"Stats about {r.name}")
+        if member_list:
+            embed = embeds[0]
 
-        embed.add_field(name="Role Name", value=f"{r.name}")
-        embed.add_field(name="Color", value=rolecolor)
-        embed.add_field(name="Members", value=len(r.members))
-        embed.add_field(name="Created at", value=format_time(r.created_at))
-        embed.add_field(name="Role Position", value=r.position)
-        embed.add_field(name="Mention", value=r.mention)
-        embed.add_field(name="Hoisted", value=r.hoist)
-        embed.add_field(name="Mentionable", value=r.mentionable)
-        embed.add_field(name="Managed", value=r.managed)
+            for m in sorted(member_list, key=lambda m: m.name.lower()):
+                line = f"{m.name}#{m.discriminator}\n"
+                if entries == 25:
+                    embed = discord.Embed(
+                        title=f"Members in {r.name.title()} (Continued)",
+                        color=r.color,
+                        description=line,
+                    ).set_thumbnail(
+                        url=f"https://placehold.it/100/{str(r.color)[1:]}?text=+"
+                    )
+                    embeds.append(embed)
+                    entries = 1
+                else:
+                    embed.description += line
+                    entries += 1
+        else:
+            embeds[0].description = "Currently there are no members in that role."
 
-        embed.set_thumbnail(url=f"https://placehold.it/100/{str(rolecolor)[1:]}?text=+")
-        embed.set_footer(text=f"Role ID: {r.id}")
-
-        return embed
+        return embeds
