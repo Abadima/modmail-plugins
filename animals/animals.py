@@ -11,9 +11,6 @@ from core import utils
 
 
 class Animals(commands.Cog):
-      """
-    Thanks Neko!
-    """
     def __init__(self, bot):
         self.bot = bot
         self.db = bot.plugin_db.get_partition(self)
