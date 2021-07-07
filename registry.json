@@ -138,7 +138,7 @@
     "sview": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
-        "description": "With this, you can view who is apart of the support team!",
+        "description": "With this you can view, \n who is apart of the support team!",
         "title": "View Support List",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/306/306458.png"
