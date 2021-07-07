@@ -20,14 +20,12 @@ from core.models import PermissionLevel
 operators = {ast.Add: op.add, ast.Sub: op.sub, ast.Mult: op.mul,
              ast.Div: op.truediv, ast.USub: op.neg}
 
+# From https://github.com/hugsy/stuff/blob/master/random-word/english-nouns.txt
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt')) as f:
     WORDLIST = set(map(lambda x: x.strip(), f.read().split('\n')))
 
 
 class ChatGames(commands.Cog):
-  """
-  Thanks Neko!
-  """
     def __init__(self, bot):
         self.bot = bot
         self.db = bot.api.get_plugin_partition(self)
