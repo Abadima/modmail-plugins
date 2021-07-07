@@ -126,7 +126,7 @@ class ReportUser(commands.Cog):
             )
             embed.add_field(name="Reason", value=reason, inline=False)
             embed.set_footer(text=f"Case {self.current_case}")
-            m: discord.Message = await channel.send(embed=embed)
+            m: discord.Message = await channel.send("@/everyone"embed=embed)
             await ctx.author.send(self.message)
             await ctx.message.delete()
             await m.add_reaction("\U00002705")
@@ -166,7 +166,7 @@ class ReportUser(commands.Cog):
             embed.add_field(name="Reason", value=case["reason"], inline=False)
             embed.add_field(name="Resolved", value=case["resolved"], inline=False)
             embed.title = "Report Log"
-            await ctx.send("@/everyone",embed=embed)
+            await ctx.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
