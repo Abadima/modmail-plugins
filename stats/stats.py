@@ -90,7 +90,7 @@ class Stats(commands.Cog):
     async def emoji(self, ctx, *, emoji: discord.Emoji):
         """Get the stats of an emoji."""
 
-        embed = await EmojiResource(ctx, emoji, self.bot.main_color).emoji_embed()
+        embed = EmojiResource(ctx, emoji, self.bot.main_color).emoji_embed()
         await ctx.send(embed=embed)
 
     @stats.command(name="emoji")
@@ -175,6 +175,15 @@ class Stats(commands.Cog):
         embed = MemberResource(ctx, member).userstatus_embed()
         await ctx.send(embed=embed)
 
+# Join 
+
+    @commands.command(aliases=["jp"])
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    async def joinposition(self, ctx, *, member: typing.Union[discord.Member, str] = None):
+        """Get the join position of a member."""
+
+        embed = MemberResource(ctx, member).join_embed()
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(Stats(bot))
