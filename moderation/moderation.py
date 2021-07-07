@@ -129,7 +129,7 @@ class Moderation(commands.Cog):
         if member.bot:
             return await ctx.send("Bots can't be warned.")
 
-        channel_config = await self.db.find_one({"_id": "config"})
+        channel_config = await self.db.find_one({"_id": "logging"})
 
         if channel_config is None:
             return await ctx.send("There's no configured log channel.")
@@ -574,7 +574,7 @@ class Moderation(commands.Cog):
         if member.bot:
             return await ctx.send("Bots can't be warned, so they can't be pardoned.")
 
-        channel_config = await self.db.find_one({"_id": "config"})
+        channel_config = await self.db.find_one({"_id": "logging"})
 
         if channel_config is None:
             return await ctx.send("There's no configured log channel.")
