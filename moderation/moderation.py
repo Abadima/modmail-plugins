@@ -134,7 +134,7 @@ class Moderation(commands.Cog):
         if channel_config is None:
             return await ctx.send("There's no configured log channel.")
         else:
-            channel = ctx.guild.get_channel(int(channel_config["channel"]))
+            channel = ctx.guild.get_channel(int(channel_config[(ctx.guild.id)]))
 
         if channel is None:
             return
