@@ -223,7 +223,7 @@ class CalculateTree(Transformer):
         return sy.log(n, b)
 
 
-class Calculator(commands.Cog):
+class Calculatorv2(commands.Cog):
     """
     Thanks Neko!
     """
