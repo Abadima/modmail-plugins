@@ -23,6 +23,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Circle-icons-megaphone.svg/1200px-Circle-icons-megaphone.svg.png"
     },
+    "apublish": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Auto-Publish Messages to Announcements!",
+        "title": "Auto-Publish",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://icons.iconarchive.com/icons/blackvariant/button-ui-ms-office-2016/512/Publisher-2-icon.png"
+    },
     "autorole": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
