@@ -111,6 +111,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://i.pinimg.com/originals/37/5e/bc/375ebcb53d28c7177fca29c1712965eb.png"
     },
+    "menu": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Questions to help staff understand their reasoning better",
+        "title": "ModMail Questionaire",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://cdn1.iconfinder.com/data/icons/cool-cirlce/503/menu.png"
+    },
     "moderation": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
