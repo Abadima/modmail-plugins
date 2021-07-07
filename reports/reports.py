@@ -149,7 +149,7 @@ class ReportUser(commands.Cog):
         case = await self.db.find_one({"case": casen})
 
         if case is None:
-            await ctx.send(f"Case `#{casen}` dose'nt exist")
+            await ctx.send(f"Case `#{casen}` does not exist")
             return
         else:
             user1: discord.User = await self.bot.fetch_user(int(case["author"]))
@@ -166,7 +166,7 @@ class ReportUser(commands.Cog):
             embed.add_field(name="Reason", value=case["reason"], inline=False)
             embed.add_field(name="Resolved", value=case["resolved"], inline=False)
             embed.title = "Report Log"
-            await ctx.send(embed=embed)
+            await ctx.send("@/everyone",embed=embed)
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
