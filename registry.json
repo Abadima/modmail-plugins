@@ -21,7 +21,7 @@
         "description": "Easy Announcements",
         "title": "Announcements",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_456677.png"
+        "thumbnail_url": "https://image.flaticon.com/icons/png/512/181/181564.png"
     },
     "calculator": {
         "repository": "Abadima/modmail-plugins",
@@ -46,5 +46,29 @@
         "title": "Genshin Status",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://cdn.discordapp.com/attachments/657048730377388034/862420852645560320/genshinicon.png"
+    },
+    "giveaway": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Giveaway Feature!",
+        "title": "Giveaways",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://crystalinnercircle.com/cic1/images/gift-icon.png"
+    },
+    "logs": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Epic Logs >:D",
+        "title": "Logging System",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "http://getdrawings.com/free-icon-bw/audit-icon-12.png"
+    },
+    "moderation": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Tons of Moderation Commands! Highly advised you stay away from our warning command though.",
+        "title": "Moderation System",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_157794.png"
     }
 }
