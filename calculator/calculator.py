@@ -223,9 +223,9 @@ class CalculateTree(Transformer):
         return sy.log(n, b)
 
 
-class Calculatorv2(commands.Cog):
+class Calculator(commands.Cog):
     """
-    It's working!! FINALLY - Taki.
+    Thanks Neko!
     """
 
     def __init__(self, bot):
