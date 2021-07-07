@@ -225,7 +225,7 @@ class CalculateTree(Transformer):
 
 class Calculatorv2(commands.Cog):
     """
-    Thanks Neko!
+    Self-Explained
     """
 
     def __init__(self, bot):
