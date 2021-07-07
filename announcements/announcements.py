@@ -9,7 +9,7 @@ from core.models import PermissionLevel
 
 class Announcements(commands.Cog):
     """
-    Easily create plain text or embedded announcements
+    Simple Announcements, Thanks Neko!
     """
 
     def __init__(self, bot):
@@ -18,13 +18,13 @@ class Announcements(commands.Cog):
     @commands.group(aliases=["a"], invoke_without_command=True)
     @commands.guild_only()
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def announce(self, ctx: commands.Context):
+    async def announcement(self, ctx: commands.Context):
         """
         Make Announcements Easily
         """
         await ctx.send_help(ctx.command)
 
-    @announce.command()
+    @announcement.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def start(
         self,
