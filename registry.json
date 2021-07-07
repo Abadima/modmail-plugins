@@ -61,7 +61,7 @@
         "description": "Epic Logs >:D",
         "title": "Logging System",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "http://getdrawings.com/free-icon-bw/audit-icon-12.png"
+        "thumbnail_url": "https://image.flaticon.com/icons/png/512/1692/1692465.png"
     },
     "moderation": {
         "repository": "Abadima/modmail-plugins",
