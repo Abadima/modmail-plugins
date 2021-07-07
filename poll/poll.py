@@ -1,4 +1,3 @@
-# Copyright (c) 2015 Rapptz
 from discord.ext import commands
 import discord
 import asyncio
@@ -30,7 +29,6 @@ class Polls(commands.Cog):
     @checks.has_permissions(PermissionLevel.MODERATOR)
     async def start(self, ctx, *, question):
         """Interactively creates a poll with the following question.
-
         To vote, use reactions!
         """
         perms = ctx.channel.permissions_for(ctx.me)
@@ -76,7 +74,7 @@ class Polls(commands.Cog):
         embed = discord.Embed(
             color=self.bot.main_color,
             timestamp=datetime.datetime.utcnow(),
-            description=f"**{question}**\n\n{body}",
+            description=f"**{question}**\n{answer}",
         )
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         poll = await ctx.send(embed=embed)
@@ -95,7 +93,6 @@ class Polls(commands.Cog):
         """Makes a poll quickly.
         The first argument is the question and the rest are the choices.
         for example: `?poll quick "Green or Light Green?" Green "Light Green"`
-
         or it can be a simple yes or no poll, like:
         `?poll quick "Do you watch Anime?"`
         """
@@ -135,7 +132,7 @@ class Polls(commands.Cog):
             embed = discord.Embed(
                 color=self.bot.main_color,
                 timestamp=datetime.datetime.utcnow(),
-                description=f"**{question}**\n\n{body}",
+                description=f"**{question}**\n{body}",
             )
             embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
             poll = await ctx.send(embed=embed)
