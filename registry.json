@@ -103,7 +103,7 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
     },
-    "reaction-roles": {
+    "reaction-role": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
         "description": "Setup Reaction Roles With Any Message of Choice",
