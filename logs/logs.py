@@ -32,7 +32,7 @@ def escape(s):
 
 class Logger(commands.Cog):
     """
-    Logs stuff.
+    Bot Logs, Thanks Neko!
     """
 
     def __init__(self, bot):
