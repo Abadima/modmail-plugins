@@ -87,6 +87,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://images.vexels.com/media/users/3/199935/isolated/preview/90b901292c4ebfa443be3db2b95282d1-gift-icon-flat-by-vexels.png"
     },
+    "hastebin": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Upload Text 2 Hastebin",
+        "title": "Hastebin",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://tapbots.com/pastebot/img/appicon.png"
+    },
     "logs": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
