@@ -2,7 +2,8 @@
     {
         "embed": {
             "Title": "The Creator",
-            "description": "I sponsored myself because I can lol",
+            "description": "I sponsored myself because I can lol"
+            "Anyways, Enjoy my Github! lol",
             "color": 8978687,
             "footer": {
                 "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
@@ -19,10 +20,6 @@
                 {
                     "name": "Github",
                     "value": "[**Click Here**](https://github.com/Abadima)"
-                },
-                {
-                    "name": "Email",
-                    "value": "[**Click Here**](mailto:neko@starairliner.tk)"
                 }
             ]
         }
