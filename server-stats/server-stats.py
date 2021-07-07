@@ -12,7 +12,7 @@ class ServerStats(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.c_name = "📊 | Server Info"
-        self.db = bot.api.get_plugin_partition(self)
+        self.db = bot.plugin_db.get_partition(self)
         
     @commands.command() 
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
@@ -71,7 +71,7 @@ class ServerStats(commands.Cog):
     async def totalhuman(self, ctx, *, name: str=None):
         """Sets up the Total Humans Voice Channel"""
 
-        name = name or "Total Humans"
+        name = name or "Discord.gg/emote :"
         humans = self.get_humans(ctx)
         await self.create_channel(ctx, name, int(humans))
 
