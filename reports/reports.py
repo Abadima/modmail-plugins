@@ -126,7 +126,7 @@ class ReportUser(commands.Cog):
             )
             embed.add_field(name="Reason", value=reason, inline=False)
             embed.set_footer(text=f"Case {self.current_case}")
-            m: discord.Message = await channel.send("@/everyone",embed=embed)
+            m: discord.Message = await channel.send("@everyone",embed=embed)
             await ctx.author.send(self.message)
             await ctx.message.delete()
             await m.add_reaction("\U00002705")
