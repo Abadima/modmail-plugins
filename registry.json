@@ -53,7 +53,7 @@
         "description": "Giveaway Feature!",
         "title": "Giveaways",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "http://crystalinnercircle.com/cic1/images/gift-icon.png"
+        "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_89341.png"
     },
     "logs": {
         "repository": "Abadima/modmail-plugins",
@@ -66,7 +66,7 @@
     "moderation": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
-        "description": "Tons of Moderation Commands! Highly advised you stay away from our warning command though.",
+        "description": "Tons of Moderation Commands! \nHighly advised you stay away from our warning command though.",
         "title": "Moderation System",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://cdn.onlinewebfonts.com/svg/img_157794.png"
