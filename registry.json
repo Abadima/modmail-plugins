@@ -55,6 +55,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://pngimg.com/uploads/ie_logo/ie_logo_PNG28.png"
     },
+    "fun": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Fun Stuff! Yay!",
+        "title": "Fun Features",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://www.thedenveregotist.com/wp-content/uploads/sites/3/2019/01/FUN_logo_socialmedia_icon.png"
+    },
     "gchat": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
