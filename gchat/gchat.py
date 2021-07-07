@@ -26,6 +26,9 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'words.txt'))
 
 
 class ChatGames(commands.Cog):
+  """
+  Thanks Neko!
+  """
     def __init__(self, bot):
         self.bot = bot
         self.db = bot.api.get_plugin_partition(self)
