@@ -23,6 +23,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Circle-icons-megaphone.svg/1200px-Circle-icons-megaphone.svg.png"
     },
+    "autorole": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Automatically Rank New Members!",
+        "title": "Auto Join Rank",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://icon-library.com/images/automation-icon/automation-icon-10.jpg"
+    },
     "calculator": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
