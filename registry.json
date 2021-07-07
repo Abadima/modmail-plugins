@@ -21,7 +21,7 @@
         "description": "Easy Announcements",
         "title": "Announcements",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://image.flaticon.com/icons/png/512/181/181564.png"
+        "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Circle-icons-megaphone.svg/1200px-Circle-icons-megaphone.svg.png"
     },
     "calculator": {
         "repository": "Abadima/modmail-plugins",
@@ -29,7 +29,7 @@
         "description": "Advanced/Simple Math",
         "title": "Calculator",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://cdn0.iconfinder.com/data/icons/mathematical-symbols-1-1/640/circle_divide-512.png"
+        "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/1200px-Calculator_icon.svg.png"
     },
     "gchat": {
         "repository": "Abadima/modmail-plugins",
