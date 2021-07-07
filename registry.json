@@ -39,6 +39,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/1200px-Calculator_icon.svg.png"
     },
+    "emanager": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Create & Edit Embeds (Advanced)",
+        "title": "Embed Manager",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://pngimg.com/uploads/ie_logo/ie_logo_PNG28.png"
+    },
     "gchat": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
