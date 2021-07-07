@@ -103,6 +103,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://www.precise.tv/hubfs/Website-2019/assets/icons/shield-icon.png"
     },
+    "quote": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "yes <3",
+        "title": "Quote",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://openclipart.org/image/800px/svg_to_png/202309/open-quotations.png"
+    },
     "reboot": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
