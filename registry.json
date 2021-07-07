@@ -95,14 +95,6 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flat_restart_icon.svg/1024px-Flat_restart_icon.svg.png"
     },
-    "server-stats": {
-        "repository": "Abadima/modmail-plugins",
-        "branch": "master",
-        "description": "Accurate Statistics About This Server ;D",
-        "title": "Server Statistics",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
-    },
     "reaction-role": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
@@ -110,5 +102,21 @@
         "title": "Reaction Roles",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/2599/2599434.png"
+    },
+    "reports": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Report a Bad Member",
+        "title": "Report System",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://image.flaticon.com/icons/png/512/235/235253.png"
+    },
+    "server-stats": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Accurate Statistics About This Server ;D",
+        "title": "Server Statistics",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
     }
 }
