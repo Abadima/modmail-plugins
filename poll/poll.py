@@ -74,7 +74,7 @@ class Polls(commands.Cog):
         embed = discord.Embed(
             color=self.bot.main_color,
             timestamp=datetime.datetime.utcnow(),
-            description=f"**{question}**\n{answer}",
+            description=f"**{question}**\n\n{answer}",
         )
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         poll = await ctx.send(embed=embed)
@@ -132,7 +132,7 @@ class Polls(commands.Cog):
             embed = discord.Embed(
                 color=self.bot.main_color,
                 timestamp=datetime.datetime.utcnow(),
-                description=f"**{question}**\n{body}",
+                description=f"**{question}**\n\n{body}",
             )
             embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
             poll = await ctx.send(embed=embed)
