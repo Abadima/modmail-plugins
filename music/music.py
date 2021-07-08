@@ -384,37 +384,37 @@ class Music(commands.Cog, name="music"):
             messages[i] = prefix + messages[i].replace('```', '``\u200b`').replace('@', '@\u200b') + suffix
         return messages
 
-    @commands.cooldown(1, 10)
-    @commands.bot_has_permissions(send_messages=True, embed_links=True)
-    @commands.command()
-    @checks.has_permissions(PermissionLevel.OWNER)
-    async def requestapi(self, ctx):
-        """Request a free api URI
-
-        Note: you will send include some data with your request, such as the bot ID and name,
-        for tracking API usage purposes."""
-        app = await self.bot.application_info()
-        if app.team:
-            owner_ids = [m.id for m in app.team.members]
-        else:
-            owner_ids = [app.owner.id]
-        requester_id = ctx.author.id
-        requester_name = str(ctx.author)
-        bot_id = self.bot.user.id
-        bot_name = self.bot.user.name
-        guild_name = self.bot.guild.name
-        guild_count = self.bot.guild.member_count
-        data = json.dumps(dict(owner_ids=owner_ids, requester_id=requester_id, requester_name=requester_name, bot_id=bot_id, bot_name=bot_name, guild_name=guild_name, guild_count=guild_count))
-        data = zlib.compress(data.encode(), 9)
-        data = base64.b64encode(data).decode()
-        try:
-            await ctx.author.send("Join the Official Modmail Server if you haven't yet: https://discord.gg/F34cRU8. "
-                                  "Send a DM to our Modmail bot (Modmail#4391) with the following message (copied exactly as-is):\n\n```"
-                                  "Hello, I would like to request a free Music API URI.\n\n"
-                                  f"Key:\n`#{data}#`\n```\n\nWe'll give you a free music API URI with courtesy of ¥¥lorenzo¥¥#0001!")
-            await ctx.send(f"{ctx.author.mention} Please check your DM!")
-        except discord.HTTPException:
-            raise Failure(ctx, "I'll need to be able to DM you, please enable DM from this server.")
+#    @commands.cooldown(1, 10)
+#    @commands.bot_has_permissions(send_messages=True, embed_links=True)
+#    @commands.command()
+#    @checks.has_permissions(PermissionLevel.OWNER)
+#    async def requestapi(self, ctx):
+#        """Request a free api URI
+#
+#        Note: you will send include some data with your request, such as the bot ID and name,
+#        for tracking API usage purposes."""
+#        app = await self.bot.application_info()
+#        if app.team:
+#            owner_ids = [m.id for m in app.team.members]
+#        else:
+#            owner_ids = [app.owner.id]
+#        requester_id = ctx.author.id
+#        requester_name = str(ctx.author)
+#        bot_id = self.bot.user.id
+#        bot_name = self.bot.user.name
+#        guild_name = self.bot.guild.name
+#        guild_count = self.bot.guild.member_count
+#        data = json.dumps(dict(owner_ids=owner_ids, requester_id=requester_id, requester_name=requester_name, bot_id=bot_id, bot_name=bot_name, guild_name=guild_name, guild_count=guild_count))
+#        data = zlib.compress(data.encode(), 9)
+#        data = base64.b64encode(data).decode()
+#        try:
+#            await ctx.author.send("Join the Official Modmail Server if you haven't yet: https://discord.gg/F34cRU8. "
+#                                  "Send a DM to our Modmail bot (Modmail#4391) with the following message (copied exactly as-is):\n\n```"
+#                                  "Hello, I would like to request a free Music API URI.\n\n"
+#                                  f"Key:\n`#{data}#`\n```\n\nWe'll give you a free music API URI with courtesy of ¥¥lorenzo¥¥#0001!")
+#            await ctx.send(f"{ctx.author.mention} Please check your DM!")
+#        except discord.HTTPException:
+#            raise Failure(ctx, "I'll need to be able to DM you, please enable DM from this server.")
 
     @commands.cooldown(1, 10)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
@@ -1315,21 +1315,6 @@ class Music(commands.Cog, name="music"):
 
         session = EmbedPaginatorSession(ctx, *embeds)
         await session.run()
-
-    @commands.bot_has_permissions(send_messages=True, embed_links=True)
-    @commands.command()
-    @checks.has_permissions(PermissionLevel.REGULAR)
-    async def aboutmusic(self, ctx):
-        """Shows the creator information of this music plugin"""
-        embed = discord.Embed(
-            description="This standalone Music Modmail plugin was created by @taku#3343.\n"
-                        "Originally made for [uwubot](https://top.gg/bot/720334365661462710).",
-            colour=0x8cffdb,
-        )
-        embed.add_field(name="Usage", value=f"To get started, request a free API URI with `{self.bot.prefix}requestapi` and once you have receive your API URI run `{self.bot.prefix}musicconfig api <APIURI>`.")
-        embed.add_field(name="Donate ❤️", value="If you're feeling generous, you can donate to my Patreon at https://www.patreon.com/takubot to support this free Groovy-alternative music bot!")
-        await ctx.send(embed=embed)
-
 
 def setup(bot):
     bot.add_cog(Music(bot))
