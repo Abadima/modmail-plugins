@@ -11,6 +11,7 @@ from core.models import PermissionLevel
 import requests
 from core.paginator import EmbedPaginatorSession
 from box import Box
+import random
 
 Cog = getattr(commands, "Cog", object)
 
