@@ -7,17 +7,15 @@ class Nekos(commands.Cog):
     """
     Nekos! Made by Abadima
     """
-
-      def __init__(self, bot):
+    def __init__(self, bot):
         self.bot = bot
         self.client = Client()
 
     @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.member)
-    @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx, user: discord.Member):
+#    @commands.cooldown(1, 10, commands.BucketType.member)
+ #   @commands.bot_has_permissions(embed_links=True)
+    async def neko(self, ctx):
         """Neko Pictures!"""
-
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(colour=author.colour)
