@@ -7,7 +7,7 @@ from nekosbest import Client
 
 class Action(commands.Cog):
     """
-    Thanks Neko!
+    Action Commands!
     """
 
     def __init__(self, bot):
