@@ -4,8 +4,12 @@ PLEASE DON'T TOUCH THIS-
 
 **-plugin add Abadima/modmail-plugins/**
 
+# MY CREDITS
 
-# CREDITS
+
+**[neko](https://github.com/Abadima/modmail-plugins/tree/master/neko) ~ [Abadima](https://github.com/Abadima)**
+
+# ADDITIONAL CREDITS
 
 **[Action](https://github.com/6days9weeks/modmail-plugins/tree/master/action) ~ [6days9weeks](https://github.com/6days9weeks)**
 
@@ -44,8 +48,6 @@ PLEASE DON'T TOUCH THIS-
 **[moderation](https://github.com/officialpiyush/modmail-plugins/tree/master/moderation) ~ [officialpiyush](https://github.com/officialpiyush)** + Extra Commands
 
 **[music](https://github.com/lorenzo132/modmail-plugins/tree/master/music) ~ [lorenzo132](https://github.com/lorenzo132)**
-
-**[neko](https://github.com/Abadima/modmail-plugins/tree/master/neko) ~ [Abadima](https://github.com/Abadima)**
 
 **[osu](https://github.com/snaildos/modmail-plugins/tree/master/osu) ~ [snaildos](https://github.com/snaildos)**
 
