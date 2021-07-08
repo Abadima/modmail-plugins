@@ -88,7 +88,7 @@
         "thumbnail_url": "http://www.newdesignfile.com/postpic/2015/09/board-game-icon_336083.png"
     },
     "genshin": {
-        "repository": "6days9weeks/modmail-plugins/",
+        "repository": "6days9weeks/modmail-plugins",
         "branch": "master",
         "description": "Server Times & Daily/Weekly Times!",
         "title": "Genshin Status",
