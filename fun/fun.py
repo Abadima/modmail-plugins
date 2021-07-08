@@ -200,13 +200,13 @@ class Fun(Cog):
         await ctx.send(text)
         
     @commands.command()
-    @commands.cooldown(1, 8, commands.BucketType.member)
+    @commands.cooldown(1, 3, commands.BucketType.member)
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
         if ctx.author == self.bot.user:
             return
 
-        elif random.randint(0, 100) < 0:
+        elif random.randint(0, 100) < 100:
             async with ctx.typing():
                 chosen_sub = random.choice(self.subreddits)
                 r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
