@@ -16,7 +16,7 @@ class Nekos(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx):
+    async def neko(self, ctx: commands.Context, user: discord.Member):
         """Picture of a Neko!"""
 
         author = ctx.author
