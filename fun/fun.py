@@ -12,6 +12,7 @@ import requests
 from core.paginator import EmbedPaginatorSession
 from box import Box
 import random
+import time
 
 Cog = getattr(commands, "Cog", object)
 
