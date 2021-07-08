@@ -8,7 +8,7 @@ from core.models import PermissionLevel
 
 class Leveling(Cog):
     """A leveling system for your server: see who's active and who's not.
-    Have Fun! And as Always, Thanks Neko :D
+    Hope You Enjoy!
     """
 
     def __init__(self, bot: Bot) -> None:
@@ -68,14 +68,14 @@ class Leveling(Cog):
     @group(name="level", invoke_without_command=True)
     @has_permissions(PermissionLevel.REGULAR)
     async def level(self, ctx: Context) -> None:
-        """Level System! Who is Active? We'll Find Out."""
+        """A leveling system for your server: see who's active and who's not."""
 
         await ctx.send_help(ctx.command)
 
     @level.command(name="info")
     @has_permissions(PermissionLevel.REGULAR)
     async def info(self, ctx: Context, user: User = None) -> None:
-        """Check One's Experience, Gold & Level."""
+        """Check someone's current amount of gold, exp and level."""
 
         user: User = user if user is not None else ctx.author
 
