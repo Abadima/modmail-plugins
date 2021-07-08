@@ -15,7 +15,7 @@ class Nekos(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx):
+    async def neko(self, ctx, user: discord.Member):
         """Neko Pictures!"""
 
         author = ctx.author
@@ -23,7 +23,7 @@ class Nekos(commands.Cog):
         embed = discord.Embed(colour=author.colour)
         embed.description = f"Neko!"
         embed.set_image(url=result.url)
-        await ctx.reply(embed=embed)
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(Action(bot))
