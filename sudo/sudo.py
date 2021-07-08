@@ -4,19 +4,18 @@ import discord
 from core.models import PermissionLevel
 
 
-class Sudo(commands.Cog):
+class sudo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_result = None
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def Sudo(self, ctx, member: discord.Member, *, msg):
+    async def sudo(self, ctx, member: discord.Member, *, msg):
         """
        Make webhooks to act like making a user say something.
         """
         await ctx.message.delete()
-        
         webhook = await ctx.channel.create_webhook(name="su")
         await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
         await webhook.delete()
@@ -27,4 +26,4 @@ class Sudo(commands.Cog):
         await self.bot.process_commands(message)
 
 def setup(bot):
-    bot.add_cog(Sudo(bot))
+    bot.add_cog(sudo(bot))
