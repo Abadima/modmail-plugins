@@ -219,12 +219,13 @@ class Fun(Cog):
                 data = (random.choice(boxed.data.children)).data
                 image = data.url
                 upvotes = data.ups
+                downvotes = data.downs
                 title = data.title
                 subreddit = data.subreddit_name_prefixed
-                embed = discord.Embed(title=f'Meme Title: {title}', color=0x6bdcd7)
-                embed.set_author(name="A wild meme has appeared!")
+                embed = discord.Embed(title=title, color=ctx.author.color)
+                embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
                 embed.set_image(url=image)
-                embed.set_footer(text=f"On {subreddit} with {upvotes} upvotes.")
+                embed.set_footer(text=f"👍{upvotes} | 👎 {downvotes}")
                 await message.channel.send(embed=embed)
     @commands.command()
     async def emojify(self, ctx, *, text: str):
