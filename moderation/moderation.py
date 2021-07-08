@@ -74,6 +74,9 @@ class Moderation(commands.Cog):
                 {"_id": "logging"},
                 {"$set": {str(ctx.guild.id): channel.id}},
                 upsert=True,
+                {"_id": "config"}, 
+                {"$set": {"channel": channel.id}}, 
+                upsert=True,
             )
             await ctx.send(
                 embed=discord.Embed(
@@ -129,12 +132,12 @@ class Moderation(commands.Cog):
         if member.bot:
             return await ctx.send("Bots can't be warned.")
 
-        channel_config = await self.db.find_one({"_id": "logging"})
+        channel_config = await self.db.find_one({"_id": "config"})
 
         if channel_config is None:
             return await ctx.send("There's no configured log channel.")
         else:
-            channel = ctx.guild.get_channel(int(channel_config[(ctx.guild.id)]))
+            channel = ctx.guild.get_channel(int(channel_config["channel"]))
 
         if channel is None:
             return
@@ -574,7 +577,7 @@ class Moderation(commands.Cog):
         if member.bot:
             return await ctx.send("Bots can't be warned, so they can't be pardoned.")
 
-        channel_config = await self.db.find_one({"_id": "logging"})
+        channel_config = await self.db.find_one({"_id": "config"})
 
         if channel_config is None:
             return await ctx.send("There's no configured log channel.")
