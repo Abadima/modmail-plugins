@@ -368,7 +368,22 @@ class Fun(Cog):
                 pages.append(page)
             session = EmbedPaginatorSession(ctx, *pages)
             await session.run()
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
+    async def sudo(self, ctx, member: discord.Member, *, msg):
+        """
+       Make webhooks to act like making a user say something.
+        """
+        webhook = await ctx.channel.create_webhook(name="su")
+        await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
+        await webhook.delete()
+        time.sleep(0.1)
+        await ctx.message.delete()
 
+        message = ctx.message
+        message.author = member
+        message.content = msg
+        await self.bot.process_commands(message)
       
 def setup(bot):
     bot.add_cog(Fun(bot))
