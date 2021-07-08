@@ -2,6 +2,7 @@ from discord.ext import commands as commands
 from core import checks
 import discord
 from core.models import PermissionLevel
+import time
 
 
 class sudo(commands.Cog):
@@ -18,7 +19,7 @@ class sudo(commands.Cog):
         webhook = await ctx.channel.create_webhook(name="su")
         await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
         await webhook.delete()
-        asyncio.sleep (5)
+        time.sleep (5)
         await ctx.message.delete()
 
         message = ctx.message
