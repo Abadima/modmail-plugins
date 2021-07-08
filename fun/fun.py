@@ -206,23 +206,19 @@ class Fun(Cog):
     @commands.command()
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
-            random.randint(0, 100) < 25:
-            async with message.channel.typing():
-                chosen_sub = random.choice(self.subreddits)
-                r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
-                             headers={'User-agent': 'Super Bot 9000'})
-                r = r.json()
-                boxed = Box(r)
-                data = (random.choice(boxed.data.children)).data
-                image = data.url
-                upvotes = data.ups
-                title = data.title
-                subreddit = data.subreddit_name_prefixed
-                embed = discord.Embed(title=f'Meme Title: {title}', color=0x6bdcd7)
-                embed.set_author(name="A wild meme has appeared!")
-                embed.set_image(url=image)
-                embed.set_footer(text=f"On {subreddit} with {upvotes} upvotes.")
-                await message.channel.send(embed=embed)
+        r = await self.bot.session.get("https://www.reddit.com/r/dankmemes/top.json?sort=top&t=day&limit=500")
+        r = await r.json()
+        r = Box(r)
+        data = choice(r.data.children).data
+        img = data.url
+        title = data.title
+        upvotes = data.ups
+        downvotes = data.downs
+        em = discord.Embed(color=ctx.author.color, title=title)
+        em.set_image(url=img)
+        em.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        em.set_footer(text=f"👍{upvotes} | 👎 {downvotes}")
+        await ctx.send(embed=em)
     @commands.command()
     async def emojify(self, ctx, *, text: str):
         """Turns your text into emojis!"""
