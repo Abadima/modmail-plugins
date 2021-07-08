@@ -15,7 +15,7 @@ class Nekos(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx: commands.Context):
+    async def neko(self, ctx):
         """Neko Pictures!"""
 
         author = ctx.author
