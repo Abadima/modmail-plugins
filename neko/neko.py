@@ -4,7 +4,8 @@ from nekosbest import Client
 
 class Nekos(commands.cog)
     """
-    Nekos! \n Thanks Abadima :D
+    Nekos!
+    Thanks Abadima :D
     """
 
       def __init__(self, bot):
