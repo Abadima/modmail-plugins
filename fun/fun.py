@@ -197,7 +197,7 @@ class Fun(Cog):
         """Get a random meme. The stuff of life."""
         r = await self.bot.session.get("https://www.reddit.com/r/dankmemes/top.json?sort=top&t=day&limit=500")
         r = await r.json()
-        r = box.Box(r)
+        r = Box(r)
         data = choice(r.data.children).data
         img = data.url
         title = data.title
