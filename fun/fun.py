@@ -1,18 +1,13 @@
-import logging
 from enum import Enum
 from random import randint,choice
-import discord
+import random, time, json, string, discord, logging, wikipedia, requests, random, os
 from discord.ext import commands
 from dadjokes import Dadjoke
 from core import checks
-import json
-import string
 from core.models import PermissionLevel
-import requests
 from core.paginator import EmbedPaginatorSession
 from box import Box
-import random
-import time
+from chatbot import Chat, register_call
 
 Cog = getattr(commands, "Cog", object)
 
