@@ -151,6 +151,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://1.bp.blogspot.com/-RgJWXm0t7q0/XIWTSUvY40I/AAAAAAAAIj0/YMDr1bdHzBsryvSU8CEGeSGNlqPh3axlQCK4BGAYYCw/s1600/music%2Bicons.png"
     },
+    "osu": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "OSU Profile for GameModes",
+        "title": "OSU",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Osu!Logo_(2015).png"
+    },
     "poll": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
