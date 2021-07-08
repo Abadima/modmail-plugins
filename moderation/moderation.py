@@ -11,7 +11,7 @@ from core import checks
 from core.models import PermissionLevel
 
 
-class ModerationPlugin(commands.Cog):
+class Moderation(commands.Cog):
     """
     Moderate ya server using modmail pog
     """
@@ -23,14 +23,14 @@ class ModerationPlugin(commands.Cog):
     @commands.group(invoke_without_command=True)
     @commands.guild_only()
     @checks.has_permissions(PermissionLevel.ADMIN)
-    async def moderation(self, ctx: commands.Context):
+    async def mod(self, ctx: commands.Context):
         """
         Settings and stuff
         """
         await ctx.send_help(ctx.command)
         return
 
-    @moderation.command()
+    @mod.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def channel(self, ctx: commands.Context, channel: discord.TextChannel):
         """
@@ -284,4 +284,4 @@ class ModerationPlugin(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(ModerationPlugin(bot))
+    bot.add_cog(Moderation(bot))
