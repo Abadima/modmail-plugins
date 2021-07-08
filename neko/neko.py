@@ -24,4 +24,4 @@ class Nekos(commands.Cog):
         await ctx.reply(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Action(bot))
+    bot.add_cog(Nekos(bot))
