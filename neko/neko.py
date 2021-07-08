@@ -19,9 +19,9 @@ class Nekos(commands.Cog):
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(colour=author.colour)
-        embed.description = f"Neko!"
+        embed.titlr = f"Neko!~"
         embed.set_image(url=result.url)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(bot):
     bot.add_cog(Action(bot))
