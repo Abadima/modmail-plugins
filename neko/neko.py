@@ -1,4 +1,4 @@
-import discord,nekos,nekosbest
+import discord,nekosbest
 from discord.ext import commands
 from nekosbest import Client
 from typing import Optional
@@ -12,8 +12,8 @@ class Nekos(commands.Cog):
         self.client = Client()
 
     @commands.command()
-#    @commands.cooldown(1, 10, commands.BucketType.member)
- #   @commands.bot_has_permissions(embed_links=True)
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
     async def neko(self, ctx):
         """Neko Pictures!"""
         author = ctx.author
