@@ -7,7 +7,7 @@ PLEASE DON'T TOUCH THIS-
 
 # CREDITS
 
-**[Action]() ~ [Still Searching](https://github.com/)**
+**[Action](https://github.com/6days9weeks/modmail-plugins/tree/master/action) ~ [6days9weeks](https://github.com/6days9weeks)**
 
 **[Aniamls](https://github.com/Taaku18/modmail-plugins/tree/master/animals) ~ [Taaku18](https://github.com/Taaku18)**
 
