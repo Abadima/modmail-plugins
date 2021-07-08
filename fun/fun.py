@@ -200,12 +200,13 @@ class Fun(Cog):
         await ctx.send(text)
         
     @commands.command()
+    @commands.cooldown(1, 8, commands.BucketType.member)
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
         if ctx.author == self.bot.user:
             return
 
-        elif random.randint(0, 100) < 1:
+        elif random.randint(0, 100) < 0:
             async with ctx.typing():
                 chosen_sub = random.choice(self.subreddits)
                 r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
@@ -215,13 +216,12 @@ class Fun(Cog):
                 data = (random.choice(boxed.data.children)).data
                 image = data.url
                 upvotes = data.ups
-                downvotes = data.downs
                 title = data.title
                 subreddit = data.subreddit_name_prefixed
                 embed = discord.Embed(title=title, color=ctx.author.color)
                 embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
                 embed.set_image(url=image)
-                embed.set_footer(text=f"👍{upvotes} | 👎 {downvotes}")
+                embed.set_footer(text=f"👍{upvotes}")
                 await ctx.send(embed=embed)
     @commands.command()
     async def emojify(self, ctx, *, text: str):
