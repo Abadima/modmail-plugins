@@ -206,6 +206,10 @@ class Fun(Cog):
     @commands.command()
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
+        if message.author == self.bot.user:
+            return
+
+        elif random.randint(0, 100) < 25:
             async with message.channel.typing():
                 chosen_sub = random.choice(self.subreddits)
                 r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
@@ -221,7 +225,7 @@ class Fun(Cog):
                 embed.set_author(name="A wild meme has appeared!")
                 embed.set_image(url=image)
                 embed.set_footer(text=f"On {subreddit} with {upvotes} upvotes.")
-                await ctx.send(embed=embed)
+                await message.channel.send(embed=embed)
     @commands.command()
     async def emojify(self, ctx, *, text: str):
         """Turns your text into emojis!"""
