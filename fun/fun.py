@@ -5,7 +5,6 @@ import discord
 from discord.ext import commands
 from dadjokes import Dadjoke
 from core import checks
-import box
 import json
 import string
 from core.models import PermissionLevel
