@@ -1,0 +1,9 @@
+  
+{
+    "AUTHOR" : "Neko",
+    "INSTALL_MSG" : "Have an osu! Plugin",
+    "NAME" : "osu",
+    "SHORT" : "Gives osu! Profile Info for all Gamemodes.",
+    "REQUIREMENTS" : ["beautifulsoup4"],
+    "DESCRIPTION" : "Gives osu! Profile Info for all Gamemodes... what more do you want lol?"
+}
