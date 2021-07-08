@@ -1,1 +1,2 @@
-nekos.py
+nekos
+nekosbest
