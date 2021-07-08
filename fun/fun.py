@@ -207,6 +207,9 @@ class Fun(Cog):
     @commands.command()
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
+        if ctx.author == self.bot.user:
+            return
+
         elif random.randint(0, 100) < 25:
             async with ctx.typing():
                 chosen_sub = random.choice(self.subreddits)
