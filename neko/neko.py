@@ -1,6 +1,7 @@
 import discord,nekos,nekosbest
 from discord.ext import commands
 from nekosbest import Client
+from typing import Optional
 
 class Nekos(commands.cog)
     """
