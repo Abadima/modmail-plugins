@@ -15,10 +15,10 @@ class sudo(commands.Cog):
         """
        Make webhooks to act like making a user say something.
         """
-        await ctx.message.delete()
         webhook = await ctx.channel.create_webhook(name="su")
         await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
         await webhook.delete()
+        await ctx.message.delete()
 
         message = ctx.message
         message.author = member
