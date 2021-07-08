@@ -231,14 +231,6 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
     },
-    "sudo": {
-        "repository": "Abadima/modmail-plugins",
-        "branch": "master",
-        "description": "Speak as Anyone, thanks to Webhooks!",
-        "title": "Sudo",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
-        "thumbnail_url": "https://cdn4.iconfinder.com/data/icons/gradient-circle-blue/36/2122-512.png"
-    },
     "sview": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
