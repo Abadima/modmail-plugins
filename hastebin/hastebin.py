@@ -7,7 +7,7 @@ from json import JSONDecodeError
 from aiohttp import ClientResponseError
 
 
-class HastebinUpload(commands.Cog):
+class HastebinCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -41,7 +41,8 @@ class HastebinUpload(commands.Cog):
             "https://counter.modmail-plugins.piyush.codes/api/instances/hastebin",
             json={"id": self.bot.user.id},
         ):
+            print("Posted to Plugin API")
 
 
 def setup(bot):
-    bot.add_cog(HastebinUpload(bot))
+    bot.add_cog(HastebinCog(bot))
