@@ -3,9 +3,9 @@ from discord.ext import commands
 from nekosbest import Client
 from typing import Optional
 
-class Nekos(commands.cog)
+class Nekos(commands.Cog):
     """
-    Thanks Neko!
+    Nekos! Made by Abadima
     """
 
       def __init__(self, bot):
