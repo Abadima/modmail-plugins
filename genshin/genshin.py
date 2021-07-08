@@ -25,7 +25,7 @@ def box(text: str, lang: str = "") -> str:
 
 class Genshin(commands.Cog):
     """
-    Thanks Neko!
+    Genshin Statistics
     """
     def __init__(self, bot):
         self.bot = bot
