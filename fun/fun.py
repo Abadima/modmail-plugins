@@ -9,6 +9,8 @@ import box
 import json
 import string
 from core.models import PermissionLevel
+import requests
+from core.paginator import EmbedPaginatorSession
 
 Cog = getattr(commands, "Cog", object)
 
