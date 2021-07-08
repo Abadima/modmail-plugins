@@ -205,7 +205,7 @@ class Fun(Cog):
         if ctx.author == self.bot.user:
             return
 
-        elif random.randint(0, 100) < 25:
+        elif random.randint(0, 100) < 1:
             async with ctx.typing():
                 chosen_sub = random.choice(self.subreddits)
                 r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
