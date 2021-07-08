@@ -199,6 +199,14 @@
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/235/235253.png"
     },
+    "role": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Modify/Add/Remove a User's Role :)",
+        "title": "Role System",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://images.vexels.com/media/users/3/157512/isolated/preview/d737a872708b488d89d0341ac9b8bc5a-people-contact-icon-people-by-vexels.png"
+    },
     "server-stats": {
         "repository": "Abadima/modmail-plugins",
         "branch": "master",
