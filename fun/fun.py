@@ -207,7 +207,7 @@ class Fun(Cog):
     @commands.command()
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
-            async with ctx.typing():
+
                 chosen_sub = random.choice(self.subreddits)
                 r = requests.get(f"https://api.reddit.com/r/{chosen_sub}/top.json?sort=top&t=day&limit=500",
                              headers={'User-agent': 'Super Bot 9000'})
