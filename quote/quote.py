@@ -36,3 +36,6 @@ class QuotePlugin(commands.Cog):
                 "Seems Like the command isn't localised for your language yet."
             )
             return
+        
+def setup(bot):
+    bot.add_cog(QuotePlugin(bot))
