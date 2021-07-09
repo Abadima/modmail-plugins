@@ -19,7 +19,7 @@ class Utilities(commands.Cog):
 
         await ctx.send_help(ctx.command)
         
-    @utilities.command()
+    @commands.command()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @commands.cooldown(1, 2, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
