@@ -51,7 +51,7 @@ PLEASE DON'T TOUCH THIS-
 
 **[osu](https://github.com/snaildos/modmail-plugins/tree/master/osu) ~ [snaildos](https://github.com/snaildos)**
 
-**[poll](https://github.com/officialpiyush/modmail-plugins/tree/master/poll) ~ [officialpiyush](https://github.com/officialpiyush)**
+**[poll](https://github.com/officialpiyush/modmail-plugins/tree/master/poll) ~ [officialpiyush](https://github.com/officialpiyush)** (Modified)
 
 **[reaction-role](https://github.com/DAzVise/modmail-plugins/tree/master/reaction-role) ~ [DAzVise](https://github.com/DAzVise)**
 
