@@ -27,7 +27,7 @@ class Utilities(commands.Cog):
         author = ctx.author
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Uptime Statistics"
-        embed.add_field(name="Uptime Duration", value=bot.uptime)
+        embed.add_field(name="Uptime Duration", value=self.bot.uptime)
         embed.add_field(name="Cogs load time:", value=_format_time(self._load_time))
         embed.add_field(name="System boot time:", value=_format_time(self._boot_time))
         embed.add_field(name="Bot boot time:", value=_format_time(self._bot_time))
