@@ -1,4 +1,4 @@
-import discord,nekosbest,requests,json,asyncio,typing
+import discord,nekosbest,requests,json,asyncio
 from discord.ext import commands
 from nekosbest import Client
 from core import checks
@@ -16,7 +16,7 @@ class Nekos(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx, typing):
+    async def neko(self, ctx):
         """Neko Pictures!"""
         author = ctx.author
         result = await self.client.get_image("nekos")
