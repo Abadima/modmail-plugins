@@ -40,8 +40,8 @@ class Utilities(commands.Cog):
     async def membercount(self, ctx):
         """Member Counts"""
         cGuild = ctx.guild.member_count
-        cHuman = self.get_humans(ctx)
-        cBot = self.get_bots(ctx)
+        cHuman = [member for member in ctx.guild.members if not member.bot]
+        cBot = [member for member in ctx.guild.members if member.bot]
         author = ctx.author
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Member Count"
