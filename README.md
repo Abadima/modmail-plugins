@@ -8,6 +8,7 @@ PLEASE DON'T TOUCH THIS-
 
 
 **[neko](https://github.com/Abadima/modmail-plugins/tree/master/neko) ~ [Abadima](https://github.com/Abadima)**
+**[utility](https://github.com/Abadima/modmail-plugins/tree/master/utility) ~ [Abadima](https://github.com/Abadima)**
 
 # ADDITIONAL CREDITS
 
