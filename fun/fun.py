@@ -370,11 +370,11 @@ class Fun(Cog):
     async def sudo(self, ctx):
  #   async def sudo(self, ctx, member: discord.Member, *, msg):
         """
-       Make webhooks to act like making a user say something.
+       Talk as Anyone! \n (DISABLED)
         """
         embed = discord.Embed(colour=ctx.author.colour)
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
-        embed.title = f"Disabled Feature"
+        embed.title = f"⚠ | Disabled Feature"
         embed.description = "Due to people abusing this feature, \n  We have Disabled This."
         await ctx.reply(embed=embed)
 #        webhook = await ctx.channel.create_webhook(name="su")
