@@ -11,10 +11,17 @@ class Utilities(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.client = Client()
+        
+    @commands.group(name="Utilities", aliases=["util"], invoke_without_command=True)
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    async def Utilities(self, ctx):
+        """Neko's Utilities"""
 
+        await ctx.send_help(ctx.command)
+        
     @Utilities.command()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 2, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def uptime(self, ctx):
         """Uptime Statistics"""
