@@ -27,10 +27,9 @@ class Utilities(commands.Cog):
         author = ctx.author
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Uptime Statistics"
-        embed.add_field(name="Uptime Duration", value=self.bot.uptime)
-        embed.add_field(name="Cogs load time:", value=_format_time(self._load_time))
-        embed.add_field(name="System boot time:", value=_format_time(self._boot_time))
-        embed.add_field(name="Bot boot time:", value=_format_time(self._bot_time))
+        embed.add_field(name="Duration", value=self.bot.uptime)
+        embed.add_field(name="Heroku Boot:", value=_format_time(self._boot_time))
+        embed.add_field(name="Bot Boot:", value=_format_time(self._bot_time))
         await ctx.reply(embed=embed)
 
 def setup(bot):
