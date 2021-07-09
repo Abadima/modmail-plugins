@@ -9,6 +9,7 @@ Say Hello to Utilities, by Abadima! If you have any issues, be sure to let me kn
 
 ```
 [P]uptime (Advanced Uptime Statistics)
+[P]membercount/mcount (Advanced Member Counts)
 ```
 
 #### More Coming Soon?
