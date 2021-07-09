@@ -212,7 +212,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def poke(self, ctx: commands.Context, user: discord.Member):
+    async def wave(self, ctx: commands.Context, user: discord.Member):
         """Wave at a user!"""
 
         author = ctx.author
