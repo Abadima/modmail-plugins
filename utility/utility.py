@@ -37,7 +37,7 @@ class Utilities(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 2, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def membercount(self, ctx, member ):
+    async def membercount(self, ctx, member):
         """Member Counts"""
         cGuild = ctx.guild.member_count
         humans = self.get_humans(member)
