@@ -36,9 +36,9 @@ class ServerStats(commands.Cog):
             embed.timestamp = datetime.datetime.utcnow()
             await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(aliases=["vcmcount"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def membercount(self, ctx, *, name: str=None):
+    async def vcmembercount(self, ctx, *, name: str=None):
         """Sets up the Member Count Voice Channel."""
 
         name = name or "Member Count"
@@ -46,9 +46,9 @@ class ServerStats(commands.Cog):
 
         self.db.find_one_and_update({"_id": "config"}, {"$set": {"mChannel": name}}, upsert=True)
 
-    @commands.command()
+    @commands.command(aliases=["vcrcount"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def rolecount(self, ctx, *, name: str=None):
+    async def vcrolecount(self, ctx, *, name: str=None):
         """Sets up the Role Count Voice Channel.""" 
 
         name = name or "Role Count"
@@ -56,9 +56,9 @@ class ServerStats(commands.Cog):
 
         self.db.find_one_and_update({"_id": "config"}, {"$set": {"rChannel": name}}, upsert=True)
 
-    @commands.command()
+    @commands.command(aliases=["vcc"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def channelcount(self, ctx, *, name: str=None):
+    async def vchannelcount(self, ctx, *, name: str=None):
         """Sets up the Channel Count Voice Channel"""
 
         name = name or "Channel Count"
@@ -66,9 +66,9 @@ class ServerStats(commands.Cog):
 
         self.db.find_one_and_update({"_id": "config"}, {"$set": {"cChannel": name}}, upsert=True)
 
-    @commands.command()
+    @commands.command(aliases=["vthc"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def totalhuman(self, ctx, *, name: str=None):
+    async def vctotalhuman(self, ctx, *, name: str=None):
         """Sets up the Total Humans Voice Channel"""
 
         name = name or "Total Humans"
@@ -77,9 +77,9 @@ class ServerStats(commands.Cog):
 
         self.db.find_one_and_update({"_id": "config"}, {"$set": {"hChannel": name}}, upsert=True)
 
-    @commands.command()
+    @commands.command(aliases=["vtbc"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def totalbot(self, ctx, *, name: str=None):
+    async def vctotalbot(self, ctx, *, name: str=None):
         """Sets up the Total Bots Voice Channel"""
 
         name = name or "Total Bots"
