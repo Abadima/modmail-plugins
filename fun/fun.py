@@ -367,7 +367,8 @@ class Fun(Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     @commands.cooldown(1, 15, commands.BucketType.member)
-    async def sudo(self, ctx, member: discord.Member, *, msg):
+    async def sudo(self, ctx):
+ #   async def sudo(self, ctx, member: discord.Member, *, msg):
         """
        Make webhooks to act like making a user say something.
         """
