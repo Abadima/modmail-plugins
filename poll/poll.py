@@ -129,11 +129,12 @@ class Polls(commands.Cog):
                 (to_emoji(e), v) for e, v in enumerate(questions_and_choices[1:])
             ]
 
-            body = "\n".join(f"{key}: {c}" for key, c in choices)
+            body = "\n\n".join(f"{key}: {c}" for key, c in choices)
             embed = discord.Embed(
                 color=self.bot.main_color,
                 timestamp=datetime.datetime.utcnow(),
-                description=f"**{question}**\n\n{body}",
+            title=f"{question}",
+            description=f"{body}",
             )
             embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
             poll = await ctx.send(embed=embed)
