@@ -1,8 +1,7 @@
-import discord,nekosbest,requests,json
+import discord,nekosbest,requests,json,asyncio
 from discord.ext import commands
 from nekosbest import Client
 from typing import Optional
-from box import Box
 from core import checks
 from core.models import PermissionLevel
 
@@ -34,14 +33,13 @@ class Nekos(commands.Cog):
     async def neko2(self, ctx):
         """Neko Pictures! Pt. 2"""
         author = ctx.author
-        result = requests.get("https://nekos.life/api/v2/img/neko")
-        result = result.json()
-        boxed = Box(result)
-        data = (boxed.data.children).data
+        img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
+        imgtxt = await getimg.text()
+        imgjson = json.loads(imgtext)
         image = data.url
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Neko!~"
-        embed.set_image(url=image)
+        embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
 
 def setup(bot):
