@@ -1,7 +1,6 @@
 import discord,nekosbest,requests,json,asyncio
 from discord.ext import commands
 from nekosbest import Client
-from typing import Optional
 from core import checks
 from core.models import PermissionLevel
 
@@ -19,6 +18,7 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def neko(self, ctx):
         """Neko Pictures!"""
+        async with ctx.typing():
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(colour=author.colour)
@@ -32,6 +32,7 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def neko2(self, ctx):
         """Neko Pictures! Pt. 2"""
+        async with ctx.typing():
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
         imgtxt = await img.text()
@@ -47,6 +48,7 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def nekogif(self, ctx):
         """Neko Gifs!"""
+        async with ctx.typing():
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/ngif')
         imgtxt = await img.text()
