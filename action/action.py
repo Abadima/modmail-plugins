@@ -207,6 +207,28 @@ class Action(commands.Cog):
         else:
             msg = "Self-poking is widely regarded as a bad move!"
             await ctx.reply(msg)
+            
+    @commands.command()
+    @commands.guild_only()
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    async def poke(self, ctx: commands.Context, user: discord.Member):
+        """Wave at a user!"""
+
+        author = ctx.author
+        result = await self.client.get_image("wave")
+
+        if user == self.bot.user:
+            msg = f"Awwww! Hey there. *waves at {author.mention} back!*"
+            return await ctx.reply(msg)
+        if user is not author:
+            embed = discord.Embed(colour=user.colour)
+            msg = f"> *{author.mention} waves at {user.mention}*"
+            embed.set_image(url=result.url)
+            return await ctx.send(content=msg, embed=embed)
+        else:
+            msg = "What? You can't do that!"
+            await ctx.reply(msg)
 
     @commands.command()
     @commands.guild_only()
@@ -240,6 +262,19 @@ class Action(commands.Cog):
         result = await self.client.get_image("cry")
         embed = discord.Embed(colour=author.colour)
         embed.description = f"{author.mention} is crying"
+        embed.set_image(url=result.url)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    async def dance(self, ctx: commands.Context):
+        """Dance! Hehe"""
+
+        author = ctx.author
+        result = await self.client.get_image("dance")
+        embed = discord.Embed(colour=author.colour)
+        embed.description = f"{author.mention} is dancing"
         embed.set_image(url=result.url)
         await ctx.send(embed=embed)
 
