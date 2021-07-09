@@ -31,6 +31,24 @@ class Utilities(commands.Cog):
         embed.add_field(name="Heroku Boot:", value=_format_time(self._boot_time))
         embed.add_field(name="Bot Boot:", value=_format_time(self._bot_time))
         await ctx.reply(embed=embed)
+        
+    @commands.command(aliases=["mcount"])
+    @commands.guild_only()
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    @commands.cooldown(1, 2, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    async def membercount(self, ctx):
+        """Member Counts"""
+        cGuild = ctx.guild.member_count
+        cHuman = self.get_humans(ctx)
+        cBot = self.get_bots(ctx)
+        author = ctx.author
+        embed = discord.Embed(colour=author.colour)
+        embed.title = f"Member Count"
+        embed.add_field(name="Members", value=cGuild)
+        embed.add_field(name="Humans", value=cHuman)
+        embed.add_field(name="Bots", value=cBot)
+        await ctx.reply(embed=embed)
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
