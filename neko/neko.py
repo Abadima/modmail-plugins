@@ -1,4 +1,4 @@
-import discord,nekosbest
+import discord,nekosbest,requests,json
 from discord.ext import commands
 from nekosbest import Client
 from typing import Optional
@@ -12,6 +12,7 @@ class Nekos(commands.Cog):
         self.client = Client()
 
     @commands.command()
+    @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def neko(self, ctx):
@@ -21,6 +22,23 @@ class Nekos(commands.Cog):
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Neko!~"
         embed.set_image(url=result.url)
+        await ctx.reply(embed=embed)
+        
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    async def neko2(self, ctx):
+        """Neko Pictures! Pt. 2"""
+        author = ctx.author
+        result = await requests.get("https://nekos.life/api/v2/img/neko")
+        result = result.json()
+        boxed = Box(result)
+        data = (boxed.data.children).data
+        image = data.url
+        embed = discord.Embed(colour=author.colour)
+        embed.title = f"Neko!~"
+        embed.set_image(url=image)
         await ctx.reply(embed=embed)
 
 def setup(bot):
