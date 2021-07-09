@@ -129,7 +129,7 @@ class Polls(commands.Cog):
                 (to_emoji(e), v) for e, v in enumerate(questions_and_choices[1:])
             ]
 
-            body = "\n\n".join(f"{key}: {c}" for key, c in choices)
+            body = "\n\n".join(f"{key} {c}" for key, c in choices)
             embed = discord.Embed(
                 color=self.bot.main_color,
                 timestamp=datetime.datetime.utcnow(),
