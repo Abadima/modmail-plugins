@@ -34,8 +34,8 @@ class Nekos(commands.Cog):
         """Neko Pictures! Pt. 2"""
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
-        imgtxt = await getimg.text()
-        imgjson = json.loads(imgtext)
+        imgtxt = await img.text()
+        imgjson = json.loads(imgtxt)
         image = data.url
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Neko!~"
