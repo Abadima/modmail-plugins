@@ -1,9 +1,5 @@
-import sys
-import os
-import discord
-import logging
+import sys,os,discord,logging
 from discord.ext import commands
-
 from core import checks
 from core.models import PermissionLevel
 
@@ -35,7 +31,7 @@ class Reboot(commands.Cog):
         logger.info("==== Rebooting Bot ====")
         await msg.edit(embed=discord.Embed(
             color=discord.Color.blurple(),
-            description="`✅ | Cleared Cached Logs`\n\n`✅ | Rebooting....`"
+            description="✅ | Cleared Cached Log\n\n✅ | Rebooting...."
         ))
         os.execl(sys.executable, sys.executable, * sys.argv)
 
