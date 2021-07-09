@@ -37,15 +37,14 @@ class Utilities(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 2, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def membercount(self, ctx, member):
+    async def membercount(self, ctx):
         """Member Counts"""
         cGuild = ctx.guild.member_count
-        humans = self.get_humans(member)
-        bots = self.get_bots(member)
-        author = ctx.author
-        embed = discord.Embed(colour=author.colour)
+        humans = self.get_humans(ctx)
+        bots = self.get_bots(ctx)
+        embed = discord.Embed(colour=ctx.author.colour)
         embed.title = f"Member Count"
-        embed.add_field(name="Members", value=member.guild.member_count)
+        embed.add_field(name="Members", value=ctx.guild.member_count)
         embed.add_field(name="Humans", value=humans)
         embed.add_field(name="Bots", value=bots)
         await ctx.reply(embed=embed)
