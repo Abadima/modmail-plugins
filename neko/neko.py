@@ -16,7 +16,7 @@ class Nekos(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def neko(self, ctx, member: typing.Union[discord.Member, str] = None):
+    async def neko(self, ctx, *, member: typing.Union[discord.Member, str] = None):
         """Neko Pictures!"""
         author = ctx.author
         result = await self.client.get_image("nekos")
