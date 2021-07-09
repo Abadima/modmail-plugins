@@ -55,7 +55,7 @@ PLEASE DON'T TOUCH THIS-
 
 **[reaction-role](https://github.com/DAzVise/modmail-plugins/tree/master/reaction-role) ~ [DAzVise](https://github.com/DAzVise)**
 
-**[reboot](https://github.com/officialpiyush/modmail-plugins/tree/master/reboot) ~ [officialpiyush](https://github.com/officialpiyush)**
+**[reboot](https://github.com/officialpiyush/modmail-plugins/tree/master/reboot) ~ [officialpiyush](https://github.com/officialpiyush)** (Modified)
 
 **[reports](https://github.com/DAzVise/modmail-plugins/tree/master/reports) ~ [DAzVise](https://github.com/DAzVise)** (Modified)
 
