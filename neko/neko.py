@@ -14,7 +14,7 @@ class Nekos(commands.Cog):
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 3, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def neko(self, ctx):
         """Neko Pictures!"""
@@ -27,7 +27,7 @@ class Nekos(commands.Cog):
         
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 5, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def neko2(self, ctx):
         """Neko Pictures! Pt. 2"""
@@ -41,8 +41,8 @@ class Nekos(commands.Cog):
         await ctx.reply(embed=embed)
         
     @commands.command(aliases=["ngif"])
-    @checks.has_permissions(PermissionLevel.REGULAR)
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @commands.cooldown(1, 5, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def nekogif(self, ctx):
         """Neko Gifs!"""
@@ -52,6 +52,21 @@ class Nekos(commands.Cog):
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Neko!~"
+        embed.set_image(url=imgjson["url"])
+        await ctx.reply(embed=embed)
+        
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    @commands.cooldown(1, 5, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    async def waifu(self, ctx):
+        """Waifu Neko!"""
+        author = ctx.author
+        img = await self.bot.session.get('https://nekos.life/api/v2/img/waifu')
+        imgtxt = await img.text()
+        imgjson = json.loads(imgtxt)
+        embed = discord.Embed(colour=author.colour)
+        embed.title = f"Waifu~"
         embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
 
