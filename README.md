@@ -29,7 +29,7 @@ PLEASE DON'T TOUCH THIS-
 
 **[eSuggest](https://github.com/fourjr/modmail-plugins/tree/master/emoji-suggester) ~ [fourjr](https://github.com/fourjjr)**
 
-**[fun](https://github.com/officialakhil/modmail-plugins/tree/master/fun) ~ [officialakhil](https://github.com/officialakhil)** / **[urban](https://github.com/RealCyGuy/modmail-plugins/tree/master/urban) ~ [RealCyGuy](https://github.com/RealCyGuy)** / **[sudo](https://github.com/snaildos/modmail-plugins/tree/master/sudo) ~ [snaildos](https://github.com/snaildos)**
+**[fun](https://github.com/officialakhil/modmail-plugins/tree/master/fun) ~ [officialakhil](https://github.com/officialakhil)** + Extra Commands
 
 **[gchat](https://github.com/Taaku18/modmail-plugins/tree/master/chatgames) ~ [Taaku18](https://github.com/Taaku18)**
 
