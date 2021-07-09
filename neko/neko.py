@@ -18,7 +18,6 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def neko(self, ctx):
         """Neko Pictures!"""
-        ctx.typing()
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(colour=author.colour)
@@ -32,7 +31,6 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def neko2(self, ctx):
         """Neko Pictures! Pt. 2"""
-        ctx.typing()
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
         imgtxt = await img.text()
@@ -48,7 +46,6 @@ class Nekos(commands.Cog):
     @commands.bot_has_permissions(embed_links=True)
     async def nekogif(self, ctx):
         """Neko Gifs!"""
-        ctx.typing()
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/ngif')
         imgtxt = await img.text()
