@@ -40,15 +40,23 @@ class Utilities(commands.Cog):
     async def membercount(self, ctx):
         """Member Counts"""
         cGuild = ctx.guild.member_count
-        cHuman = [member for member in ctx.guild.members if not member.bot]
-        cBot = [member for member in ctx.guild.members if member.bot]
+        humans = self.get_humans(member)
+        bots = self.get_bots(member)
         author = ctx.author
         embed = discord.Embed(colour=author.colour)
         embed.title = f"Member Count"
-        embed.add_field(name="Members", value=cGuild)
-        embed.add_field(name="Humans", value=cHuman)
-        embed.add_field(name="Bots", value=cBot)
+        embed.add_field(name="Members", value=member.guild.member_count)
+        embed.add_field(name="Humans", value=humans)
+        embed.add_field(name="Bots", value=bots)
         await ctx.reply(embed=embed)
+        
+    def get_bots(self, ctx):
+        bots = [member for member in ctx.guild.members if member.bot]
+        return len(bots)
+
+    def get_humans(self, ctx):
+        humans = [member for member in ctx.guild.members if not member.bot]
+        return len(humans)
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
