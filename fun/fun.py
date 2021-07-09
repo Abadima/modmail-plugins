@@ -1,6 +1,6 @@
 from enum import Enum
 from random import randint,choice
-import random, time, json, string, discord, logging, requests, random
+import random, time, json, string, discord, logging, requests
 from discord.ext import commands
 from dadjokes import Dadjoke
 from core import checks
@@ -363,23 +363,29 @@ class Fun(Cog):
                 pages.append(page)
             session = EmbedPaginatorSession(ctx, *pages)
             await session.run()
+            
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    @commands.cooldown(5, 10, commands.BucketType.member)
+    @commands.cooldown(1, 15, commands.BucketType.member)
     async def sudo(self, ctx, member: discord.Member, *, msg):
         """
        Make webhooks to act like making a user say something.
         """
-        webhook = await ctx.channel.create_webhook(name="su")
-        await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
-        await webhook.delete()
-        time.sleep(0.1)
-        await ctx.message.delete()
-
-        message = ctx.message
-        message.author = member
-        message.content = msg
-        await self.bot.process_commands(message)
+        embed = discord.Embed(colour=author.colour)
+        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
+        embed.title = f"Disabled Feature"
+        embed.description = "Due to people abusing this feature, \n  We have Disabled This."
+        await ctx.reply(embed=embed)
+#        webhook = await ctx.channel.create_webhook(name="su")
+#        await webhook.send(content=msg, username=member.name, avatar_url=member.avatar_url)
+#        await webhook.delete()
+#        time.sleep(0.1)
+#        await ctx.message.delete()
+#
+#        message = ctx.message
+#        message.author = member
+#        message.content = msg
+#        await self.bot.process_commands(message)
       
 def setup(bot):
     bot.add_cog(Fun(bot))
