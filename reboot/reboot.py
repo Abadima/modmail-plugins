@@ -18,11 +18,6 @@ class Reboot(commands.Cog):
             color=discord.Color.blurple(),
             description="Processing..."
         ))
-
-        # Clear The cached logs
-        #with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-       #                        '../../../temp/logs.log'), 'w'):
-          #  pass
         await ctx.invoke(self.bot.get_command('debug clear'))
         emsg = await msg.edit(embed=discord.Embed(
             color=discord.Color.blurple(),
@@ -31,7 +26,7 @@ class Reboot(commands.Cog):
         logger.info("==== Rebooting Bot ====")
         await msg.edit(embed=discord.Embed(
             color=discord.Color.blurple(),
-            description="✅ | Cleared Cached Log\n\n✅ | Rebooting...."
+            description="✅ | Rebooting...."
         ))
         os.execl(sys.executable, sys.executable, * sys.argv)
 
