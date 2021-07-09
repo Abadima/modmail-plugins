@@ -372,7 +372,7 @@ class Fun(Cog):
         """
        Make webhooks to act like making a user say something.
         """
-        embed = discord.Embed(colour=author.colour)
+        embed = discord.Embed(colour=ctx.author.colour)
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.title = f"Disabled Feature"
         embed.description = "Due to people abusing this feature, \n  We have Disabled This."
