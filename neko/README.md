@@ -15,6 +15,8 @@ Say Hello to Neko, by Abadima! If you have any issues, be sure to let me know in
 [P]neko2 (Neko Pic, Nekos.life API)
 
 [P]NekoGif/gNeko (Neko Gif)
+
+[P]waifu (Waifu Neko)
 ```
 
 #### More Coming Soon?
