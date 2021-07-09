@@ -246,5 +246,13 @@
         "title": "Trivia Quiz",
         "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
         "thumbnail_url": "https://cdn.discordapp.com/attachments/657048730377388034/862455764835631124/unnamed.png"
+    },
+    "utility": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Know More about this Bot! \n By: Abadima",
+        "title": "Utilities",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "thumbnail_url": "https://www.faxcore.com/wp-content/uploads/2018/03/if_tools_1287509.png"
     }
 }
