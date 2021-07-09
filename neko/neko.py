@@ -34,7 +34,7 @@ class Nekos(commands.Cog):
     async def neko2(self, ctx):
         """Neko Pictures! Pt. 2"""
         author = ctx.author
-        result = await requests.get("https://nekos.life/api/v2/img/neko")
+        result = requests.get("https://nekos.life/api/v2/img/neko")
         result = result.json()
         boxed = Box(result)
         data = (boxed.data.children).data
