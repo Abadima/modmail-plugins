@@ -12,14 +12,14 @@ class Utilities(commands.Cog):
         self.bot = bot
         self.client = Client()
         
-    @commands.group(name="Utilities", aliases=["util"], invoke_without_command=True)
+    @commands.group(name="utilities", aliases=["util"], invoke_without_command=True)
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     async def Utilities(self, ctx):
         """Neko's Utilities"""
 
         await ctx.send_help(ctx.command)
         
-    @Utilities.command()
+    @utilities.command()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @commands.cooldown(1, 2, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
