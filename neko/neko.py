@@ -2,6 +2,9 @@ import discord,nekosbest,requests,json
 from discord.ext import commands
 from nekosbest import Client
 from typing import Optional
+from box import Box
+from core import checks
+from core.models import PermissionLevel
 
 class Nekos(commands.Cog):
     """
