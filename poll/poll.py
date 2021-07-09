@@ -13,7 +13,7 @@ def to_emoji(c):
 
 
 class Polls(commands.Cog):
-    """Poll voting system."""
+    """Poll Voting System."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -70,11 +70,12 @@ class Polls(commands.Cog):
         except:
             pass  # oh well
 
-        answer = "\n\n".join(f"{keycap} {content}" for keycap, content in answers)
+        answer = "\n \n".join(f"{keycap} {content}" for keycap, content in answers)
         embed = discord.Embed(
             color=self.bot.main_color,
             timestamp=datetime.datetime.utcnow(),
-            description=f"**{question}**\n\n{answer}",
+            title=f"{question}"
+            description=f"{answer}",
         )
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         poll = await ctx.send(embed=embed)
