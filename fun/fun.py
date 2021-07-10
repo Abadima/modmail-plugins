@@ -366,7 +366,7 @@ class Fun(Cog):
             
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    @commands.cooldown(1, 15, commands.BucketType.member)
+    @commands.cooldown(3, 15, commands.BucketType.member)
     async def sudo(self, ctx, member: discord.Member, *, msg):
         """
        Talk as Anyone!
