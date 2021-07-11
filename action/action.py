@@ -18,6 +18,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def kiss(self, ctx: commands.Context, user: discord.Member):
         """Kiss a user!"""
 
@@ -41,6 +42,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def pat(self, ctx: commands.Context, user: discord.Member):
         """Pats a user!"""
 
@@ -63,6 +65,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def hug(self, ctx: commands.Context, user: discord.Member):
         """hug a user!"""
 
@@ -84,6 +87,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def slap(self, ctx: commands.Context, user: discord.Member):
         """Slaps a user!"""
 
@@ -106,6 +110,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def baka(self, ctx: commands.Context, user: discord.Member):
         """Call a user BAKA with a GIF reaction!"""
 
@@ -128,6 +133,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def tickle(self, ctx: commands.Context, user: discord.Member):
         """Tickles a user!"""
 
@@ -151,6 +157,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def smug(self, ctx: commands.Context, user: Optional[discord.Member] = None):
         """Be smug towards someone!"""
 
@@ -170,6 +177,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def cuddle(self, ctx: commands.Context, user: discord.Member):
         """Cuddles a user!"""
 
@@ -190,6 +198,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def poke(self, ctx: commands.Context, user: discord.Member):
         """Pokes a user!"""
 
@@ -212,6 +221,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def wave(self, ctx: commands.Context, user: discord.Member):
         """Wave at a user!"""
 
@@ -234,6 +244,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def feed(self, ctx: commands.Context, user: discord.Member):
         """Feeds a user!"""
 
@@ -255,6 +266,7 @@ class Action(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def cry(self, ctx: commands.Context):
         """Let others know you feel like crying or just wanna cry."""
 
@@ -268,6 +280,7 @@ class Action(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def dance(self, ctx: commands.Context):
         """Dance! Hehe"""
 
