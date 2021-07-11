@@ -305,6 +305,7 @@ class Moderation(commands.Cog):
                     color=discord.Color.red(),
                 )
                 .set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
+                .set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             )
         try:
             await ctx.message.delete()
@@ -315,7 +316,9 @@ class Moderation(commands.Cog):
                     title="Error",
                     description="I don't have enough permissions to purge messages.",
                     color=discord.Color.red(),
-                ).set_footer(text="Please fix the permissions.")
+                )
+                .set_footer(text="Please fix the permissions.")
+                .set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             )
         case = await self.get_case()
         messages = "messages" if amount > 1 else "message"
@@ -326,14 +329,18 @@ class Moderation(commands.Cog):
                 title="Purge",
                 description=f"{amount} {messages} {have} been purged by {ctx.author.mention}.",
                 color=self.bot.main_color,
-            ).set_footer(text=f"This is the {case} case."),
+            )
+            .set_footer(text=f"This is the {case} case.")
+            .set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         )
         await ctx.send(
             embed=discord.Embed(
                 title="Success",
                 description=f"Purged {amount} {messages}.",
                 color=self.bot.main_color,
-            ).set_footer(text=f"This is the {case} case.")
+            )
+            .set_footer(text=f"This is the {case} case.")
+            .set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         )
     async def get_case(self):
         """Gives the case number."""
