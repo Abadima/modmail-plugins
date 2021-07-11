@@ -368,7 +368,7 @@ class Moderation(commands.Cog):
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red(),
                     set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat."),
+                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
                 )
             )
 
@@ -382,7 +382,7 @@ class Moderation(commands.Cog):
                     title="Error",
                     description="I don't have enough permissions to purge messages.",
                     set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat."),
+                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
                 )
             )
 
