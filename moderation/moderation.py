@@ -368,7 +368,8 @@ class Moderation(commands.Cog):
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red(),
                     set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                ).set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
+                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat."),
+                )
             )
 
         try:
@@ -380,8 +381,9 @@ class Moderation(commands.Cog):
                     
                     title="Error",
                     description="I don't have enough permissions to purge messages.",
-                    color=discord.Color.red(),
-                ).set_footer(text="Please fix the permissions.")
+                    set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat."),
+                )
             )
 
         case = await self.get_case()
