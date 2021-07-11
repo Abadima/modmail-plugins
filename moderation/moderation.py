@@ -362,8 +362,7 @@ class Moderation(commands.Cog):
         """Purge the specified amount of messages."""
         max = 2000
         if amount > max:
-            return 
-                embed=discord.Embed(
+            return embed=discord.Embed(
                     title="Error",
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red()
