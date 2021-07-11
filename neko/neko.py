@@ -75,7 +75,7 @@ class Nekos(commands.Cog):
         imgtxt = await img.text()
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(
-            colour=author.colour
+            colour=author.colour,
             title = f"Waifu~"
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
