@@ -303,7 +303,8 @@ class Moderation(commands.Cog):
                     title="Error",
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red(),
-                ).set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
+                )
+                .set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
             )
         try:
             await ctx.message.delete()
