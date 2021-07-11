@@ -30,7 +30,7 @@ class GuildResource:
         embed.add_field(name="Text Channels", value=len(g.text_channels))
         embed.add_field(name="Voice Channels", value=len(g.voice_channels))
         embed.add_field(name="Roles", value=len(g.roles))
-        embed.add_field(name="Server Region", value=g.region.title())
+ #       embed.add_field(name="Server Region", value=g.region.title())
         embed.add_field(name="Server Owner", value=g.owner.mention)
         embed.add_field(name="Created", value=format_time(g.created_at))
 
