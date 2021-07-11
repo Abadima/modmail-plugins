@@ -22,10 +22,11 @@ class Nekos(commands.Cog):
         result = await self.client.get_image("nekos")
         embed = discord.Embed(
             colour=author.colour,
-            title=f"Neko!~"
+            title=f"Neko!~",
+            set_image(url=result.url)
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        embed.set_image(url=result.url)
+     #   embed.set_image(url=result.url)
         await ctx.reply(embed=embed)
         
     @commands.command()
