@@ -60,20 +60,20 @@ class MemberResource:
         embed.add_field(name="Created", value=format_time(m.created_at))
         embed.add_field(name="Joined", value=format_time(m.joined_at))
         embed.add_field(name="Join Position", value=join_position)
-#        embed.add_field(name="Avatar URL", value=f"[Link]({m.avatar_url})")
         embed.add_field(name="Mention", value=m.mention)
 
         if m.activity is not None:
             activitytype = m.activity.type.name.title()
             activitytype += " to" if activitytype == "Listening" else ""
 
-            embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
-
+    #    embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
+    
+        embed.add_field(name="Activity", value=f"{m.activity.name}")
         embed.add_field(name="Status", value=m.status.name.title())
         embed.add_field(name="Nickname", value=m.nick)
         embed.add_field(name="Roles", value=" ".join(role_list))
 
-        embed.set_thumbnail(url=m.avatar_url)
+        embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
 
         return embed
@@ -87,7 +87,6 @@ class MemberResource:
 
         embed.set_author(name=f"{str(m)}'s Avatar")
         embed.set_image(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
-     #   embed.set_image(url=f"{m.avatar_url}?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
 
         return embed
