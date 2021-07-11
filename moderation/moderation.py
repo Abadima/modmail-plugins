@@ -362,29 +362,30 @@ class Moderation(commands.Cog):
         """Purge the specified amount of messages."""
         max = 2000
         if amount > max:
-            return await ctx.send(
+            return 
                 embed=discord.Embed(
                     title="Error",
                     description=f"You can only purge up to 2000 messages.",
-                    color=discord.Color.red(),
-                    set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat."),
+                    color=discord.Color.red()
                 )
-            )
+                embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+                embed.set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
+        await ctx.send(embed=embed)
 
         try:
             await ctx.message.delete()
             await ctx.channel.purge(limit=amount)
         except discord.errors.Forbidden:
-            return await ctx.send(
+            return 
                 embed=discord.Embed(
                     
                     title="Error",
-                    description="I don't have enough permissions to purge messages.",
+                    description="I don't have enough permissions to purge messages."
                 )
               embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
               embed.set_footer(text=f"Check My Permissions, and try again.")
-            )
+            
+            await ctx.send(embed=embed)
 
         case = await self.get_case()
         messages = "messages" if amount > 1 else "message"
@@ -395,21 +396,20 @@ class Moderation(commands.Cog):
             embed=discord.Embed(
                 title="Purge",
                 description=f"{amount} {messages} {have} been purged by {ctx.author.mention}.",
-                color=self.bot.main_color,
+                color=self.bot.main_color
                 )
               embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
               embed.set_footer(text=f"This is the {case} case."),
             )
 
-        await ctx.send(
             embed=discord.Embed(
                 title="Success",
                 description=f"Purged {amount} {messages}.",
-                color=self.bot.main_color,
+                color=self.bot.main_color
                 )
               embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
               embed.set_footer(text=f"This is the {case} case."),
-            )
+            await ctx.send(embed=embed)
 
     async def get_case(self):
         """Gives the case number."""
