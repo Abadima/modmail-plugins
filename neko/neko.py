@@ -20,10 +20,15 @@ class Nekos(commands.Cog):
         """Neko Pictures!"""
         author = ctx.author
         result = await self.client.get_image("nekos")
-        embed = discord.Embed(colour=author.colour)
-        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        embed.title = f"Neko!~"
-        embed.set_image(url=result.url)
+        embed = discord.Embed(
+            colour=author.colour
+            set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+            title = f"Neko!~"
+            set_image(url=result.url)
+        )
+    #    embed.
+    #    embed.
+    #    embed.
         await ctx.reply(embed=embed)
         
     @commands.command()
