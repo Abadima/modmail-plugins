@@ -21,7 +21,7 @@ class Nekos(commands.Cog):
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(
-            colour=author.colour
+            colour=author.colour,
             title=f"Neko!~"
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
