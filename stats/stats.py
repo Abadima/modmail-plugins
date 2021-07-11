@@ -49,7 +49,7 @@ class Stats(commands.Cog):
 
     # Avatar
 
-    @commands.command(aliases=["avatarinfo"])
+    @commands.command(aliases=["avatarinfo","av"])
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def avatar(self, ctx, *, member: typing.Union[discord.Member, str] = None):
         """Get the avatar of a member."""
@@ -102,7 +102,7 @@ class Stats(commands.Cog):
 
     # Member
 
-    @commands.command(aliases=["memberinfo", "user", "userinfo"])
+    @commands.command(aliases=["memberinfo", "user", "userinfo","whois"])
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def member(self, ctx, *, member: typing.Union[discord.Member, str] = None):
         """Get the stats of a member."""
