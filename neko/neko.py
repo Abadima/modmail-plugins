@@ -21,6 +21,7 @@ class Nekos(commands.Cog):
         author = ctx.author
         result = await self.client.get_image("nekos")
         embed = discord.Embed(colour=author.colour)
+        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.title = f"Neko!~"
         embed.set_image(url=result.url)
         await ctx.reply(embed=embed)
@@ -36,6 +37,7 @@ class Nekos(commands.Cog):
         imgtxt = await img.text()
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(colour=author.colour)
+        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.title = f"Neko!~"
         embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
@@ -51,6 +53,7 @@ class Nekos(commands.Cog):
         imgtxt = await img.text()
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(colour=author.colour)
+        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.title = f"Neko!~"
         embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
@@ -66,6 +69,7 @@ class Nekos(commands.Cog):
         imgtxt = await img.text()
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(colour=author.colour)
+        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.title = f"Waifu~"
         embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
