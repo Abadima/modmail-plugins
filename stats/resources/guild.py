@@ -24,7 +24,7 @@ class GuildResource:
 
         embed.add_field(
             name=f"Member Count",
-            value=f"Online: {online}\nHumans: {humans}\nBots: {bots}\nMember Count: {g.member_count}",
+            value=f"Members: {g.member_count}\nOnline: {online}\nHumans: {humans}\nBots: {bots}",
         )
         embed.add_field(name="Categories", value=len(g.categories))
         embed.add_field(name="Text Channels", value=len(g.text_channels))
