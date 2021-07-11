@@ -367,9 +367,9 @@ class Moderation(commands.Cog):
                     title="Error",
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red(),
-                    set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
                 )
+              embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+              embed.set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
             )
 
         try:
@@ -381,9 +381,9 @@ class Moderation(commands.Cog):
                     
                     title="Error",
                     description="I don't have enough permissions to purge messages.",
-                    set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-                    set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
                 )
+              embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+              embed.set_footer(text=f"Check My Permissions, and try again.")
             )
 
         case = await self.get_case()
@@ -396,17 +396,20 @@ class Moderation(commands.Cog):
                 title="Purge",
                 description=f"{amount} {messages} {have} been purged by {ctx.author.mention}.",
                 color=self.bot.main_color,
-                set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
-            ).set_footer(text=f"This is the {case} case."),
-        )
+                )
+              embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+              embed.set_footer(text=f"This is the {case} case."),
+            )
 
         await ctx.send(
             embed=discord.Embed(
                 title="Success",
                 description=f"Purged {amount} {messages}.",
                 color=self.bot.main_color,
-            ).set_footer(text=f"This is the {case} case.")
-        )
+                )
+              embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+              embed.set_footer(text=f"This is the {case} case."),
+            )
 
     async def get_case(self):
         """Gives the case number."""
