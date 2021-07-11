@@ -367,7 +367,7 @@ class Moderation(commands.Cog):
                     title="Error",
                     description=f"You can only purge up to 2000 messages.",
                     color=discord.Color.red(),
-                    author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+                    set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
                 ).set_footer(text=f"Use {ctx.prefix}nuke to purge the entire chat.")
             )
 
@@ -394,7 +394,7 @@ class Moderation(commands.Cog):
                 title="Purge",
                 description=f"{amount} {messages} {have} been purged by {ctx.author.mention}.",
                 color=self.bot.main_color,
-                    author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
+                set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url),
             ).set_footer(text=f"This is the {case} case."),
         )
 
