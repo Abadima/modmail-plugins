@@ -151,7 +151,7 @@ class Action(commands.Cog):
                 description=f"*{author.mention} smugs at {user.mention}*"
             )
             embed.set_image(url=result.url)
-            return await ctx.reply(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = f"{author.mention} Smugs at themselves..?"
             await ctx.reply(msg)
