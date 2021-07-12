@@ -56,6 +56,7 @@ class Action(commands.Cog):
                 colour=user.colour,
             description=f"*{author.mention} pats themselves, I guess?*"
         )
+            
         embed.set_image(url=result.url)
         await ctx.reply(embed=embed)
     @commands.command()
