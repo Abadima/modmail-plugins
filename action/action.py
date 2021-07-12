@@ -143,7 +143,7 @@ class Action(commands.Cog):
         result = await self.client.get_image("smug")
         
         if user == self.bot.user:
-            msg = "**Ｎ Ｏ   Ｕ**"
+            msg = "**hehe** *smugs at you*"
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
