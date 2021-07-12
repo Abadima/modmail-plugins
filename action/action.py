@@ -158,7 +158,7 @@ class Action(commands.Cog):
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def smug(self, ctx: commands.Context, user: Optional[discord.Member] = None):
+    async def smug(self, ctx: commands.Context, user: discord.Member):
         """Be smug towards someone!"""
 
         author = ctx.author
@@ -166,7 +166,7 @@ class Action(commands.Cog):
 
         embed = discord.Embed(colour=author.colour)
         if not user:
-            msg = f"> *{author.mention} smugs at @\u200bsomeone*"
+            msg = f"> *{author.mention} smugs at themselves..?*"
         else:
             user = user[0]
             msg = f"> *{author.mention} smugs at {user.mention}*"
