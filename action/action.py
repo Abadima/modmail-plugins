@@ -169,7 +169,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} smugs at {user.mention}*"
             )
             embed.set_image(url=result.url)
