@@ -163,15 +163,20 @@ class Action(commands.Cog):
 
         author = ctx.author
         result = await self.client.get_image("smug")
-
-        embed = discord.Embed(colour=author.colour)
-        if not user:
-            msg = f"> *{author.mention} smugs at themselves..?*"
+        
+        if user == self.bot.user:
+            msg = "**Ｎ Ｏ   Ｕ**"
+            return await ctx.reply(msg)
+        if user is not author:
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} smugs at {user.mention}*"
+            )
+            embed.set_image(url=result.url)
+            return await ctx.reply(content=msg, embed=embed)
         else:
-            user = user[0]
-            msg = f"> *{author.mention} smugs at {user.mention}*"
-        embed.set_image(url=result.url)
-        await ctx.send(content=msg, embed=embed)
+            msg = f"{author.mention} Smugs at themselves..?"
+            await ctx.reply(msg)
 
     @commands.command()
     @commands.guild_only()
