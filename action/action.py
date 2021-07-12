@@ -25,10 +25,12 @@ class Action(commands.Cog):
             msg = f"*OwO! kisses {author.mention} back!*"
             return await ctx.reply(msg)
         if user is not ctx.author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} kisses {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} kisses {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.send(embed=embed)
         else:
             msg = "Congratulations, you kissed yourself! LOL!!!"
             await ctx.reply(msg)
@@ -45,12 +47,17 @@ class Action(commands.Cog):
             msg = "Thanks for the pats, I guess."
             return await ctx.reply(msg)
         if user is not author:
-            msg = f"> *{author.mention} pats {user.mention}*"
+        embed = discord.Embed(
+            colour=user.color
+            description= f"*{author.mention} pats {user.mention}*"
+        )
         else:
-            msg = f"> *{author.mention} pats themselves, I guess?*"
-        embed = discord.Embed(colour=user.color)
+        embed = discord.Embed(
+            colour=user.color
+            description=f"*{author.mention} pats themselves, I guess?*"
+        )
         embed.set_image(url=result.url)
-        await ctx.send(content=msg, embed=embed)
+        await ctx.reply(embed=embed)
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -64,10 +71,12 @@ class Action(commands.Cog):
             msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} hugs {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} hugs {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "One dOEs NOt SiMplY hUg THeIR oWn sELF!"
             await ctx.reply(msg)
@@ -84,10 +93,12 @@ class Action(commands.Cog):
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} slaps {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} slaps {user.mention}*" 
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "Don't slap yourself, you're precious!"
             await ctx.reply(msg)
@@ -104,10 +115,12 @@ class Action(commands.Cog):
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} calls {user.mention} a BAKA bahahahahaha*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} calls {user.mention} a BAKA bahahahahaha*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "You really are BAKA, stupid."
             await ctx.reply(msg)
@@ -124,10 +137,12 @@ class Action(commands.Cog):
             msg = f"LMAO. Tickling a bot now, are we? {author.mention}"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} tickles {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} tickles {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "Tickling yourself is boring!"
             msg += " Tickling others is more fun though."
@@ -167,12 +182,14 @@ class Action(commands.Cog):
         if user == self.bot.user:
             return await ctx.reply("Come come. We'll cuddle all day and night!")
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} cuddles {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} cuddles {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
-            msg = "Cuddling yourself sounds like a gay move LMFAO!"
+            msg = "Cuddling yourself sounds like a gay move LOL!"
             await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
@@ -187,10 +204,12 @@ class Action(commands.Cog):
             msg = f"Awwww! Hey there. *pokes {author.mention} back!*"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} casually pokes {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} casually pokes {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "Self-poking is widely regarded as a bad move!"
             await ctx.reply(msg)
@@ -208,10 +227,12 @@ class Action(commands.Cog):
             msg = f"Awwww! Hey there. *waves at {author.mention} back!*"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} waves at {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} waves at {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            return await ctx.send(content=msg, embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "What? You can't do that!"
             await ctx.reply(msg)
@@ -228,10 +249,12 @@ class Action(commands.Cog):
             msg = f"OWO! Yummy food! Thanks {author.mention} :heart:"
             return await ctx.reply(msg)
         if user is not author:
-            embed = discord.Embed(colour=user.colour)
-            msg = f"> *{author.mention} feeds {user.mention}*"
+            embed = discord.Embed(
+                colour=user.colour
+                description=f"*{author.mention} feeds {user.mention}*"
+            )
             embed.set_image(url=result.url)
-            await ctx.send(content=msg, embed=embed)
+            await ctx.reply(embed=embed)
         else:
             msg = "Congrats you just fed yourself."
             await ctx.reply(msg)
@@ -256,7 +279,7 @@ class Action(commands.Cog):
         author = ctx.author
         result = await self.client.get_image("dance")
         embed = discord.Embed(colour=author.colour)
-        embed.description = f"{author.mention} is dancing"
+        embed.description = f"{author.mention} is dancing!"
         embed.set_image(url=result.url)
         await ctx.send(embed=embed)
 def setup(bot):
