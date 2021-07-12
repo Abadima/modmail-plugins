@@ -46,9 +46,9 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = "Thanks for the pats, I guess."
             return await ctx.reply(msg)
-        if user is not author:
-        embed = discord.Embed(
-            colour=user.color,
+        if user is not ctx.author:
+            embed = discord.Embed(
+                colour=user.colour,
             description= f"*{author.mention} pats {user.mention}*"
         )
         else:
@@ -70,7 +70,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} hugs {user.mention}*"
@@ -92,7 +92,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} slaps {user.mention}*" 
@@ -114,7 +114,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} calls {user.mention} a BAKA bahahahahaha*"
@@ -136,7 +136,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = f"LMAO. Tickling a bot now, are we? {author.mention}"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} tickles {user.mention}*"
@@ -160,7 +160,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = "**hehe** *smugs at you*"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} smugs at {user.mention}*"
@@ -181,7 +181,7 @@ class Action(commands.Cog):
         result = await self.client.get_image("cuddle")
         if user == self.bot.user:
             return await ctx.reply("Come come. We'll cuddle all day and night!")
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} cuddles {user.mention}*"
@@ -203,7 +203,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = f"Awwww! Hey there. *pokes {author.mention} back!*"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} casually pokes {user.mention}*"
@@ -226,7 +226,7 @@ class Action(commands.Cog):
         if user == self.bot.user:
             msg = f"Awwww! Hey there. *waves at {author.mention} back!*"
             return await ctx.reply(msg)
-        if user is not author:
+        if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*{author.mention} waves at {user.mention}*"
