@@ -26,7 +26,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not ctx.author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} kisses {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -48,7 +48,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
         embed = discord.Embed(
-            colour=user.color
+            colour=user.color,
             description= f"*{author.mention} pats {user.mention}*"
         )
         else:
@@ -72,7 +72,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} hugs {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -94,7 +94,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} slaps {user.mention}*" 
             )
             embed.set_image(url=result.url)
@@ -116,7 +116,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} calls {user.mention} a BAKA bahahahahaha*"
             )
             embed.set_image(url=result.url)
@@ -138,7 +138,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} tickles {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -183,7 +183,7 @@ class Action(commands.Cog):
             return await ctx.reply("Come come. We'll cuddle all day and night!")
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} cuddles {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -205,7 +205,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} casually pokes {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -228,7 +228,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} waves at {user.mention}*"
             )
             embed.set_image(url=result.url)
@@ -250,7 +250,7 @@ class Action(commands.Cog):
             return await ctx.reply(msg)
         if user is not author:
             embed = discord.Embed(
-                colour=user.colour
+                colour=user.colour,
                 description=f"*{author.mention} feeds {user.mention}*"
             )
             embed.set_image(url=result.url)
