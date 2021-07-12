@@ -52,8 +52,8 @@ class Action(commands.Cog):
             description= f"*{author.mention} pats {user.mention}*"
         )
         else:
-        embed = discord.Embed(
-            colour=user.color
+            embed = discord.Embed(
+                colour=user.colour,
             description=f"*{author.mention} pats themselves, I guess?*"
         )
         embed.set_image(url=result.url)
