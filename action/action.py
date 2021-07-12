@@ -2,6 +2,9 @@ from typing import Optional
 import discord
 from discord.ext import commands
 from nekosbest import Client
+from core import checks
+from core.models import PermissionLevel
+
 class Action(commands.Cog):
     """
     Action Commands!
@@ -16,7 +19,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def kiss(self, ctx: commands.Context, user: discord.Member):
         """Kiss a user!"""
-
         author = ctx.author
         result = await self.client.get_image("kiss")
         if user == self.bot.user:
@@ -37,7 +39,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def pat(self, ctx: commands.Context, user: discord.Member):
         """Pats a user!"""
-
         author = ctx.author
         result = await self.client.get_image("pat")
         if user == self.bot.user:
@@ -57,7 +58,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def hug(self, ctx: commands.Context, user: discord.Member):
         """hug a user!"""
-
         author = ctx.author
         result = await self.client.get_image("hug")
         if user == self.bot.user:
@@ -78,7 +78,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def slap(self, ctx: commands.Context, user: discord.Member):
         """Slaps a user!"""
-
         author = ctx.author
         result = await self.client.get_image("slap")
         if user == self.bot.user:
@@ -99,7 +98,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def baka(self, ctx: commands.Context, user: discord.Member):
         """Call a user BAKA with a GIF reaction!"""
-
         author = ctx.author
         result = await self.client.get_image("baka")
         if user == self.bot.user:
@@ -120,7 +118,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def tickle(self, ctx: commands.Context, user: discord.Member):
         """Tickles a user!"""
-
         author = ctx.author
         result = await self.client.get_image("tickle")
         if user == self.bot.user:
@@ -140,19 +137,24 @@ class Action(commands.Cog):
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def smug(self, ctx: commands.Context, user: Optional[discord.Member] = None):
+    async def smug(self, ctx: commands.Context, user: discord.Member):
         """Be smug towards someone!"""
-
         author = ctx.author
         result = await self.client.get_image("smug")
-        embed = discord.Embed(colour=author.colour)
-        if not user:
-            msg = f"> *{author.mention} smugs at @\u200bsomeone*"
+        
+        if user == self.bot.user:
+            msg = "**Ｎ Ｏ   Ｕ**"
+            return await ctx.reply(msg)
+        if user is not author:
+            embed = discord.Embed(
+                colour=user.colour,
+                description=f"*{author.mention} smugs at {user.mention}*"
+            )
+            embed.set_image(url=result.url)
+            return await ctx.reply(content=msg, embed=embed)
         else:
-            user = user[0]
-            msg = f"> *{author.mention} smugs at {user.mention}*"
-        embed.set_image(url=result.url)
-        await ctx.send(content=msg, embed=embed)
+            msg = f"{author.mention} Smugs at themselves..?"
+            await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -160,7 +162,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def cuddle(self, ctx: commands.Context, user: discord.Member):
         """Cuddles a user!"""
-
         author = ctx.author
         result = await self.client.get_image("cuddle")
         if user == self.bot.user:
@@ -180,7 +181,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def poke(self, ctx: commands.Context, user: discord.Member):
         """Pokes a user!"""
-
         author = ctx.author
         result = await self.client.get_image("poke")
         if user == self.bot.user:
@@ -202,7 +202,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def wave(self, ctx: commands.Context, user: discord.Member):
         """Wave at a user!"""
-
         author = ctx.author
         result = await self.client.get_image("wave")
         if user == self.bot.user:
@@ -223,7 +222,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def feed(self, ctx: commands.Context, user: discord.Member):
         """Feeds a user!"""
-
         author = ctx.author
         result = await self.client.get_image("feed")
         if user == self.bot.user:
@@ -243,7 +241,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def cry(self, ctx: commands.Context):
         """Let others know you feel like crying or just wanna cry."""
-
         author = ctx.author
         result = await self.client.get_image("cry")
         embed = discord.Embed(colour=author.colour)
@@ -256,7 +253,6 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def dance(self, ctx: commands.Context):
         """Dance! Hehe"""
-
         author = ctx.author
         result = await self.client.get_image("dance")
         embed = discord.Embed(colour=author.colour)
