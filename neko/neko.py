@@ -87,14 +87,17 @@ class Nekos(commands.Cog):
     @commands.cooldown(1, 5, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     async def nekoavatar(self, ctx):
-        """Neko Avatar!"""
+        """
+        Neko Avatar!
+        Use at your own Risk.
+        """
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
         imgtxt = await img.text()
         imgjson = json.loads(imgtxt)
         embed = discord.Embed(
             colour=author.colour,
-            title = f"Waifu~"
+            title = f"Neko Avatar!"
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=imgjson["url"])
