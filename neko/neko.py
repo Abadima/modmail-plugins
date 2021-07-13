@@ -121,17 +121,17 @@ class Nekos(commands.Cog):
         Neko Avatar!
         But for Owner Testing
         """
-       author = ctx.author
-       img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
-       imgtxt = await img.text()
-       imgjson = json.loads(imgtxt)
-       embed = discord.Embed(
+        author = ctx.author
+        img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
+        imgtxt = await img.text()
+        imgjson = json.loads(imgtxt)
+        embed = discord.Embed(
            colour=author.colour,
            title = f"Neko Avatar!"
        )
-       embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-       embed.set_image(url=imgjson["url"])
-       await ctx.reply(embed=embed)
+        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        embed.set_image(url=imgjson["url"])
+        await ctx.reply(embed=embed)
 
 def setup(bot):
     bot.add_cog(Nekos(bot))
