@@ -82,11 +82,11 @@ class Nekos(commands.Cog):
         embed.set_image(url=imgjson["url"])
         await ctx.reply(embed=embed)
         
-    @commands.command()
+    @commands.command(aliases=["nav"])
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @commands.cooldown(1, 5, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    async def avatar(self, ctx):
+    async def nekoavatar(self, ctx):
         """Neko Avatar!"""
         author = ctx.author
         img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
