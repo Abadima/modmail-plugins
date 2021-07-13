@@ -384,8 +384,6 @@ class Music(commands.Cog, name="music"):
             messages[i] = prefix + messages[i].replace('```', '``\u200b`').replace('@', '@\u200b') + suffix
         return messages
 
-           raise Failure(ctx, "I'll need to be able to DM you, please enable DM from this server.")
-
     @commands.cooldown(1, 10)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
     @commands.command()
