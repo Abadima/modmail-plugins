@@ -8,7 +8,7 @@ Say Hello to Neko, by Abadima! If you have any issues, be sure to let me know in
 # Commands
 
 ```
-[P]avatar (Neko Avatar, Nekos.Life API)
+[P]nekoavatar/nav (Neko Avatar, Nekos.Life API)
 
 [P]Nekos (Help Menu)
 
