@@ -276,16 +276,14 @@ class Suggest(commands.Cog):
                 colour=self.bot.error_color,
                 title=f"{user.name}#{user.discriminator} is already blocked.",
                 description=f"Reason: {self.banlist[str(user.id)]}",
-            )
-        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+            ).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         else:
             self.banlist[str(user.id)] = reason
             embed = discord.Embed(
                 colour=self.bot.main_color,
                 title=f"{user.name}#{user.discriminator} is now blocked.",
                 description=f"Reason: {reason}",
-            )
-            embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+            ).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
 
         await self._update_mod_db()
         await ctx.send(embed=embed)
@@ -301,15 +299,13 @@ class Suggest(commands.Cog):
                 colour=self.bot.error_color,
                 title=f"{user.name}#{user.discriminator} is not blocked.",
                 description=f"Reason: {self.banlist[str(user.id)]}",
-            )
-            embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+            ).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         else:
             self.banlist.pop(str(user.id))
             embed = discord.Embed(
                 colour=self.bot.main_color,
                 title=f"{user.name}#{user.discriminator} is now unblocked.",
-            )
-            embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+            ).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
 
         await self._update_mod_db()
         await ctx.send(embed=embed)
