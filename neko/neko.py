@@ -92,13 +92,13 @@ class Nekos(commands.Cog):
         [DISABLED] Too Close to Hentai.
         """
         
-    author = ctx.author
-    embed = discord.Embed(
-    colour=author.colour,
-    title = f"DISABLED.",
-    description = f"This Command has potential NSFW, so to protect our kids, \n we have disabled this for now.",
-).set_author(name=author.name, icon_url=author.avatar_url)
-await ctx.reply(embed=embed)
+        author = ctx.author
+        embed = discord.Embed(
+        colour=author.colour,
+        title = f"DISABLED.",
+        description = f"This Command has potential NSFW, so to protect our kids, \n we have disabled this for now.",
+        ).set_author(name=author.name, icon_url=author.avatar_url)
+        await ctx.reply(embed=embed)
 
 #       author = ctx.author
 #       img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
