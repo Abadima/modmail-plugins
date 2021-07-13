@@ -94,7 +94,7 @@ class Nekos(commands.Cog):
     author = ctx.author
     embed = discord.Embed(
     colour=author.colour,
-    title = f"DISABLED."
+    title = f"DISABLED.",
     description = f"This Command has potential NSFW, so to protect our kids, \nwe have disabled this for now."
 )
 embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
