@@ -87,8 +87,7 @@ class Suggest(commands.Cog):
                     color=self.bot.error_color,
                     title=f"You have been blocked, {ctx.author.name}#{ctx.author.discriminator}.",
                     description=f"Reason: {self.banlist[str(ctx.author.id)]}",
-                )
-              embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+                ).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             )
 
     @commands.command()
