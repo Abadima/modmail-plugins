@@ -89,19 +89,28 @@ class Nekos(commands.Cog):
     async def nekoavatar(self, ctx):
         """
         Neko Avatar!
-        Use at your own Risk.
+        [DISABLED] Too Close to Hentai.
         """
-        author = ctx.author
-        img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
-        imgtxt = await img.text()
-        imgjson = json.loads(imgtxt)
-        embed = discord.Embed(
-            colour=author.colour,
-            title = f"Neko Avatar!"
-        )
-        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        embed.set_image(url=imgjson["url"])
-        await ctx.reply(embed=embed)
+    author = ctx.author
+    embed = discord.Embed(
+    colour=author.colour,
+    title = f"DISABLED."
+    description = f"This Command has potential NSFW, so to protect our kids, \nwe have disabled this for now."
+)
+embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+await ctx.reply(embed=embed)
+
+#       author = ctx.author
+#       img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
+#       imgtxt = await img.text()
+#       imgjson = json.loads(imgtxt)
+#       embed = discord.Embed(
+#           colour=author.colour,
+#           title = f"Neko Avatar!"
+#       )
+#       embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+#       embed.set_image(url=imgjson["url"])
+#       await ctx.reply(embed=embed)
 
 def setup(bot):
     bot.add_cog(Nekos(bot))
