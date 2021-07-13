@@ -96,9 +96,8 @@ class Nekos(commands.Cog):
     colour=author.colour,
     title = f"DISABLED.",
     description = f"This Command has potential NSFW, so to protect our kids, \nwe have disabled this for now."
-)
-embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-ctx.reply(embed=embed)
+).set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+await ctx.reply(embed=embed)
 
 #       author = ctx.author
 #       img = await self.bot.session.get('https://nekos.life/api/v2/img/avatar')
