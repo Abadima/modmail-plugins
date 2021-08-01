@@ -178,7 +178,7 @@ class Giveaways(commands.Cog):
         invoke_without_command=True,
     )
     @commands.guild_only()
-    @checks.has_permissions(PermissionLevel.ADMIN)
+    @checks.has_permissions(PermissionLevel.MOD)
     async def giveaway(self, ctx: commands.Context):
         """
         Create / Stop Giveaways
@@ -186,7 +186,7 @@ class Giveaways(commands.Cog):
         await ctx.send_help(ctx.command)
         return
 
-    @checks.has_permissions(PermissionLevel.ADMIN)
+    @checks.has_permissions(PermissionLevel.MOD)
     @giveaway.command(name="start", aliases=["create", "c", "s"])
     async def start(self, ctx: commands.Context, channel: discord.TextChannel):
         """
@@ -291,7 +291,7 @@ class Giveaways(commands.Cog):
         await self._update_db()
         await self._start_new_giveaway_thread(giveaway_obj)
 
-    @checks.has_permissions(PermissionLevel.ADMIN)
+    @checks.has_permissions(PermissionLevel.MOD)
     @giveaway.command(name="reroll", aliases=["rroll"])
     async def reroll(self, ctx: commands.Context, _id: str, winners_count: int):
         """
@@ -381,7 +381,7 @@ class Giveaways(commands.Cog):
                 break
 
     @giveaway.command(name="cancel", aliases=["stop"])
-    @checks.has_permissions(PermissionLevel.ADMIN)
+    @checks.has_permissions(PermissionLevel.MOD)
     async def cancel(self, ctx: commands.Context, _id: str):
         """
         Stop an active giveaway
