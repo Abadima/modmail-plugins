@@ -4,7 +4,7 @@
         "branch": "master",
         "description": "Fun Actions! >:D",
         "title": "Actions",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096"
     },
     "animals": {
@@ -12,7 +12,7 @@
         "branch": "master",
         "description": "Pictures of Animals, Awh!",
         "title": "Animals",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://opengameart.org/sites/default/files/forum-attachments/circle%20dog%20big.png"
     },
     "announcements": {
@@ -20,7 +20,7 @@
         "branch": "master",
         "description": "Easy Announcements",
         "title": "Announcements",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Circle-icons-megaphone.svg/1200px-Circle-icons-megaphone.svg.png"
     },
     "anti-profanity": {
@@ -28,7 +28,7 @@
         "branch": "master",
         "description": "Prevent Profanity!",
         "title": "Anti-Profanity",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://www.precise.tv/hubfs/Website-2019/assets/icons/shield-icon.png"
     },
     "apublish": {
@@ -36,7 +36,7 @@
         "branch": "master",
         "description": "Auto-Publish Messages to Announcements!",
         "title": "Auto-Publish",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "http://icons.iconarchive.com/icons/blackvariant/button-ui-ms-office-2016/512/Publisher-2-icon.png"
     },
     "autorole": {
@@ -44,7 +44,7 @@
         "branch": "master",
         "description": "Automatically Rank New Members!",
         "title": "Auto Join Rank",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://icon-library.com/images/automation-icon/automation-icon-10.jpg"
     },
     "calculator": {
@@ -52,7 +52,7 @@
         "branch": "master",
         "description": "Advanced/Simple Math",
         "title": "Calculator",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/1200px-Calculator_icon.svg.png"
     },
     "emanager": {
@@ -60,7 +60,7 @@
         "branch": "master",
         "description": "Create & Edit Embeds (Advanced)",
         "title": "Embed Manager",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://pngimg.com/uploads/ie_logo/ie_logo_PNG28.png"
     },
     "esuggest": {
@@ -68,7 +68,7 @@
         "branch": "master",
         "description": "Suggest Emojis",
         "title": "Emoji Suggestor",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://hotemoji.com/images/dl/h/tongue-sticking-out-emoji-by-twitter.png"
     },
     "fun": {
@@ -76,7 +76,7 @@
         "branch": "master",
         "description": "Fun Stuff! Yay!",
         "title": "Fun Features",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://www.thedenveregotist.com/wp-content/uploads/sites/3/2019/01/FUN_logo_socialmedia_icon.png"
     },
     "gchat": {
@@ -84,7 +84,7 @@
         "branch": "master",
         "description": "Fun Games!",
         "title": "Chat Games",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "http://www.newdesignfile.com/postpic/2015/09/board-game-icon_336083.png"
     },
     "genshin": {
@@ -100,7 +100,7 @@
         "branch": "master",
         "description": "Giveaway Feature!",
         "title": "Giveaways",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://images.vexels.com/media/users/3/199935/isolated/preview/90b901292c4ebfa443be3db2b95282d1-gift-icon-flat-by-vexels.png"
     },
     "hastebin": {
@@ -108,7 +108,7 @@
         "branch": "master",
         "description": "Upload Text 2 Hastebin",
         "title": "Hastebin",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://tapbots.com/pastebot/img/appicon.png"
     },
     "logs": {
@@ -116,7 +116,7 @@
         "branch": "master",
         "description": "Epic Logs >:D",
         "title": "Logging System",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/1692/1692465.png"
     },
     "levels": {
@@ -124,7 +124,7 @@
         "branch": "master",
         "description": "Levelling, Fun! >:D",
         "title": "Logging System",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://i.pinimg.com/originals/37/5e/bc/375ebcb53d28c7177fca29c1712965eb.png"
     },
     "media-only": {
@@ -132,7 +132,7 @@
         "branch": "master",
         "description": "Setup Media-Only Channels, \n to prevent Non-Media from entering",
         "title": "Media Only Feature",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "http://icons.iconarchive.com/icons/cornmanthe3rd/plex/512/Media-wmp-icon.png"
     },
     "menu": {
@@ -140,7 +140,7 @@
         "branch": "master",
         "description": "Questions to help staff understand their reasoning better",
         "title": "ModMail Questionaire",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://cdn1.iconfinder.com/data/icons/cool-cirlce/503/menu.png"
     },
     "moderation": {
@@ -148,7 +148,7 @@
         "branch": "master",
         "description": "Tons of Moderation Commands! \nHighly advised you stay away from our warning command though.",
         "title": "Moderation System",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://www.precise.tv/hubfs/Website-2019/assets/icons/shield-icon.png"
     },
     "music": {
@@ -156,7 +156,7 @@
         "branch": "master",
         "description": "Twitch, SoundCloud, YouTube, Lyrics, And More!",
         "title": "Music Player",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://1.bp.blogspot.com/-RgJWXm0t7q0/XIWTSUvY40I/AAAAAAAAIj0/YMDr1bdHzBsryvSU8CEGeSGNlqPh3axlQCK4BGAYYCw/s1600/music%2Bicons.png"
     },
     "neko": {
@@ -164,7 +164,7 @@
         "branch": "master",
         "description": "Pictures of Nekos! Thanks to API \n Credits To Abadima",
         "title": "Neko Fun",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f6aa0b60-df7f-4a25-a751-7308f8994009/daao1j9-5f5dd2a8-5e75-49e3-b45f-6eb8ada29b81.png/v1/fill/w_600,h_600,q_75,strp/_com__neko_girl___icon_by_miimiisart-daao1j9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9mNmFhMGI2MC1kZjdmLTRhMjUtYTc1MS03MzA4Zjg5OTQwMDkvZGFhbzFqOS01ZjVkZDJhOC01ZTc1LTQ5ZTMtYjQ1Zi02ZWI4YWRhMjliODEucG5nIiwid2lkdGgiOiI8PTYwMCIsImhlaWdodCI6Ijw9NjAwIn1dXX0.xJ2-qMaDdf_wquf8LfBUZW706uf9ljmMSVRulQU5Bow"
     },
     "osu": {
@@ -172,7 +172,7 @@
         "branch": "master",
         "description": "OSU Profile for GameModes",
         "title": "OSU",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Osu!Logo_(2015).png"
     },
     "poll": {
@@ -180,7 +180,7 @@
         "branch": "master",
         "description": "Create Polls! Yes/No & More :D",
         "title": "Polls",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://icons.iconarchive.com/icons/iconarchive/blue-election/1024/Election-Polling-Box-01-Outline-icon.png"
     },
     "reboot": {
@@ -188,7 +188,7 @@
         "branch": "master",
         "description": "Reboot Bot \n (OWNER ONLY)",
         "title": "Reboot Function",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flat_restart_icon.svg/1024px-Flat_restart_icon.svg.png"
     },
     "reaction-role": {
@@ -196,7 +196,7 @@
         "branch": "master",
         "description": "Setup Reaction Roles With Any Message of Choice",
         "title": "Reaction Roles",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/2599/2599434.png"
     },
     "reports": {
@@ -204,7 +204,7 @@
         "branch": "master",
         "description": "Report a Bad Member",
         "title": "Report System",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/235/235253.png"
     },
     "role": {
@@ -212,7 +212,7 @@
         "branch": "master",
         "description": "Modify/Add/Remove a User's Role :)",
         "title": "Role System",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://images.vexels.com/media/users/3/157512/isolated/preview/d737a872708b488d89d0341ac9b8bc5a-people-contact-icon-people-by-vexels.png"
     },
     "server-stats": {
@@ -220,7 +220,7 @@
         "branch": "master",
         "description": "Accurate Statistics About This Server ;D",
         "title": "Server Statistics",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
     },
     "stats": {
@@ -228,7 +228,7 @@
         "branch": "master",
         "description": "Advanced Statistics Command. \n Featuring: Avatar, BotInfo, Emoji, Member, etc",
         "title": "Advanced Statistics",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/172/172175.png"
     },
         "suggest": {
@@ -236,7 +236,7 @@
         "branch": "master",
         "description": "Suggestions! Fun :D",
         "title": "Suggestions",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "http://www.lakelandtn.gov/images/pages/N126/suggestion_box.png"
     },
     "sview": {
@@ -244,7 +244,7 @@
         "branch": "master",
         "description": "With this you can view, \n who is apart of the support team!",
         "title": "View Support List",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://image.flaticon.com/icons/png/512/306/306458.png"
     },
     "trivia": {
@@ -252,7 +252,7 @@
         "branch": "master",
         "description": "Play Trivial Games :D",
         "title": "Trivia Quiz",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://cdn.discordapp.com/attachments/657048730377388034/862455764835631124/unnamed.png"
     },
     "utility": {
@@ -260,7 +260,7 @@
         "branch": "master",
         "description": "Know More about this Bot! \n By: Abadima",
         "title": "Utilities",
-        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/a1d51e4f64ed717cc769d21cfa7194f8.png?size=4096",
+        "icon_url": "https://cdn.discordapp.com/avatars/326815959358898189/e409e7925c364e9004675cc0ba160221.png?size=4096",
         "thumbnail_url": "https://www.faxcore.com/wp-content/uploads/2018/03/if_tools_1287509.png"
     }
 }
