@@ -7,6 +7,7 @@ from core import checks
 from core.models import PermissionLevel
 from core.paginator import EmbedPaginatorSession
 from box import Box
+from time import sleep
 
 Cog = getattr(commands, "Cog", object)
 
@@ -188,6 +189,7 @@ class Fun(Cog):
         """Same as say command, except it deletes your message."""
         msg = escape(message,mass_mentions=True)
         try:
+            sleep(.1)
             await ctx.message.delete()
         except discord.errors.Forbidden:
             await ctx.send("Not enough permissions to delete messages.", delete_after=2)
