@@ -168,7 +168,7 @@ class Birthdays(commands.Cog):
 
             self.birthdays[str(ctx.author.id)] = birthday_obj
             await self._update_birthdays()
-            await ctx.send(f"Done! You'r birthday was set to {date}")
+            await ctx.send(f"Done! Your birthday was set to {date}")
             return
         except KeyError:
             logger.info(birthday[0])
