@@ -6,6 +6,7 @@ PLEASE DON'T TOUCH THIS-
 
 # MY CREDITS
 
+**[Birthday](https://github.com/Abadima/modmail-plugins/tree/master/birthday) ~ [Abadima](https://github.com/Abadima)**
 
 **[neko](https://github.com/Abadima/modmail-plugins/tree/master/neko) ~ [Abadima](https://github.com/Abadima)**
 
