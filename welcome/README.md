@@ -1,3 +1,5 @@
+# DM/Welcome Plugin
+
 # Permission Required
 `MANAGE_GUILD` (used to view invites)
 
