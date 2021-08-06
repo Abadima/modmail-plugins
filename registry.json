@@ -270,5 +270,13 @@
         "title": "Utilities",
         "icon_url": "https://avatars.githubusercontent.com/u/39747270?v=4",
         "thumbnail_url": "https://www.faxcore.com/wp-content/uploads/2018/03/if_tools_1287509.png"
+    },
+        "welcome": {
+        "repository": "Abadima/modmail-plugins",
+        "branch": "master",
+        "description": "Welcome Users! DMs & Server \n By: Abadima",
+        "title": "Welcome System",
+        "icon_url": "https://avatars.githubusercontent.com/u/39747270?v=4",
+        "thumbnail_url": "https://image.flaticon.com/icons/png/512/188/188012.png"
     }
 }
