@@ -1,9 +1,9 @@
 # DM/Welcome Plugin
 
-# Permission Required
+## Permission Required
 `MANAGE_GUILD` (used to view invites)
 
-# Variables
+## Variables
 
 | Name     | Description |
 | -------- | ------------------------------------------------------------------------------------------------------ |
@@ -14,7 +14,7 @@
 
 Example: `Welcome {member.mention} to {guild.name}! He used {invite.code} to join the server (invite created by {invite.inviter.name})`
 
-# Embeds
+## Embeds
 
 1. You can use [this tool](https://leovoel.github.io/embed-visualizer/) to generate JSON representations.
 2. Copy the JSON from the left and paste it into [hastebin](https://hasteb.in/). Save it (`Ctrl` + `S` or the save button on the right)
