@@ -56,8 +56,6 @@ PLEASE DON'T TOUCH THIS-
 
 **[music](https://github.com/lorenzo132/modmail-plugins/tree/master/music) ~ [lorenzo132](https://github.com/lorenzo132)**
 
-**[osu](https://github.com/snaildos/modmail-plugins/tree/master/osu) ~ [snaildos](https://github.com/snaildos)**
-
 **[poll](https://github.com/officialpiyush/modmail-plugins/tree/master/poll) ~ [officialpiyush](https://github.com/officialpiyush)** (Modified)
 
 **[reaction-role](https://github.com/DAzVise/modmail-plugins/tree/master/reaction-role) ~ [DAzVise](https://github.com/DAzVise)**
