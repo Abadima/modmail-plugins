@@ -14,6 +14,8 @@ PLEASE DON'T TOUCH THIS-
 
 **[utility](https://github.com/Abadima/modmail-plugins/tree/master/utility) ~ [Abadima](https://github.com/Abadima)**
 
+**[welcome](https://github.com/Abadima/modmail-plugins/tree/master/welcome) ~ [Abadima](https://github.com/Abadima)** (Remastered)
+
 # ADDITIONAL CREDITS
 
 **[Action](https://github.com/6days9weeks/modmail-plugins/tree/master/action) ~ [6days9weeks](https://github.com/6days9weeks)** + My Extra Commands
