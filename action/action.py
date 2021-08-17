@@ -9,9 +9,20 @@ class Action(commands.Cog):
     """
     Action Commands!
     """
-    def __init__(self, bot):
-        self.bot = bot
+    def __init__(self, bot, member):
+        self.ctx = ctx
+        self.member = member
         self.client = Client()
+
+         self._get_member()
+        if self.member is None:
+            try:
+                self.member = discord.utils.get(self.ctx.guild.members, id=int(self.ctx.channel.topic[9:]))
+                if self.member is None:
+                    self.member = self.ctx.author
+            except (ValueError, TypeError):
+                self.member = self.ctx.author
+        
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -41,6 +52,8 @@ class Action(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def pat(self, ctx: commands.Context, user: discord.Member):
         """Pats a user!"""
+        
+        m: discord.Member = self.member
         author = ctx.author
         result = await self.client.get_image("pat")
         if user == self.bot.user:
@@ -49,7 +62,7 @@ class Action(commands.Cog):
         if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
-            description= f"*{author.mention} pats {user.mention}*"
+            description= f"*{author.mention} pats {m.mention}*"
         )
         else:
             embed = discord.Embed(
