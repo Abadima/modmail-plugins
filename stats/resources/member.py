@@ -69,9 +69,9 @@ class MemberResource:
             embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
             
         if len(role_list) == 0:
-            embed.add_field(name=f"[{len(role_list)}] Roles", value="Unable to Display Roles")
+            embed.add_field(name=f"[{len(m.roles)}] Roles", value="Unable to Display Roles")
         else:
-            embed.add_field(name=f"[{len(role_list)}] Roles", value=" ".join(role_list))        
+            embed.add_field(name=f"[{len(m.roles)}] Roles", value=" ".join(role_list))        
 
         embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
