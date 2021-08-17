@@ -10,7 +10,7 @@ class Action(commands.Cog):
     Action Commands!
     """
     def __init__(self, bot):
-        self.ctx = ctx
+        self.bot = bot
         self.client = Client()
         
     @commands.command()
