@@ -71,8 +71,8 @@ class MemberResource:
       #  embed.add_field(name="Activity", value=f"{m.activity.name}")
         embed.add_field(name="Status", value=m.status.name.title())
         embed.add_field(name="Nickname", value=m.nick)
-        embed.add_field(name="Roles", value=" ".join(role_list))
-                        #value="Temporarily Disabled due to Issues.")#" ".join(role_list))
+        embed.add_field(name="Roles", value="Temporarily Disabled due to Issues.")#" ".join(role_list))
+                       
 
         embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
