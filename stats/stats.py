@@ -1,6 +1,4 @@
-import typing
-import datetime
-import discord
+import typing, datetime, discord
 from discord.ext import commands
 
 from core import checks
@@ -90,7 +88,7 @@ class Stats(commands.Cog):
     async def emoji(self, ctx, *, emoji: discord.Emoji):
         """Get the stats of an emoji."""
 
-        embed = EmojiResource(ctx, emoji, self.bot.main_color).emoji_embed()
+        embed = await EmojiResource(ctx, emoji, self.bot.main_color).emoji_embed()
         await ctx.send(embed=embed)
 
     @stats.command(name="emoji")
