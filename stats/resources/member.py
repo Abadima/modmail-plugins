@@ -47,9 +47,8 @@ class MemberResource:
         role_list = [
             role.mention
             for role in reversed(m.roles)
-            if role is not self.ctx.guild.default_role and len(m.roles) > 15
+            if role is not self.ctx.guild.default_role and len(m.roles) > 25
         ]
-        print(len(m.roles))
         
         join_position = sorted(m.guild.members, key=lambda m: m.joined_at).index(m) + 1
 
@@ -70,16 +69,9 @@ class MemberResource:
             embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
             
         if len(role_list) == 0:
-            print(role_list)
-            embed.add_field(name="Roles", value="Unable to Display Roles")
+            embed.add_field(name=f"[{len(role_list)}] Roles", value="Unable to Display Roles")
         else:
-            embed.add_field(name="Roles", value=" ".join(role_list))
-            
-    
-      #  embed.add_field(name="Activity", value=f"{m.activity.name}")
-     #   embed.add_field(name="Roles", value=" ".join(role_list))
-                        #value="Temporarily Disabled due to Issues.")#" ".join(role_list))
-                       
+            embed.add_field(name=f"[{len(role_list)}] Roles", value=" ".join(role_list))        
 
         embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
