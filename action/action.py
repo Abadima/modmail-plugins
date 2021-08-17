@@ -14,7 +14,7 @@ class Action(commands.Cog):
         self.member = member
         self.client = Client()
 
-         self._get_member()
+        self._get_member()
         if self.member is None:
             try:
                 self.member = discord.utils.get(self.ctx.guild.members, id=int(self.ctx.channel.topic[9:]))
