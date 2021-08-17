@@ -72,7 +72,8 @@ class MemberResource:
         if len(role_list) == 0:
             print(role_list)
             embed.add_field(name="Roles", value="Unable to Display Roles")
-
+        else:
+            embed.add_field(name="Roles", value=" ".join(role_list))
             
     
       #  embed.add_field(name="Activity", value=f"{m.activity.name}")
