@@ -61,19 +61,19 @@ class MemberResource:
         embed.add_field(name="Joined", value=format_time(m.joined_at))
         embed.add_field(name="Join Position", value=join_position)
         embed.add_field(name="Mention", value=m.mention)
+        embed.add_field(name="Status", value=m.status.name.title())
+        embed.add_field(name="Nickname", value=m.nick)
 
         if m.activity is not None:
             activitytype = m.activity.type.name.title()
             activitytype += " to" if activitytype == "Listening" else ""
             embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
             
-        if role_list is not None:
-            embed.add_field(name="Roles", value=" ".join(role_list))
+        if role_list is None:
+            embed.add_field(name="Roles", value="Unable to Display Roles")
 
     
       #  embed.add_field(name="Activity", value=f"{m.activity.name}")
-        embed.add_field(name="Status", value=m.status.name.title())
-        embed.add_field(name="Nickname", value=m.nick)
      #   embed.add_field(name="Roles", value=" ".join(role_list))
                         #value="Temporarily Disabled due to Issues.")#" ".join(role_list))
                        
