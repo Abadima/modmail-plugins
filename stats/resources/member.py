@@ -68,12 +68,12 @@ class MemberResource:
             activitytype += " to" if activitytype == "Listening" else ""
             embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
         else:
-            embed.add_field(name="Activity", value="Currently None")
+            embed.add_field(name="Activity", value="None")
             
         if len(role_list) == 0:
             embed.add_field(name=f"[{len(m.roles)}] Roles", value="Unable to Display Roles")
         else:
-            embed.add_field(name=f"[{len(m.roles)}] Roles", value=" ".join(role_list))        
+            embed.add_field(name=f"[{len(m.roles)}] Roles", value=" ".join(role_list), inline=false)        
         embed.set_thumbnail(url=m.avatar_url)
       #  embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{m.id}/{m.avatar}.png?size=4096")
         embed.set_footer(text=f"User ID: {m.id}")
