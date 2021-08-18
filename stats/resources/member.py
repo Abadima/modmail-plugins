@@ -67,8 +67,8 @@ class MemberResource:
             activitytype = m.activity.type.name.title()
             activitytype += " to" if activitytype == "Listening" else ""
             embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
-        else:
-            embed.add_field(name="Activity", value="None")
+    #    else:
+   #         embed.add_field(name="Activity", value="None")
             
         if len(role_list) == 0:
             embed.add_field(name=f"[{len(m.roles)}] Roles", value="Unable to Display Roles")
