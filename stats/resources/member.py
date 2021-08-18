@@ -47,7 +47,7 @@ class MemberResource:
         role_list = [
             role.mention
             for role in reversed(m.roles)
-            if role is not self.ctx.guild.default_role and len(m.roles) < 35
+            if role is not self.ctx.guild.default_role and len(m.roles) < 36
         ]
         
         join_position = sorted(m.guild.members, key=lambda m: m.joined_at).index(m) + 1
