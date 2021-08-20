@@ -53,7 +53,7 @@ class Stats(commands.Cog):
         """Get the avatar of a member."""
 
         embed = MemberResource(ctx, member).avatar_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="avatar")
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -72,7 +72,7 @@ class Stats(commands.Cog):
         """Get the stats of your Modmail bot."""
 
         embed = BotResource(ctx, self.bot).bot_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="bot")
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -89,7 +89,7 @@ class Stats(commands.Cog):
         """Get the stats of an emoji."""
 
         embed = await EmojiResource(ctx, emoji, self.bot.main_color).emoji_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="emoji")
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -106,7 +106,7 @@ class Stats(commands.Cog):
         """Get the stats of a member."""
 
         embed = MemberResource(ctx, member).member_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="member", aliases=["user"])
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -137,7 +137,7 @@ class Stats(commands.Cog):
         """Get the stats of a role."""
 
         embed = RoleResource(ctx, role).role_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="role")
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -154,7 +154,7 @@ class Stats(commands.Cog):
         """Get the stats of your server"""
 
         embed = GuildResource(ctx, self.bot.main_color).guild_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @stats.command(name="server", aliases=["guild"])
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -171,7 +171,7 @@ class Stats(commands.Cog):
         """Get the status of a member."""
 
         embed = MemberResource(ctx, member).userstatus_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 # Join 
 
@@ -181,7 +181,7 @@ class Stats(commands.Cog):
         """Get the join position of a member."""
 
         embed = MemberResource(ctx, member).join_embed()
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(bot):
     bot.add_cog(Stats(bot))
