@@ -111,3 +111,17 @@ class MemberResource:
         embed.set_footer(text=f"User ID: {m.id}")
 
         return embed
+
+        def join_embed(self):
+        """Get the join position of a member."""
+
+        m: discord.Member = self.member
+            
+        embed = discord.Embed(color=m.color,icon_url=m.avatar_url)
+        
+        embed.set_author(name=f"{str(m)}'s Status")
+        embed.title='User Join Date'
+        embed.description=f"Count: {join_position}"
+        embed.set_footer(text=f"User ID: {m.id}")
+
+        return embed
