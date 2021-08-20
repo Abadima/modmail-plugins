@@ -112,7 +112,7 @@ class MemberResource:
 
         return embed
 
-        def join_embed(self):
+    def join_embed(self):
         """Get the join position of a member."""
 
         m: discord.Member = self.member
