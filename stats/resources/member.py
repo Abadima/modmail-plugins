@@ -122,7 +122,7 @@ class MemberResource:
         
         embed.set_author(name=f"{str(m)}'s Status")
         embed.title='User Join Date'
-        embed.description=f"Count: {join_position}"
+        embed.description=f"{join_position}"
         embed.set_footer(text=f"User ID: {m.id}")
 
         return embed
