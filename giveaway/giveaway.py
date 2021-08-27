@@ -1,9 +1,4 @@
-import asyncio
-import aiohttp
-import discord
-import math
-import random
-import time
+import asyncio,aiohttp,discord,math,random,time
 from datetime import datetime
 from discord.ext import commands
 
