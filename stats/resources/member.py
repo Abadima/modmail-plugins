@@ -66,7 +66,7 @@ class MemberResource:
         if m.activity is not None:
             activitytype = m.activity.type.name.title()
             activitytype += " to" if activitytype == "Listening" else ""
-            embed.add_field(name="Activity", value=f"{activitytype} {m.activity.name}")
+            embed.add_field(name="Activity", value=f"[{activitytype}] {m.activity.name}")
     #    else:
    #         embed.add_field(name="Activity", value="None")
             
