@@ -9,8 +9,8 @@ logger = logging.getLogger('Modmail')
 class Reboot(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command()
+        
+    @commands.command(aliases=["bathroom"])
     @checks.has_permissions(PermissionLevel.OWNER)
     async def reboot(self, ctx):
         """Clears Cached Logs & Reboots The Bot"""
