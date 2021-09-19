@@ -32,7 +32,7 @@ class Nekos(commands.Cog):
         embed.set_image(url=result.url)
         await ctx.reply(
             embed=embed,
-            components=ActionRow(Button(Style=ButtonStyle.link,label="Original Image",url=f"{result.url}"))
+            components=ActionRow(Button(style=ButtonStyle.link,label="Original Image",url=f"{result.url}"))
         )
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
