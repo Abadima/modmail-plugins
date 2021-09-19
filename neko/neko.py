@@ -53,7 +53,7 @@ class Nekos(commands.Cog):
         await ctx.reply(
             embed=embed,
             components = [ActionRow(
-                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+                Button(style=ButtonStyle.red, label="Source", disabled=True)
             )])
         
     @commands.command(aliases=["ngif"])
@@ -75,7 +75,7 @@ class Nekos(commands.Cog):
         await ctx.reply(
             embed=embed,
             components = [ActionRow(
-                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+                Button(style=ButtonStyle.red, label="Source", disabled=True)
             )])
         
     @commands.command()
@@ -97,7 +97,7 @@ class Nekos(commands.Cog):
         await ctx.reply(
             embed=embed,
             components = [ActionRow(
-                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+                Button(style=ButtonStyle.red, label="Source", disabled=True)
             )])
         
     @commands.command(aliases=["nav"])
@@ -152,7 +152,7 @@ class Nekos(commands.Cog):
         await ctx.reply(
             embed=embed,
             components = [ActionRow(
-                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+                Button(style=ButtonStyle.red, label="Source", disabled=True)
             )])
 
 def setup(bot):
