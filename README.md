@@ -75,3 +75,5 @@ PLEASE DON'T TOUCH THIS-
 **[sview](https://github.com/robinmahieu/modmail-plugins/tree/master/supporters) ~ [robinmahieu](https://github.com/robinmahieu)**
 
 **[trivia](https://github.com/Jerrie-Aries/modmail-plugins/tree/master/trivia) ~ [Jerrie-Aries](https://github.com/Jerrie-Aries)**
+
+**[Tickets](https://github.com/sskewer/Modmail-Plugins/tree/master/easy-ticket) ~ [sskewer](https://github.com/sskewer)** (Translated & Modified)
