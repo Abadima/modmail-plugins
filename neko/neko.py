@@ -6,6 +6,13 @@ from core.models import PermissionLevel
 from dislash import slash_commands
 from dislash.interactions import ActionRow, Button, ButtonStyle
 
+    Neko1 = ActionRow(
+        Button(
+            Style=ButtonStyle.link,
+            label="Original Image",
+            url=f"{result.url}"
+        )
+    )    
 
 class Nekos(commands.Cog):
     """
@@ -31,9 +38,7 @@ class Nekos(commands.Cog):
         embed.set_image(url=result.url)
         await ctx.reply(
             embed=embed
-            components = ActionRow(
-                Button(Style=ButtonStyle.link,label="Original Image", url=f"{result.url}")
-        )    
+            components=[Neko1]
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 5, commands.BucketType.member)
