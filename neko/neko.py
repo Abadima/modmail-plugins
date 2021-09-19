@@ -39,6 +39,7 @@ class Nekos(commands.Cog):
         await ctx.reply(
             embed=embed
             components=[Neko1]
+        )
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 5, commands.BucketType.member)
