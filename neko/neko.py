@@ -6,13 +6,13 @@ from core.models import PermissionLevel
 from dislash import slash_commands
 from dislash.interactions import ActionRow, Button, ButtonStyle
 
-    Neko1 = ActionRow(
-        Button(
-            Style=ButtonStyle.link,
-            label="Original Image",
-            url=f"{result.url}"
-        )
-    )    
+Neko1 = ActionRow(
+    Button(
+        Style=ButtonStyle.link,
+        label="Original Image",
+        url=f"{result.url}"
+    )
+)
 
 class Nekos(commands.Cog):
     """
