@@ -37,7 +37,7 @@ class Nekos(commands.Cog):
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=result.url)
         await ctx.reply(
-            embed=embed
+            embed=embed,
             components=[Neko1]
         )
     @commands.command()
