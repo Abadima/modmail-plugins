@@ -6,14 +6,6 @@ from core.models import PermissionLevel
 from dislash import slash_commands
 from dislash.interactions import ActionRow, Button, ButtonStyle
 
-#Neko1 = ActionRow(
-#     Button(
-#         style=ButtonStyle.link,
-#         label="Original Image",
-#         url=f"{result.url}"
-#     )
-#)
-
 class Nekos(commands.Cog):
     """
     Nekos! Made by Abadima
@@ -40,8 +32,8 @@ class Nekos(commands.Cog):
             embed=embed,
             components = [ActionRow(
                 Button(style=ButtonStyle.link, label="Source", url=f"{result.url}")
-                )]
-        )
+            )])
+        
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 5, commands.BucketType.member)
@@ -58,7 +50,11 @@ class Nekos(commands.Cog):
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=imgjson["url"])
-        await ctx.reply(embed=embed)
+        await ctx.reply(
+            embed=embed,
+            components = [ActionRow(
+                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+            )])
         
     @commands.command(aliases=["ngif"])
     @checks.has_permissions(PermissionLevel.SUPPORTER)
@@ -76,7 +72,11 @@ class Nekos(commands.Cog):
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=imgjson["url"])
-        await ctx.reply(embed=embed)
+        await ctx.reply(
+            embed=embed,
+            components = [ActionRow(
+                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+            )])
         
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
@@ -94,7 +94,11 @@ class Nekos(commands.Cog):
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=imgjson["url"])
-        await ctx.reply(embed=embed)
+        await ctx.reply(
+            embed=embed,
+            components = [ActionRow(
+                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+            )])
         
     @commands.command(aliases=["nav"])
     @checks.has_permissions(PermissionLevel.SUPPORTER)
@@ -145,7 +149,11 @@ class Nekos(commands.Cog):
        )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=imgjson["url"])
-        await ctx.reply(embed=embed)
+        await ctx.reply(
+            embed=embed,
+            components = [ActionRow(
+                Button(style=ButtonStyle.link, label="Source", url=f"{imgjson["url"]}")
+            )])
 
 def setup(bot):
     bot.add_cog(Nekos(bot))
