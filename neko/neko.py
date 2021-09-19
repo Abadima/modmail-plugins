@@ -3,6 +3,9 @@ from discord.ext import commands
 from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
+from dislash import slash_commands
+from dislash.interactions import ActionRow, Button, ButtonStyle
+
 
 class Nekos(commands.Cog):
     """
@@ -26,8 +29,11 @@ class Nekos(commands.Cog):
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         embed.set_image(url=result.url)
-        await ctx.reply(embed=embed)
-        
+        await ctx.reply(
+            embed=embed
+            components = ActionRow(
+                Button(Style=ButtonStyle.link,label="Original Image", url=f"{result.url}")
+        )    
     @commands.command()
     @checks.has_permissions(PermissionLevel.REGULAR)
     @commands.cooldown(1, 5, commands.BucketType.member)
