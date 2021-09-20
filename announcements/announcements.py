@@ -9,7 +9,7 @@ from core.models import PermissionLevel
 
 class Announcements(commands.Cog):
     """
-    Simple Announcements, Thanks Neko!
+    Simple Announcements
     """
 
     def __init__(self, bot):
@@ -45,8 +45,8 @@ class Announcements(commands.Cog):
         def check(msg: discord.Message):
             return ctx.author == msg.author and ctx.channel == msg.channel
 
-        # def check_reaction(reaction: discord.Reaction, user: discord.Member):
-        #     return ctx.author == user and (str(reaction.emoji == "✅") or str(reaction.emoji) == "❌")
+         def check_reaction(reaction: discord.Reaction, user: discord.Member):
+             return ctx.author == user and (str(reaction.emoji == "✅") or str(reaction.emoji) == "❌")
 
         def title_check(msg: discord.Message):
             return (
@@ -69,10 +69,10 @@ class Announcements(commands.Cog):
                 and (len(msg.content) < 2048)
             )
 
-        # def author_check(msg: discord.Message):
-        #     return (
-        #             ctx.author == msg.author and ctx.channel == msg.channel and (len(msg.content) < 256)
-        #     )
+         def author_check(msg: discord.Message):
+             return (
+                     ctx.author == msg.author and ctx.channel == msg.channel and (len(msg.content) < 256)
+             )
 
         def cancel_check(msg: discord.Message):
             if msg.content == "cancel" or msg.content == f"{ctx.prefix}cancel":
@@ -326,14 +326,6 @@ class Announcements(commands.Cog):
             grole: discord.Role = guild.get_role(role.id)
             if grole.mentionable is True:
                 await grole.edit(mentionable=False)
-
-    @commands.Cog.listener()
-    async def on_ready(self):
-        async with self.bot.session.post(
-            "https://counter.modmail-plugins.piyush.codes/api/instances/announcement",
-            json={"id": self.bot.user.id},
-        ):
-            print("Posted to Plugin API")
 
     @staticmethod
     async def generate_embed(description: str):
