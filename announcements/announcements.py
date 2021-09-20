@@ -45,8 +45,8 @@ class Announcements(commands.Cog):
         def check(msg: discord.Message):
             return ctx.author == msg.author and ctx.channel == msg.channel
 
-         def check_reaction(reaction: discord.Reaction, user: discord.Member):
-             return ctx.author == user and (str(reaction.emoji == "✅") or str(reaction.emoji) == "❌")
+        def check_reaction(reaction: discord.Reaction, user: discord.Member):
+            return ctx.author == user and (str(reaction.emoji == "✅") or str(reaction.emoji) == "❌")
 
         def title_check(msg: discord.Message):
             return (
