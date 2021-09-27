@@ -6,7 +6,7 @@ from core.models import PermissionLevel
 
 class Nekos(commands.Cog):
     """
-    Nekos! Made by Abadima
+    Nekos! Legacy Edition Made by Abadima
     """
     def __init__(self, bot):
         self.bot = bot
