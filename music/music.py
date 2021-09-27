@@ -410,7 +410,6 @@ class Music(commands.Cog, name="Music"):
             description=f"To run an API, run: **(Prefix)musicconfig api (URL)** \n \n lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 \n lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"
         )
             embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-            embed.set_image(url=result.url)
             await ctx.author.send(embed=embed)
             await ctx.send(f"{ctx.author.mention} Please check your DM!")
         except discord.HTTPException:
