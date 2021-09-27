@@ -23,7 +23,7 @@ if not os.path.exists(MUSIC_STATE_PATH):
     os.mkdir(MUSIC_STATE_PATH)
 
 
-class Music(commands.Cog, name="music"):
+class Music(commands.Cog, name="Music"):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         self._spotify: typing.Optional[Spotify] = None
