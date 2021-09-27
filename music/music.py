@@ -1,9 +1,4 @@
-import asyncio
-import base64
-import json
-import os
-import time
-import typing
+import asyncio,base64,json,os,time,typing
 import urllib.parse
 import zlib
 from base64 import b64decode
@@ -207,8 +202,8 @@ class Music(commands.Cog, name="music"):
         if not self.bot.lavalink.node_manager.available_nodes:
             raise Failure(ctx, "Music isn't ready/configured yet, try again later...\n"
                                f"You can configure music with `{self.bot.prefix}musicconfig`. "
-                               "If you already configured music with your API URI and it's still not working, "
-                               "perhaps check logs to see the error.")
+                               "If you believe music has already been configured, "
+                               "you are welcome to ping the bot host.")
         await self.ensure_voice(ctx)
 
     async def ensure_voice(self, ctx):
@@ -392,7 +387,7 @@ class Music(commands.Cog, name="music"):
         """
         There are three valid config types: `api`, `spotify` and `genius`.
 
-        Courtesy of ¥¥lorenzo¥¥#0001, you can request a **free** API URI from us. Run the `{prefix}requestapi` command to get your very own api URI.
+        Run the `{prefix}requestapi` to obtain an API URL for this bot.
 
         Spotify is for spotify support and genius is for lyrics search.
 
@@ -405,9 +400,9 @@ class Music(commands.Cog, name="music"):
 
         Examples (yours would definitely be different):
         ```
-        {prefix}musicconfig api lavalink://us:verysecretpw@123.321.1.32:1234
-        {prefix}musicconfig spotify bc8500a0bb59f4336393ae30e9a82930c:358500a0bb595536393ae30e9a82930d
-        {prefix}musicconfig genius YtRxZDO3jcOId098iE49blkckKdj3oIdjOS2CAZEGDUiOT9Q4k3OR_p-Kdih93NL
+        {prefix}musicconfig api lavalink://loc:password@ip
+        {prefix}musicconfig spotify (code)
+        {prefix}musicconfig genius (access key)
         ```
         """
         if type == "spotify":
