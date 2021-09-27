@@ -9,8 +9,6 @@ This is the Legacy Version, use this if the latest version is not working with y
 # Commands
 
 ```
-[P]nekoavatar/nav (Neko Avatar, Nekos.Life API)
-
 [P]Nekos (Help Menu)
 
 [P]neko (Neko Pic, NekosBest API)
