@@ -379,14 +379,16 @@ class Music(commands.Cog, name="music"):
             messages[i] = prefix + messages[i].replace('```', '``\u200b`').replace('@', '@\u200b') + suffix
         return messages
     
-        @commands.cooldown(1, 10)
+    @commands.cooldown(1, 10)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
     @commands.command()
     @checks.has_permissions(PermissionLevel.OWNER)
     async def requestapi(self, ctx):
         """Request a free api URI
-        Note: you will send include some data with your request, such as the bot ID and name,
-        for tracking API usage purposes."""
+        Note: the API links listed are tested, 
+        if you find that any one of them is not working,
+        please contact the bot owner.
+        """
         app = await self.bot.application_info()
         if app.team:
             owner_ids = [m.id for m in app.team.members]
