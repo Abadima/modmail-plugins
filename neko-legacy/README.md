@@ -1,6 +1,7 @@
 # Neko (Legacy)
 
 Say Hello to Neko, by Abadima! If you have any issues, be sure to let me know in the issues category, so I know!
+
 This is the Legacy Version, use this if the latest version is not working with your bot.
 
 ## How to Install
