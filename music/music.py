@@ -384,7 +384,7 @@ class Music(commands.Cog, name="music"):
     @commands.command()
     @checks.has_permissions(PermissionLevel.OWNER)
     async def requestapi(self, ctx):
-        """Request a free api URI
+        """Obtain a Free API
         Note: the API links listed are tested, 
         if you find that any one of them is not working,
         please contact the bot owner.
