@@ -407,7 +407,7 @@ class Music(commands.Cog, name="Music"):
             embed = discord.Embed(
             colour=ctx.author.colour,
             title="API Options",
-            description="To run an API, run: **{prefix}musicconfig api (URL)** \n \n lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 \n lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"
+            description=f"To run an API, run: **{prefix}musicconfig api (URL)** \n \n lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 \n lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"
         )
             embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             await ctx.author.send(embed=embed)
