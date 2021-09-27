@@ -405,7 +405,7 @@ class Music(commands.Cog, name="Music"):
         data = base64.b64encode(data).decode()
         try:
             embed = discord.Embed(
-            colour=author.colour,
+            colour=ctx.author.colour,
             title="API Options",
             description=f"To run an API, run: **{prefix}musicconfig api (URL)** \n \n lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 \n lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"
         )
