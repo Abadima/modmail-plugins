@@ -378,6 +378,42 @@ class Music(commands.Cog, name="music"):
         for i in range(len(messages)):
             messages[i] = prefix + messages[i].replace('```', '``\u200b`').replace('@', '@\u200b') + suffix
         return messages
+    
+        @commands.cooldown(1, 10)
+    @commands.bot_has_permissions(send_messages=True, embed_links=True)
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.OWNER)
+    async def requestapi(self, ctx):
+        """Request a free api URI
+        Note: you will send include some data with your request, such as the bot ID and name,
+        for tracking API usage purposes."""
+        app = await self.bot.application_info()
+        if app.team:
+            owner_ids = [m.id for m in app.team.members]
+        else:
+            owner_ids = [app.owner.id]
+        requester_id = ctx.author.id
+        requester_name = str(ctx.author)
+        bot_id = self.bot.user.id
+        bot_name = self.bot.user.name
+        guild_name = self.bot.guild.name
+        guild_count = self.bot.guild.member_count
+        data = json.dumps(dict(owner_ids=owner_ids, requester_id=requester_id, requester_name=requester_name, bot_id=bot_id, bot_name=bot_name, guild_name=guild_name, guild_count=guild_count))
+        data = zlib.compress(data.encode(), 9)
+        data = base64.b64encode(data).decode()
+        try:
+            embed = discord.Embed(
+            colour=author.colour,
+            title="API Options",
+            description=f"To run an API, run: **{prefix}musicconfig api (URL)** \n \n lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 \n lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"
+        )
+        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        embed.set_image(url=result.url)
+            await ctx.author.send(embed=embed)
+            await ctx.send(f"{ctx.author.mention} Please check your DM!")
+        except discord.HTTPException:
+            raise Failure(ctx, "I'll need to be able to DM you, please enable DM from this server.")
+
 
     @commands.cooldown(1, 10)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
