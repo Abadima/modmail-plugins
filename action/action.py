@@ -295,7 +295,7 @@ class Action(commands.Cog):
         """Furry Mode!"""
         author = ctx.author
         embed = discord.Embed(
-                colour=user.colour,
+                colour=ctx.author.colour,
                 description=f"OwO Coming Soon"
             )
         await ctx.reply(embed=embed)
