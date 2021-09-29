@@ -290,7 +290,7 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.has_permissions(PermissionLevel.REGULAR)
     async def afurmode(self, ctx: commands.Context):
         """Furry Mode!"""
         author = ctx.author
