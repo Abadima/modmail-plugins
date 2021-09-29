@@ -291,7 +291,7 @@ class Action(commands.Cog):
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.SUPPORTER)
-    async def action_furry(self, ctx: commands.Context):
+    async def afurmode(self, ctx: commands.Context):
         """Furry Mode!"""
         author = ctx.author
         embed = discord.Embed(
