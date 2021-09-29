@@ -285,5 +285,20 @@ class Action(commands.Cog):
         embed.description = f"{author.mention} is dancing!"
         embed.set_image(url=result.url)
         await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.guild_only()
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    async def action_furry(self, ctx: commands.Context, user: discord.Member):
+        """Furry Mode!"""
+        author = ctx.author
+        embed = discord.Embed(
+                colour=user.colour,
+                description=f"OwO Coming Soon"
+            )
+        await ctx.reply(embed=embed)
+            
 def setup(bot):
     bot.add_cog(Action(bot))
