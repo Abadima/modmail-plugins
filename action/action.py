@@ -76,10 +76,10 @@ class Action(commands.Cog):
             img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
-            if user == self.bot.user:
-                msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
-                
+        if user == self.bot.user:
+            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
+            
         if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
@@ -93,9 +93,10 @@ class Action(commands.Cog):
             
         if furry_mode is False or None:
             result = await self.client.get_image("hug")
-            if user == self.bot.user:
-                msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
+        if user == self.bot.user:
+            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
+        
         if user is not ctx.author:
             embed = discord.Embed(
                 colour=user.colour,
@@ -103,6 +104,7 @@ class Action(commands.Cog):
             )
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
+        
         else:
             msg = "One dOEs NOt SiMplY hUg THeIR oWn sELF!"
             await ctx.reply(msg)
