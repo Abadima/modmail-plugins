@@ -295,16 +295,43 @@ class Action(commands.Cog):
     async def afurmode(self, ctx: commands.Context):
         """Furry Mode!"""
         author = ctx.author
-        embed = discord.Embed(
-                colour=ctx.author.colour,
-                description=f"Test Function"
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        if furry_mode is None:
+            await self.db.find_one_and_update(
+                {'_id': 'action-config'},
+                {'$set': {'furry_mode': True}},
+                upsert=True
             )
-        await ctx.reply(embed=embed)
-        await self.db.find_one_and_update(
-            {'_id': 'action-config'},
-            {'$set': {'furry_mode': True}},
-            upsert=True
-        )
+            embed = discord.Embed(
+                colour=ctx.author.colour,
+                description=f"Enabled Furry Mode"
+            )
+            await ctx.reply(embed=embed)
+            
+        if furry_mode is True:
+            await self.db.find_one_and_update(
+                {'_id': 'action-config'},
+                {'$set': {'furry_mode': False}},
+                upsert=True
+            )
+            embed = discord.Embed(
+                colour=ctx.author.colour,
+                description=f"Disabled Furry Mode"
+            )
+            await ctx.reply(embed=embed)
+            
+        if furry_mode is False:
+            await self.db.find_one_and_update(
+                {'_id': 'action-config'},
+                {'$set': {'furry_mode': True}},
+                upsert=True
+            )
+            embed = discord.Embed(
+                colour=ctx.author.colour,
+                description=f"Enabled Furry Mode"
+            )
+            await ctx.reply(embed=embed)
             
 def setup(bot):
     bot.add_cog(Action(bot))
