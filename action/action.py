@@ -73,11 +73,15 @@ class Action(commands.Cog):
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
         if furry_mode is True:
-            result = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
-            print(result.url)
+            img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
+            imgtxt = await img.text()
+            imgjson = json.loads(imgtxt)
+            result.url = imgjson["url"]
+            
         if furry_mode is False:
             result = await self.client.get_image("hug")
             print(result.url)
+            
         if user == self.bot.user:
             msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
