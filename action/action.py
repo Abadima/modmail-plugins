@@ -111,7 +111,12 @@ class Action(commands.Cog):
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             embed.set_image(url=imgjson["images"][0]["url"])
-            return await ctx.reply(embed=embed)
+            return await ctx.reply(
+                embed=embed,
+                components = [ActionRow(
+                    Button(style=ButtonStyle.link, label="Source", url=imgjson["images"][0]["url"])
+                )])
+                
         
         if furry_mode is False or None:
             result = await self.client.get_image("hug")
