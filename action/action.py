@@ -301,6 +301,7 @@ class Action(commands.Cog):
         else:
             msg = "Congrats you just fed yourself."
             await ctx.reply(msg)
+            
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
@@ -325,7 +326,38 @@ class Action(commands.Cog):
         embed.description = f"{author.mention} is dancing!"
         embed.set_image(url=result.url)
         await ctx.send(embed=embed)
+  
+    @commands.command()
+    @commands.guild_only()
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    async def boop(self, ctx: commands.Context, user: discord.Member):
+        """Boop a user!"""
+        author = ctx.author
+        if user == self.bot.user:
+            msg = f"OwO {author.mention} :heart:"
+            return await ctx.reply(msg)
+        if user is not author:
+            embed = discord.Embed(
+                colour=user.colour,
+                description=f"*{author.mention} Booped {user.mention}*"
+            )
+        if furry_mode is True and user is not ctx.author:
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/boop')
+            imgtxt = await img.text()
+            imgjson = json.loads(imgtxt)
+            embed.set_image(url=imgjson["images"][0]["url"])
+            return await ctx.reply(embed=embed)
         
+        if furry_mode is False or None:
+            embed.description=f"Not Available"
+        #    embed.set_image(url=result.url)
+            return await ctx.reply(embed=embed)
+        else:
+            msg = "Hehe! You booped yourself :3"
+            await ctx.reply(msg)
+            
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
