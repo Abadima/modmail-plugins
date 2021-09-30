@@ -335,6 +335,9 @@ class Action(commands.Cog):
     async def boop(self, ctx: commands.Context, user: discord.Member):
         """Boop a user!"""
         author = ctx.author
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             msg = f"OwO {author.mention} :heart:"
             return await ctx.reply(msg)
@@ -366,8 +369,6 @@ class Action(commands.Cog):
     async def afurmode(self, ctx: commands.Context):
         """Furry Mode!"""
         author = ctx.author
-        config = await self.db.find_one({'_id': 'action-config'})
-        furry_mode = (config or {}).get('furry_mode')
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
         if furry_mode is None:
