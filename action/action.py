@@ -14,11 +14,11 @@ class Action(commands.Cog):
     """
     def __init__(self, bot):
         self.bot = bot
-        self.interclient = InteractionClient(bot, test_guilds=[880192403707924590])
+        ehe = InteractionClient(bot, test_guilds=[880192403707924590])
         self.db = bot.plugin_db.get_partition(self)
         self.client = Client()
         
-    self.interclient.slash_command(
+    ehe.slash_command(
     description="Test Feature",
     options=[
         Option("user", "Test Function", OptionType.USER)
