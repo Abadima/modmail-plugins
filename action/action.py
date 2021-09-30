@@ -344,7 +344,7 @@ class Action(commands.Cog):
         if user is not author:
             embed = discord.Embed(
                 colour=user.colour,
-                description=f"*{author.mention} Booped {user.mention}*"
+                description=f"*{author.mention} Booped {user.mention} OwO*"
             )
         if furry_mode is True and user is not ctx.author:
             img = await self.bot.session.get('https://v2.yiff.rest/furry/boop')
