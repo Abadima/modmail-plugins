@@ -4,7 +4,7 @@ from discord.ext import commands
 from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
-from dislash import InteractionClient, Option, OptionType
+from dislash import InteractionClient, ActionRow, Button, ButtonStyle
 
 class Action(commands.Cog):
     """
@@ -12,18 +12,8 @@ class Action(commands.Cog):
     """
     def __init__(self, bot):
         self.bot = bot
-        self.int = InteractionClient(bot, test_guilds=[880192403707924590])
         self.db = bot.plugin_db.get_partition(self)
         self.client = Client()
-        
-    @self.int.slash_command(
-    description="Test Feature",
-    options=[
-        Option("user", "Test Function", OptionType.USER)
-    ]
-)
-    async def test(inter):
-        await inter.reply("Test Complete")
         
     @commands.command()
     @commands.guild_only()
