@@ -70,7 +70,14 @@ class Action(commands.Cog):
     async def hug(self, ctx: commands.Context, user: discord.Member):
         """hug a user!"""
         author = ctx.author
-        result = await self.client.get_image("hug")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        if furry_mode = True:
+            result = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
+            
+        if furry_mode = False:
+            result = await self.client.get_image("hug")
+            
         if user == self.bot.user:
             msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
