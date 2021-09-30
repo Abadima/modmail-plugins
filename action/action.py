@@ -331,7 +331,7 @@ class Action(commands.Cog):
             )
             embed = discord.Embed(
                 colour=ctx.author.colour,
-                title=f"Status: {furry_mode}"
+                title=f"Status: {furry_mode}",
                 description=f"Enabled Furry Mode"
             )
             await ctx.reply(embed=embed)
