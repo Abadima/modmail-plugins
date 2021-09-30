@@ -368,6 +368,8 @@ class Action(commands.Cog):
         author = ctx.author
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         if furry_mode is None:
             await self.db.find_one_and_update(
                 {'_id': 'action-config'},
