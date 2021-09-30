@@ -4,6 +4,8 @@ from discord.ext import commands
 from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
+from discord.ext import commands
+from dislash import InteractionClient
 
 class Action(commands.Cog):
     """
@@ -13,6 +15,9 @@ class Action(commands.Cog):
         self.bot = bot
         self.db = bot.plugin_db.get_partition(self)
         self.client = Client()
+        inter_client = InteractionClient(bot, test_guilds=[880192403707924590])
+
+        
         
     @commands.command()
     @commands.guild_only()
