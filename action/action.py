@@ -62,6 +62,7 @@ class Action(commands.Cog):
             
         embed.set_image(url=result.url)
         await ctx.reply(embed=embed)
+        
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -72,39 +73,26 @@ class Action(commands.Cog):
         author = ctx.author
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
+        
+        result = await self.client.get_image("hug")
+        if user == self.bot.user:
+            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
+            return await ctx.reply(msg)
+        if user is not ctx.author:
+            embed = discord.Embed(
+                colour=user.colour,
+                description=f"*{author.mention} hugs {user.mention}*"
+            )
         if furry_mode is True:
             img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
-        if user == self.bot.user:
-            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
-            return await ctx.reply(msg)
-            
-        if user is not ctx.author:
-            embed = discord.Embed(
-                colour=user.colour,
-                description=f"*{author.mention} hugs {user.mention}*"
-            )
             embed.set_image(url=imgjson["url"])
             return await ctx.reply(embed=embed)
-        else:
-            msg = "One dOEs NOt SiMplY hUg THeIR oWn sELF!"
-            await ctx.reply(msg)
-            
-        if furry_mode is False or None:
-            result = await self.client.get_image("hug")
-        if user == self.bot.user:
-            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
-            return await ctx.reply(msg)
         
-        if user is not ctx.author:
-            embed = discord.Embed(
-                colour=user.colour,
-                description=f"*{author.mention} hugs {user.mention}*"
-            )
+        if furry_mode is False or None:
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
-        
         else:
             msg = "One dOEs NOt SiMplY hUg THeIR oWn sELF!"
             await ctx.reply(msg)
@@ -126,11 +114,14 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} slaps {user.mention}*" 
             )
+        if 
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
         else:
             msg = "Don't slap yourself, you're precious!"
             await ctx.reply(msg)
+            
+            
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
