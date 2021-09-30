@@ -22,7 +22,8 @@ class Action(commands.Cog):
     async def kiss(self, ctx: commands.Context, user: discord.Member):
         """Kiss a user!"""
         author = ctx.author
-        result = await self.client.get_image("kiss")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         if user == self.bot.user:
             msg = f"*OwO! kisses {author.mention} back!*"
             return await ctx.reply(msg)
@@ -31,11 +32,21 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} kisses {user.mention}*"
             )
+        if furry_mode is True and user is not ctx.author:
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/kiss')
+            imgtxt = await img.text()
+            imgjson = json.loads(imgtxt)
+            embed.set_image(url=imgjson["images"][0]["url"])
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("kiss")
             embed.set_image(url=result.url)
-            return await ctx.send(embed=embed)
+            return await ctx.reply(embed=embed)
         else:
             msg = "Congratulations, you kissed yourself! LOL!!!"
             await ctx.reply(msg)
+            
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -74,7 +85,6 @@ class Action(commands.Cog):
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
         
-        result = await self.client.get_image("hug")
         if user == self.bot.user:
             msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
@@ -91,6 +101,7 @@ class Action(commands.Cog):
             return await ctx.reply(embed=embed)
         
         if furry_mode is False or None:
+            result = await self.client.get_image("hug")
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
         else:
