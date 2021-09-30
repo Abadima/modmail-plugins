@@ -83,7 +83,7 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} hugs {user.mention}*"
             )
-        if furry_mode is True:
+        if furry_mode is True and user is not ctx.author:
             img = await self.bot.session.get('https://v2.yiff.rest/furry/hug')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
