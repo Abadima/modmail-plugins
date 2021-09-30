@@ -89,8 +89,7 @@ class Action(commands.Cog):
             imgjson = json.loads(imgtxt)
             print(imgjson.images[0].url)
             print(imgtxt.images[0].url
-           # print(imgjson[[0].url])
-            embed.set_image(url=imgjson["url"])
+           # embed.set_image(url=imgjson["url"])
             return await ctx.reply(embed=embed)
         
         if furry_mode is False or None:
