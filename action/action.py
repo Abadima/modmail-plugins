@@ -72,10 +72,10 @@ class Action(commands.Cog):
         author = ctx.author
         config = await self.db.find_one({'_id': 'action-config'})
         furry_mode = (config or {}).get('furry_mode')
-        if furry_mode = True:
+        if furry_mode is True:
             result = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
             
-        if furry_mode = False:
+        if furry_mode is False:
             result = await self.client.get_image("hug")
             
         if user == self.bot.user:
