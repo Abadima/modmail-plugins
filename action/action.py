@@ -290,15 +290,20 @@ class Action(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
-    @checks.has_permissions(PermissionLevel.REGULAR)
+    @checks.has_permissions(PermissionLevel.OWNER)
     async def afurmode(self, ctx: commands.Context):
         """Furry Mode!"""
         author = ctx.author
         embed = discord.Embed(
                 colour=ctx.author.colour,
-                description=f"OwO Coming Soon"
+                description=f"Test Function"
             )
         await ctx.reply(embed=embed)
+        await self.db.find_one_and_update(
+            {'_id': 'action-config'},
+            {'$set': {'furry_mode': True}},
+            upsert=True
+        )
             
 def setup(bot):
     bot.add_cog(Action(bot))
