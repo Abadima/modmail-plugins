@@ -218,8 +218,6 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} cuddles {user.mention}*"
             )
-            embed.set_image(url=result.url)
-            return await ctx.reply(embed=embed)
         
         if furry_mode is True and user is not ctx.author:
             img = await self.bot.session.get('https://v2.yiff.rest/furry/cuddle')
