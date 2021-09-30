@@ -56,7 +56,9 @@ class Action(commands.Cog):
         """Pats a user!"""
         
         author = ctx.author
-        result = await self.client.get_image("pat")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             msg = "Thanks for the pats, I guess."
             return await ctx.reply(msg)
@@ -65,14 +67,24 @@ class Action(commands.Cog):
                 colour=user.colour,
             description= f"*{author.mention} pats {user.mention}*"
         )
+        if furry_mode is True:
+            embed.description=f"Not Available"
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("pat")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
+            
         else:
             embed = discord.Embed(
                 colour=user.colour,
-            description=f"*{author.mention} pats themselves, I guess?*"
+                description=f"*{author.mention} pats themselves, I guess?*",
+                set_image(url=result.url)
         )
+            await ctx.reply(embed=embed)
             
-        embed.set_image(url=result.url)
-        await ctx.reply(embed=embed)
         
     @commands.command()
     @commands.guild_only()
@@ -116,7 +128,9 @@ class Action(commands.Cog):
     async def slap(self, ctx: commands.Context, user: discord.Member):
         """Slaps a user!"""
         author = ctx.author
-        result = await self.client.get_image("slap")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
@@ -125,8 +139,16 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} slaps {user.mention}*" 
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("slap")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
+            
         else:
             msg = "Don't slap yourself, you're precious!"
             await ctx.reply(msg)
@@ -140,7 +162,9 @@ class Action(commands.Cog):
     async def baka(self, ctx: commands.Context, user: discord.Member):
         """Call a user BAKA with a GIF reaction!"""
         author = ctx.author
-        result = await self.client.get_image("baka")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             msg = "**Ｎ Ｏ   Ｕ**"
             return await ctx.reply(msg)
@@ -149,8 +173,15 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} calls {user.mention} a BAKA bahahahahaha*"
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("baka")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             msg = "You really are BAKA, stupid."
             await ctx.reply(msg)
@@ -162,7 +193,9 @@ class Action(commands.Cog):
     async def tickle(self, ctx: commands.Context, user: discord.Member):
         """Tickles a user!"""
         author = ctx.author
-        result = await self.client.get_image("tickle")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             msg = f"LMAO. Tickling a bot now, are we? {author.mention}"
             return await ctx.reply(msg)
@@ -171,8 +204,16 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} tickles {user.mention}*"
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("tickle")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
+            
         else:
             msg = "Tickling yourself is boring!"
             msg += " Tickling others is more fun though."
@@ -185,7 +226,8 @@ class Action(commands.Cog):
     async def smug(self, ctx: commands.Context, user: discord.Member):
         """Be smug towards someone!"""
         author = ctx.author
-        result = await self.client.get_image("smug")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         
         if user == self.bot.user:
             msg = "**hehe** *smugs at you*"
@@ -195,8 +237,16 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} smugs at {user.mention}*"
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("smug")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
+            
         else:
             msg = f"{author.mention} Smugs at themselves..?"
             await ctx.reply(msg)
@@ -242,7 +292,8 @@ class Action(commands.Cog):
     async def poke(self, ctx: commands.Context, user: discord.Member):
         """Pokes a user!"""
         author = ctx.author
-        result = await self.client.get_image("poke")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         if user == self.bot.user:
             msg = f"Awwww! Hey there. *pokes {author.mention} back!*"
             return await ctx.reply(msg)
@@ -251,8 +302,15 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} casually pokes {user.mention}*"
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("poke")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             msg = "Self-poking is widely regarded as a bad move!"
             await ctx.reply(msg)
@@ -265,7 +323,8 @@ class Action(commands.Cog):
     async def wave(self, ctx: commands.Context, user: discord.Member):
         """Wave at a user!"""
         author = ctx.author
-        result = await self.client.get_image("wave")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         if user == self.bot.user:
             msg = f"Awwww! Hey there. *waves at {author.mention} back!*"
             return await ctx.reply(msg)
@@ -274,11 +333,19 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} waves at {user.mention}*"
             )
-            embed.set_image(url=result.url)
+        if furry_mode is True:
+            embed.description=f"Not Available"
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("wave")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             msg = "What? You can't do that!"
             await ctx.reply(msg)
+            
     @commands.command()
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
@@ -287,7 +354,8 @@ class Action(commands.Cog):
     async def feed(self, ctx: commands.Context, user: discord.Member):
         """Feeds a user!"""
         author = ctx.author
-        result = await self.client.get_image("feed")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         if user == self.bot.user:
             msg = f"OWO! Yummy food! Thanks {author.mention} :heart:"
             return await ctx.reply(msg)
@@ -296,8 +364,16 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} feeds {user.mention}*"
             )
+        if furry_mode is True:
+            embed.description=f"Not Available"
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("feed")
             embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
             await ctx.reply(embed=embed)
+            
         else:
             msg = "Congrats you just fed yourself."
             await ctx.reply(msg)
@@ -309,11 +385,20 @@ class Action(commands.Cog):
     async def cry(self, ctx: commands.Context):
         """Let others know you feel like crying or just wanna cry."""
         author = ctx.author
-        result = await self.client.get_image("cry")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
         embed = discord.Embed(colour=author.colour)
         embed.description = f"{author.mention} is crying"
-        embed.set_image(url=result.url)
-        await ctx.send(embed=embed)
+        
+        if furry_mode is True:
+            embed.description=f"Not Available"
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("cry")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
+        
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
@@ -321,11 +406,19 @@ class Action(commands.Cog):
     async def dance(self, ctx: commands.Context):
         """Dance! Hehe"""
         author = ctx.author
-        result = await self.client.get_image("dance")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         embed = discord.Embed(colour=author.colour)
         embed.description = f"{author.mention} is dancing!"
-        embed.set_image(url=result.url)
-        await ctx.send(embed=embed)
+        if furry_mode is True:
+            embed.description=f"Not Available"
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("dance")
+            embed.set_image(url=result.url)
+            return await ctx.send(embed=embed)
   
     @commands.command()
     @commands.guild_only()
@@ -379,7 +472,7 @@ class Action(commands.Cog):
             )
             embed = discord.Embed(
                 colour=ctx.author.colour,
-                title=f"Status: {furry_mode}",
+                title=f"Status: True",
                 description=f"Enabled Furry Mode"
             )
             await ctx.reply(embed=embed)
@@ -392,7 +485,7 @@ class Action(commands.Cog):
             )
             embed = discord.Embed(
                 colour=ctx.author.colour,
-                title=f"Status: {furry_mode}",
+                title=f"Status: False",
                 description=f"Disabled Furry Mode"
             )
             await ctx.reply(embed=embed)
@@ -405,7 +498,7 @@ class Action(commands.Cog):
             )
             embed = discord.Embed(
                 colour=ctx.author.colour,
-                title=f"Status: {furry_mode}",
+                title=f"Status: True",
                 description=f"Enabled Furry Mode"
             )
             await ctx.reply(embed=embed)
