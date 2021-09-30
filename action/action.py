@@ -4,9 +4,7 @@ from discord.ext import commands
 from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
-from discord.ext import commands
-from dislash import slash_commands
-from dislash import InteractionClient
+from dislash import InteractionClient, Option, OptionType
 
 class Action(commands.Cog):
     """
@@ -14,11 +12,11 @@ class Action(commands.Cog):
     """
     def __init__(self, bot):
         self.bot = bot
-        inter_client = InteractionClient(bot, test_guilds=[880192403707924590])
+        self.int = InteractionClient(bot, test_guilds=[880192403707924590])
         self.db = bot.plugin_db.get_partition(self)
         self.client = Client()
         
-    await inter_client.slash_command(
+    @self.int.slash_command(
     description="Test Feature",
     options=[
         Option("user", "Test Function", OptionType.USER)
