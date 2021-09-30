@@ -80,9 +80,9 @@ class Action(commands.Cog):
         else:
             embed = discord.Embed(
                 colour=user.colour,
-                description=f"*{author.mention} pats themselves, I guess?*",
-                set_image(url=result.url)
+                description=f"*{author.mention} pats themselves, I guess?*"
             )
+            embed.set_image(url=result.url)
             await ctx.reply(embed=embed)
             
         
