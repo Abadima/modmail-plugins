@@ -208,7 +208,9 @@ class Action(commands.Cog):
     async def cuddle(self, ctx: commands.Context, user: discord.Member):
         """Cuddles a user!"""
         author = ctx.author
-        result = await self.client.get_image("cuddle")
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        
         if user == self.bot.user:
             return await ctx.reply("Come come. We'll cuddle all day and night!")
         if user is not ctx.author:
@@ -218,6 +220,19 @@ class Action(commands.Cog):
             )
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
+        
+        if furry_mode is True and user is not ctx.author:
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/cuddle')
+            imgtxt = await img.text()
+            imgjson = json.loads(imgtxt)
+            embed.set_image(url=imgjson["images"][0]["url"])
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            result = await self.client.get_image("cuddle")
+            embed.set_image(url=result.url)
+            return await ctx.reply(embed=embed)
+        
         else:
             msg = "Cuddling yourself sounds like a gay move LOL!"
             await ctx.reply(msg)
