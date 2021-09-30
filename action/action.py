@@ -1,5 +1,5 @@
 from typing import Optional
-import discord
+import discord,json,asyncio,requests
 from discord.ext import commands
 from nekosbest import Client
 from core import checks
