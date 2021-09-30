@@ -3,7 +3,6 @@ from discord.ext import commands
 from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
-from dislash import slash_commands
 from dislash.interactions import ActionRow, Button, ButtonStyle
 
 class Nekos(commands.Cog):
