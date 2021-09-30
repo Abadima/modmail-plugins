@@ -17,9 +17,10 @@ class Action(commands.Cog):
         self.client = Client()
         inter_client = InteractionClient(bot, test_guilds=[880192403707924590])
         
+        
     @inter_client.slash_command(description="Test command")
     async def test(inter):
-    await inter.reply("Test Complete")
+        await inter.reply("Test Complete")
         
     @commands.command()
     @commands.guild_only()
