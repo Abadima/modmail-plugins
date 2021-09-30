@@ -114,7 +114,6 @@ class Action(commands.Cog):
                 colour=user.colour,
                 description=f"*{author.mention} slaps {user.mention}*" 
             )
-        if 
             embed.set_image(url=result.url)
             return await ctx.reply(embed=embed)
         else:
