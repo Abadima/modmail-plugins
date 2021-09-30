@@ -77,7 +77,8 @@ class Action(commands.Cog):
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             if user == self.bot.user:
-            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
+                msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
+                
             return await ctx.reply(msg)
         if user is not ctx.author:
             embed = discord.Embed(
@@ -93,7 +94,7 @@ class Action(commands.Cog):
         if furry_mode is False or None:
             result = await self.client.get_image("hug")
             if user == self.bot.user:
-            msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
+                msg = f"Awwww thanks! So nice of you! *hugs {author.mention} back*"
             return await ctx.reply(msg)
         if user is not ctx.author:
             embed = discord.Embed(
