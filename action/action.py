@@ -5,6 +5,7 @@ from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
 from discord.ext import commands
+from dislash import slash_commands
 from dislash import InteractionClient
 
 class Action(commands.Cog):
@@ -17,7 +18,7 @@ class Action(commands.Cog):
         self.db = bot.plugin_db.get_partition(self)
         self.client = Client()
         
-    @inter_client.slash_command(
+    inter_client.slash_command(
     description="Test Feature",
     options=[
         Option("user", "Test Function", OptionType.USER)
