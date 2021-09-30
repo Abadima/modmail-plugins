@@ -84,9 +84,10 @@ class Action(commands.Cog):
                 description=f"*{author.mention} hugs {user.mention}*"
             )
         if furry_mode is True:
-            img = await self.bot.session.get('https://nekos.life/api/v2/img/neko')
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/hug')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
+            print(imgjson["url"])
             embed.set_image(url=imgjson["url"])
             return await ctx.reply(embed=embed)
         
