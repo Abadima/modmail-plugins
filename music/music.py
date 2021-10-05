@@ -409,8 +409,8 @@ class Music(commands.Cog, name="Music"):
             title="API Options",
             description="""To run an API, run: **{prefix}musicconfig api (URL)** 
             
-            lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 
-            lavalink://whatwasthelastingyousaid@cope.darrennathanael.com:443"""
+            Main: lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 
+            Fallback: lavalink://whatwasthelastingyousaid@lava.darrennathanael.com:2095"""
         )
             embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             await ctx.author.send(embed=embed)
