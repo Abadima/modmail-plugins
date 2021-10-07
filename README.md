@@ -54,7 +54,7 @@ PLEASE DON'T TOUCH THIS-
 
 **[moderation](https://github.com/officialpiyush/modmail-plugins/tree/master/moderation) ~ [officialpiyush](https://github.com/officialpiyush)** + Extra Commands
 
-**[music](https://github.com/lorenzo132/modmail-plugins/tree/master/music) ~ [lorenzo132](https://github.com/lorenzo132)**
+**[music](https://github.com/lorenzo132/modmail-plugins/tree/master/music) ~ [lorenzo132](https://github.com/lorenzo132)** (Updated & Modified)
 
 **[poll](https://github.com/officialpiyush/modmail-plugins/tree/master/poll) ~ [officialpiyush](https://github.com/officialpiyush)** (Modified)
 
@@ -72,8 +72,8 @@ PLEASE DON'T TOUCH THIS-
 
 **[stats](https://github.com/KarateWumpus/modmail-plugins/tree/master/stats) ~ [KarateWumpus](https://github.com/KarateWumpus)**
 
-**[sview](https://github.com/robinmahieu/modmail-plugins/tree/master/supporters) ~ [robinmahieu](https://github.com/robinmahieu)**
+**[sview](https://github.com/robinmahieu/modmail-plugins/tree/master/supporters) ~ [robinmahieu](https://github.com/robinmahieu)** 
 
-**[trivia](https://github.com/Jerrie-Aries/modmail-plugins/tree/master/trivia) ~ [Jerrie-Aries](https://github.com/Jerrie-Aries)**
+**[trivia](https://github.com/Jerrie-Aries/modmail-plugins/tree/master/trivia) ~ [Jerrie-Aries](https://github.com/Jerrie-Aries)** 
 
 **[Tickets](https://github.com/sskewer/Modmail-Plugins/tree/master/easy-ticket) ~ [sskewer](https://github.com/sskewer)** (Translated & Modified)
