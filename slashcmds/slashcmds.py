@@ -13,8 +13,6 @@ class SlashCmds(commands.Cog):
     """
     def __init__(self, bot):
         self.bot = bot
-        self.db = bot.plugin_db.get_partition(self)
-        self.client = Client()
         
         
 def setup(bot):
