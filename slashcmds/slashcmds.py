@@ -19,7 +19,7 @@ class SlashCmds(commands.Cog):
     @commands.guild_only()
     @commands.cooldown(1, 2, commands.BucketType.member)
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def test(self, ctx: commands.Context, user: discord.Member):
+    async def test(self, ctx: commands.Context):
         """***NOT FUNCTIONAL***"""
         await ctx.reply('seriously, this feature is still W.I.P')
         
