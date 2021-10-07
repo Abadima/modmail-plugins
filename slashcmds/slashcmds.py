@@ -16,8 +16,7 @@ class SlashCmds(commands.Cog):
         
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
-    @commands.bot_has_permissions(embed_links=True)
+    @commands.cooldown(1, 2, commands.BucketType.member)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def test(self, ctx: commands.Context, user: discord.Member):
         """***NOT FUNCTIONAL***"""
