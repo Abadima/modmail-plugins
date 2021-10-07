@@ -21,7 +21,7 @@ class SlashCmds(commands.Cog):
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def test(self, ctx: commands.Context):
         """***NOT FUNCTIONAL***"""
-        await ctx.reply('seriously, this feature is still W.I.P')
+        await ctx.reply('seriously, this feature is still W.I.P',components = [ActionRow(Button(style=ButtonStyle.link, label="The Useless Web", url="https://theuselessweb.com/"))])
         
         
 def setup(bot):
