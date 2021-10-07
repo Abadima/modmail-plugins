@@ -14,6 +14,15 @@ class SlashCmds(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
+    @commands.command()
+    @commands.guild_only()
+    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    async def test(self, ctx: commands.Context, user: discord.Member):
+        """***NOT FUNCTIONAL***"""
+        await ctx.reply('seriously, this feature is still W.I.P')
+        
         
 def setup(bot):
     bot.add_cog(SlashCmds(bot))
