@@ -622,9 +622,9 @@ class Music(commands.Cog, name="Music"):
             colour=self.bot.main_color,
             title="Search Results",
             description=pages
-        )
+        ) # pages[-1]
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        return await ctx.send(embed[-1], allowed_mentions=AllowedMentions.none())
+        return await ctx.send(embed, allowed_mentions=AllowedMentions.none())
 
     @commands.cooldown(1, 1.5, type=commands.BucketType.guild)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
