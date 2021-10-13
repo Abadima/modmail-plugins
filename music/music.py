@@ -319,7 +319,7 @@ class Music(commands.Cog, name="Music"):
                 music_url = 'spotify:' + ':'.join(url.path.split('/')[1:])
             elif 'soundcloud.com' in url.netloc:
                 logger.spam("SoundCloud URL Matched")
-                music_url = 'soundcloud' + ':'.join(url.path.split('/')[1:])
+                music_url = 'soundcloud:' + ':'.join(url.path.split('/')[1:])
         except ValueError:
             pass
         return music_url, playlist
