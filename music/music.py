@@ -620,7 +620,7 @@ class Music(commands.Cog, name="Music"):
         pages = self._render(tracks)
         embed = discord.Embed(
             colour=author.colour,
-            title=f"Search Results"
+            title="Search Results",
             description=pages
         )
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
