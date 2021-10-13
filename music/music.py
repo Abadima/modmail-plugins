@@ -3,6 +3,7 @@ import urllib.parse
 import zlib
 from base64 import b64decode
 from collections import defaultdict
+from dislash.interactions import ActionRow, Button, ButtonStyle
 
 import lavalink
 
@@ -618,13 +619,13 @@ class Music(commands.Cog, name="Music"):
             tracks += [LazyAudioTrack.from_loaded(track, ctx.author.id)]
 
         pages = self._render(tracks)
-        embed = discord.Embed(
-            colour=self.bot.main_color,
-            title="Search Results",
-            description=pages
-        ) # pages[-1]
+#        embed = discord.Embed(
+ #           colour=self.bot.main_color,
+  #          title="Search Results",
+   #         description=pages
+    #    ) # pages[-1], embed=embed
         embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        return await ctx.send(pages[-1], embed=embed, allowed_mentions=AllowedMentions.none())
+        return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
 
     @commands.cooldown(1, 1.5, type=commands.BucketType.guild)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
@@ -1153,7 +1154,11 @@ class Music(commands.Cog, name="Music"):
         footer += f"{progress} {utils.seconds_to_time_string(current / 1000, int_seconds=True, format=3)} " \
                   f"/ {utils.seconds_to_time_string(total / 1000, int_seconds=True, format=3)}"
         embed.set_footer(text=footer)
-        await ctx.send(embed=embed)
+        await ctx.reply(
+            embed=embed,
+            components = [ActionRow(
+                Button(style=ButtonStyle.link, label="YouTube", url=player.current.uri)
+            )])
 
     @commands.cooldown(1, 2)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
