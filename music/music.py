@@ -618,7 +618,13 @@ class Music(commands.Cog, name="Music"):
             tracks += [LazyAudioTrack.from_loaded(track, ctx.author.id)]
 
         pages = self._render(tracks)
-        return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
+        embed = discord.Embed(
+            colour=author.colour,
+            title=f"Search Results"
+            description=pages
+        )
+        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        return await ctx.send(embed[-1], allowed_mentions=AllowedMentions.none())
 
     @commands.cooldown(1, 1.5, type=commands.BucketType.guild)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
