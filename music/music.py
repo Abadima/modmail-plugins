@@ -317,6 +317,9 @@ class Music(commands.Cog, name="Music"):
             elif 'open.spotify.com' in url.netloc:
                 logger.spam("Spotify URL matched")
                 music_url = 'spotify:' + ':'.join(url.path.split('/')[1:])
+            elif 'soundcloud.com' in url.netloc:
+                logger.spam("SoundCloud URL Matched")
+                music_url = 'soundcloud' + ':'.join(url.path.split('/')[1:])
         except ValueError:
             pass
         return music_url, playlist
@@ -572,7 +575,33 @@ class Music(commands.Cog, name="Music"):
             await track.load(player)
             pages = self._render([track])
             return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
+        
+        if query.startswith('soundcloud:'):
+            logger.spam("Processing SoundCloud")
+            try:
+                titles, playlist_name, playlist_link, spotify_image = await self._req_spotify(query)
+            except SpotifyError as e:
+                logger.debug("Bad SoundCloud %s", e)
+                raise Failure(ctx, "Not Available (Yet)")
+            if playlist_name:
+                if not titles:
+                    raise Failure(ctx, 'The SoundCloud link is empty!')
+                tracks = [LazyAudioTrack(f'ytsearch:{title}', title, ctx.author.id, duration=duration, spotify=True)
+                          for title, duration in titles]
+                await asyncio.gather(*[track.load(player) for track in tracks])
+                pages = self._render(tracks)
+                if len(pages) == 1:
+                    return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
+                session = PaginatorSession(ctx, *pages)
+                return await session.run()
 
+            track = LazyAudioTrack(f'ytsearch:{titles[0][0]}', titles[0][0], ctx.author.id,
+                                   duration=titles[0][1], spotify=True)
+            await track.load(player)
+            pages = self._render([track])
+            return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
+
+        
         if is_youtube_playlist:
             try:
                 result = await player.req_lavalink_playlist(query)
