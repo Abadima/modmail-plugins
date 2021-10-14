@@ -647,14 +647,18 @@ class Music(commands.Cog, name="Music"):
         for track in result['tracks'][:10]:
             tracks += [LazyAudioTrack.from_loaded(track, ctx.author.id)]
 
-        pages = self._render(tracks)
+      #  pages = self._render(tracks)
+        page = discord.Embed(title='Search Results',description=tracks)
+        
+        session = EmbedPaginatorSession(ctx, *tracks)
+        await session.run()
 #        embed = discord.Embed(
  #           colour=self.bot.main_color,
   #          title="Search Results",
    #         description=pages
     #    ) # pages[-1], embed=embed
-        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-        return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
+     #   embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+      #  return await ctx.send(pages[-1], allowed_mentions=AllowedMentions.none())
 
     @commands.cooldown(1, 1.5, type=commands.BucketType.guild)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
