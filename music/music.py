@@ -647,8 +647,8 @@ class Music(commands.Cog, name="Music"):
         for track in result['tracks'][:10]:
             tracks += [LazyAudioTrack.from_loaded(track, ctx.author.id)]
 
-      #  pages = self._render(tracks)
-        page = discord.Embed(title='Search Results',description=tracks)
+        pages = self._render(tracks)
+        page = discord.Embed(title='Search Results',description=pages)
         
         session = EmbedPaginatorSession(ctx, *tracks)
         await session.run()
