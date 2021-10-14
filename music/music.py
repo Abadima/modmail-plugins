@@ -15,6 +15,7 @@ from ._music import *
 
 from core import checks
 from core.models import getLogger, PermissionLevel
+from core.paginator import EmbedPaginatorSession
 
 
 logger = getLogger(__name__)
