@@ -48,7 +48,7 @@ class Action(commands.Cog):
             msg = "Congratulations, you kissed yourself! LOL!!!"
             await ctx.reply(msg)
             
-    @commands.command()
+    @commands.command(aliases=["pet"])
     @commands.guild_only()
     @commands.cooldown(1, 10, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
