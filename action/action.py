@@ -17,7 +17,7 @@ class Action(commands.Cog):
         
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def kiss(self, ctx: commands.Context, user: discord.Member):
@@ -50,7 +50,7 @@ class Action(commands.Cog):
             
     @commands.command(aliases=["pet"])
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def pat(self, ctx: commands.Context, user: discord.Member):
@@ -89,7 +89,7 @@ class Action(commands.Cog):
         
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def hug(self, ctx: commands.Context, user: discord.Member):
@@ -123,7 +123,7 @@ class Action(commands.Cog):
             
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def slap(self, ctx: commands.Context, user: discord.Member):
@@ -157,7 +157,7 @@ class Action(commands.Cog):
             
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def baka(self, ctx: commands.Context, user: discord.Member):
@@ -188,7 +188,7 @@ class Action(commands.Cog):
             await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def tickle(self, ctx: commands.Context, user: discord.Member):
@@ -221,7 +221,7 @@ class Action(commands.Cog):
             await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def smug(self, ctx: commands.Context, user: discord.Member):
@@ -253,7 +253,7 @@ class Action(commands.Cog):
             await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def cuddle(self, ctx: commands.Context, user: discord.Member):
@@ -287,7 +287,7 @@ class Action(commands.Cog):
             await ctx.reply(msg)
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def poke(self, ctx: commands.Context, user: discord.Member):
@@ -318,7 +318,7 @@ class Action(commands.Cog):
             
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def wave(self, ctx: commands.Context, user: discord.Member):
@@ -349,7 +349,7 @@ class Action(commands.Cog):
             
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def feed(self, ctx: commands.Context, user: discord.Member):
@@ -380,7 +380,7 @@ class Action(commands.Cog):
             await ctx.reply(msg)
             
     @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def cry(self, ctx: commands.Context):
@@ -401,7 +401,7 @@ class Action(commands.Cog):
             return await ctx.send(embed=embed)
         
     @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def dance(self, ctx: commands.Context):
@@ -423,7 +423,7 @@ class Action(commands.Cog):
   
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 8, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.REGULAR)
     async def boop(self, ctx: commands.Context, user: discord.Member):
@@ -457,7 +457,7 @@ class Action(commands.Cog):
             
     @commands.command()
     @commands.guild_only()
-    @commands.cooldown(1, 10, commands.BucketType.member)
+    @commands.cooldown(1, 12, commands.BucketType.member)
     @commands.bot_has_permissions(embed_links=True)
     @checks.has_permissions(PermissionLevel.OWNER)
     async def afurmode(self, ctx: commands.Context):
