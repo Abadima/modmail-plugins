@@ -1,6 +1,5 @@
 import discord,requests,time,psutil
 from discord.ext import commands
-from nekosbest import Client
 from core import checks
 from core.models import PermissionLevel
 
