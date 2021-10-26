@@ -34,7 +34,7 @@ class Leveling(Cog):
                     "name": message.author.name,
                     "gold": amount,
                     "exp": amount,
-                    "level": 1,
+                    "level": 0,
                 }
             )
         else:
