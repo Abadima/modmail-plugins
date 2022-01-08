@@ -190,10 +190,7 @@ class Music(commands.Cog, name="Music"):
         if ctx.command.qualified_name in {'musicconfig', 'requestapi', 'aboutmusic'}:
             return
         if not self.bot.lavalink.node_manager.available_nodes:
-            raise Failure(ctx, "Music isn't ready/configured yet, try again later...\n"
-                               f"You can configure music with `{self.bot.prefix}musicconfig`. "
-                               "If you believe music has already been configured, "
-                               "you are welcome to ping the bot host.")
+            raise Failure(ctx, "We have experienced an error, this is likely due to the server being unavailable, or there's something else that's not working right.")
         await self.ensure_voice(ctx)
 
     async def ensure_voice(self, ctx):
