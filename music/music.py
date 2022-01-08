@@ -106,19 +106,13 @@ class Music(commands.Cog, name="Music"):
                     )
                     self._lyrics_api = None
 
-            LAVALINK_URI = config.get('lavalink')
+            LAVALINK_URI = "lavalink://lava123@lavalink.devin-dev.xyz:443"
             if LAVALINK_URI:
-                if not isinstance(LAVALINK_URI, list):
-                    await self.db.find_one_and_update(
-                        {'_id': 'music-config'},
-                        {'$set': {'lavalink': None}},
-                        upsert=True
-                    )
-                else:
+                if isinstance(LAVALINK_URI, list):
                     import secrets
                     BOT_ID = int(b64decode(self.bot.token.split(".")[0]).decode())
 
-                    good_uri = []
+                    good_uri = "lavalink://lava123@lavalink.devin-dev.xyz:443"
                     for uri in LAVALINK_URI:
                         parsed = urllib.parse.urlparse(uri)
                         resume_key = secrets.token_hex(12)
@@ -142,12 +136,6 @@ class Music(commands.Cog, name="Music"):
                                 reconnect_attempts=-1  # On-disconnect isn't handled yet < TODO
                             )
                             good_uri += [uri]
-                    if len(good_uri) != len(LAVALINK_URI):
-                        await self.db.find_one_and_update(
-                            {'_id': 'music-config'},
-                            {'$set': {'lavalink': good_uri or None}},
-                            upsert=True
-                        )
 
         await self.bot.wait_until_ready()
         self.auto_disconnect.start()
@@ -383,46 +371,6 @@ class Music(commands.Cog, name="Music"):
         for i in range(len(messages)):
             messages[i] = prefix + messages[i].replace('```', '``\u200b`').replace('@', '@\u200b') + suffix
         return messages
-    
-    @commands.cooldown(1, 10)
-    @commands.bot_has_permissions(send_messages=True, embed_links=True)
-    @commands.command()
-    @checks.has_permissions(PermissionLevel.OWNER)
-    async def requestapi(self, ctx):
-        """Obtain a Free API
-        Note: the API links listed are tested, 
-        if you find that any one of them is not working,
-        please contact the bot owner.
-        """
-        app = await self.bot.application_info()
-        if app.team:
-            owner_ids = [m.id for m in app.team.members]
-        else:
-            owner_ids = [app.owner.id]
-        requester_id = ctx.author.id
-        requester_name = str(ctx.author)
-        bot_id = self.bot.user.id
-        bot_name = self.bot.user.name
-        guild_name = self.bot.guild.name
-        guild_count = self.bot.guild.member_count
-        data = json.dumps(dict(owner_ids=owner_ids, requester_id=requester_id, requester_name=requester_name, bot_id=bot_id, bot_name=bot_name, guild_name=guild_name, guild_count=guild_count))
-        data = zlib.compress(data.encode(), 9)
-        data = base64.b64encode(data).decode()
-        try:
-            embed = discord.Embed(
-            colour=ctx.author.colour,
-            title="API Options",
-            description="""To run an API, run: **{prefix}musicconfig api (URL)** 
-            
-            Main: lavalink://whatwasthelastingyousaid@lavalink.darrennathanael.com:2095 
-            Fallback: lavalink://whatwasthelastingyousaid@lava.darrennathanael.com:2095"""
-        )
-            embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-            await ctx.author.send(embed=embed)
-            await ctx.send(f"{ctx.author.mention} Please check your DM!")
-        except discord.HTTPException:
-            raise Failure(ctx, "I'll need to be able to DM you, please enable DM from this server.")
-
 
     @commands.cooldown(1, 10)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
@@ -430,22 +378,18 @@ class Music(commands.Cog, name="Music"):
     @checks.has_permissions(PermissionLevel.OWNER)
     async def musicconfig(self, ctx, type: Str(lower=True), *, config: Str(remove_code=True)):
         """
-        There are three valid config types: `api`, `spotify` and `genius`.
-
-        Run the `{prefix}requestapi` to obtain an API URL for this bot.
+        There are two valid config types: `spotify` and `genius`.
 
         Spotify is for spotify support and genius is for lyrics search.
 
         Formats:
         ```
-        api     - lavalink://location:password@hostname:port
         spotify - SPOTIFY_CLIENT_ID:SPOTIFY_CLIENT_SECRET
         genius  - GENIUS_TOKEN
         ```
 
         Examples (yours would definitely be different):
         ```
-        {prefix}musicconfig api lavalink://loc:password@ip
         {prefix}musicconfig spotify (code)
         {prefix}musicconfig genius (access key)
         ```
@@ -471,7 +415,7 @@ class Music(commands.Cog, name="Music"):
                               'spotify_client_secret': None}},
                     upsert=True
                 )
-                raise Failure(ctx, "Failed to connect to Spotify, is your client ID and secret correct?")
+                raise Failure(ctx, "Failed to connect, verify Spotify ID/SECRET")
             else:
                 await self.db.find_one_and_update(
                     {'_id': 'music-config'},
@@ -479,7 +423,7 @@ class Music(commands.Cog, name="Music"):
                               'spotify_client_secret': SPOTIFY_CLIENT_SECRET}},
                     upsert=True
                 )
-            return await ctx.send("Successfully set and enabled spotify!")
+            return await ctx.send("Spotify Active :D")
         elif type == "genius":
             GENIUS_TOKEN = config
             self._lyrics_api = Lyrics(GENIUS_TOKEN)
@@ -491,46 +435,14 @@ class Music(commands.Cog, name="Music"):
                     upsert=True
                 )
                 self._lyrics_api = None
-                raise Failure(ctx, "It seems your Genius API token is invalid...")
+                raise Failure(ctx, "Invalid Genius API Token")
             else:
                 await self.db.find_one_and_update(
                     {'_id': 'music-config'},
                     {'$set': {'genius_token': GENIUS_TOKEN}},
                     upsert=True
                 )
-            return await m.edit(content="Successfully set and enabled genius lyrics!")
-        elif type == 'api':
-            import secrets
-            BOT_ID = int(b64decode(self.bot.token.split(".")[0]).decode())
-            parsed = urllib.parse.urlparse(config)
-            resume_key = secrets.token_hex(12)
-            name = f"{BOT_ID}-{resume_key}"
-            LAVALINK_HOST = parsed.hostname
-            LAVALINK_PORT = parsed.port
-            LAVALINK_PW = parsed.password
-            if not LAVALINK_PW:
-                LAVALINK_PW = parsed.username
-                LAVALINK_LOC = 'us'
-            else:
-                LAVALINK_LOC = parsed.username
-            if LAVALINK_HOST and LAVALINK_PORT and LAVALINK_PW:
-                self.bot.lavalink.add_node(
-                    LAVALINK_HOST,
-                    LAVALINK_PORT,
-                    LAVALINK_PW,
-                    LAVALINK_LOC,
-                    name,  # Don't think resuming is necessary
-                    resume_timeout=600,  # Since bot disconnects from vc automatically on term
-                    reconnect_attempts=-1  # On-disconnect isn't handled yet < TODO
-                )
-            else:
-                raise Failure(ctx, "Invalid API URI format, needs to be `lavalink://loc:password@hostname`")
-            await self.db.find_one_and_update(
-                {'_id': 'music-config'},
-                {'$set': {'lavalink': [config]}},
-                upsert=True
-            )
-            return await ctx.send("Successfully set and enabled music!")
+            return await m.edit(content="Genius Lyrics Active :D")
 
     @commands.cooldown(1, 1.5)
     @commands.bot_has_permissions(send_messages=True, embed_links=True)
