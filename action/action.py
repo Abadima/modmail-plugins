@@ -110,7 +110,7 @@ class Action(commands.Cog):
             img = await self.bot.session.get('https://v2.yiff.rest/furry/hug')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
-            print(imgjson["images"][0]["url"])
+            print(imgtxt)
            #  embed.set_image(url=imgjson["images"][0]["url"])
             return await ctx.reply(embed=embed)   
         
