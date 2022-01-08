@@ -6,6 +6,8 @@ from core import checks
 from core.models import PermissionLevel
 from dislash import InteractionClient, ActionRow, Button, ButtonStyle
 
+headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'}
+
 class Action(commands.Cog):
     """
     Action Commands!
@@ -107,7 +109,7 @@ class Action(commands.Cog):
                 description=f"*{author.mention} hugs {user.mention}*"
             )
         if furry_mode is True and user is not ctx.author:
-            img = await self.bot.session.get('https://v2.yiff.rest/furry/hug')
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/hug', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             print(imgtxt)
