@@ -110,7 +110,8 @@ class Action(commands.Cog):
             img = await self.bot.session.get('https://v2.yiff.rest/furry/hug')
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
-            embed.set_image(url=imgjson["images"][0]["url"])
+            print(imgjson["images"][0]["url"])
+           #  embed.set_image(url=imgjson["images"][0]["url"])
             return await ctx.reply(embed=embed)   
         
         if furry_mode is False or None:
