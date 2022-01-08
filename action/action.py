@@ -36,7 +36,7 @@ class Action(commands.Cog):
                 description=f"*{author.mention} kisses {user.mention}*"
             )
         if furry_mode is True and user is not ctx.author:
-            img = await self.bot.session.get('https://v2.yiff.rest/furry/kiss')
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/kiss', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             embed.set_image(url=imgjson["images"][0]["url"])
@@ -112,8 +112,7 @@ class Action(commands.Cog):
             img = await self.bot.session.get('https://v2.yiff.rest/furry/hug', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
-            print(imgtxt)
-           #  embed.set_image(url=imgjson["images"][0]["url"])
+            embed.set_image(url=imgjson["images"][0]["url"])
             return await ctx.reply(embed=embed)   
         
         if furry_mode is False or None:
@@ -274,7 +273,7 @@ class Action(commands.Cog):
             )
         
         if furry_mode is True and user is not ctx.author:
-            img = await self.bot.session.get('https://v2.yiff.rest/furry/cuddle')
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/cuddle', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             embed.set_image(url=imgjson["images"][0]["url"])
@@ -444,7 +443,7 @@ class Action(commands.Cog):
                 description=f"*{author.mention} Booped {user.mention} OwO*"
             )
         if furry_mode is True and user is not ctx.author:
-            img = await self.bot.session.get('https://v2.yiff.rest/furry/boop')
+            img = await self.bot.session.get('https://v2.yiff.rest/furry/boop', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
             embed.set_image(url=imgjson["images"][0]["url"])
