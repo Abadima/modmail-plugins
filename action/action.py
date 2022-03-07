@@ -435,8 +435,8 @@ class Action(commands.Cog):
         furry_mode = (config or {}).get('furry_mode')            
         if furry_mode is True:
             embed = discord.Embed(
-                colour=user.colour,
-                description=f"*blep*"
+                colour=ctx.colour,
+                title=f"*blep*"
             )
             
             img = await self.bot.session.get('https://v2.yiff.rest/animals/blep', headers=headers)
