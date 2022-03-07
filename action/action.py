@@ -435,7 +435,7 @@ class Action(commands.Cog):
         furry_mode = (config or {}).get('furry_mode')            
         if furry_mode is True:
             embed = discord.Embed(
-                colour=ctx.colour,
+                colour=author.colour,
                 title=f"*blep*"
             )
             
