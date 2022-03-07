@@ -422,6 +422,33 @@ class Action(commands.Cog):
             result = await self.client.get_image("dance")
             embed.set_image(url=result.url)
             return await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.guild_only()
+    @commands.cooldown(1, 8, commands.BucketType.member)
+    @commands.bot_has_permissions(embed_links=True)
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    async def blep(self, ctx: commands.Context):
+        """Blep"""
+        author = ctx.author
+        config = await self.db.find_one({'_id': 'action-config'})
+        furry_mode = (config or {}).get('furry_mode')
+        if user is not author:
+            embed = discord.Embed(
+                colour=user.colour,
+                description=f"*blep*"
+            )
+        if furry_mode is True:
+            img = await self.bot.session.get('https://v2.yiff.rest/animals/blep', headers=headers)
+            imgtxt = await img.text()
+            imgjson = json.loads(imgtxt)
+            embed.set_image(url=imgjson["images"][0]["yiffMediaURL"])
+            return await ctx.reply(embed=embed)
+        
+        if furry_mode is False or None:
+            embed.description=f"Not Available"
+        #    embed.set_image(url=result.url)
+            return await ctx.reply(embed=embed)
   
     @commands.command()
     @commands.guild_only()
