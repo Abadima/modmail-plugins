@@ -432,13 +432,13 @@ class Action(commands.Cog):
         """Blep"""
         author = ctx.author
         config = await self.db.find_one({'_id': 'action-config'})
-        furry_mode = (config or {}).get('furry_mode')
-        if user is not author:
+        furry_mode = (config or {}).get('furry_mode')            
+        if furry_mode is True:
             embed = discord.Embed(
                 colour=user.colour,
                 description=f"*blep*"
             )
-        if furry_mode is True:
+            
             img = await self.bot.session.get('https://v2.yiff.rest/animals/blep', headers=headers)
             imgtxt = await img.text()
             imgjson = json.loads(imgtxt)
